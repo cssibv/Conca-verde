@@ -245,12 +245,6 @@ section.container {
 .center { margin: 16px auto 0; }
 .align-left { text-align: left; margin-bottom: 25px; }
 
-/* RESTAURANT MENU LIST */
-.menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
 /* GRIDS */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
@@ -422,34 +416,7 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
 }
 
 /* --- RESTAURANT --- */
-.menu-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 50px; margin-top: 35px;
-}
-/* Single-category sections should span full width */
-.menu-grid.full-width { grid-template-columns: 1fr; }
-
-.menu-category h3 {
-    font-family: var(--font-head); color: var(--gold);
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 8px; margin-bottom: 18px;
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-}
-
-/* Menu Item — single source of truth */
-.menu-item {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 18px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-.menu-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-.m-info h4 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
-.m-info p { font-size: 0.85rem; color: #666; font-style: italic; }
-.m-price { font-weight: 700; color: var(--gold); font-size: 1.1rem; white-space: nowrap; margin-left: 16px; }
+/* Room card layout */
 
 /* --- EVENIMENTE --- */
 .service-card .policy-list li {
@@ -528,8 +495,6 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
 
     .room-details { padding: 22px; }
     .room-details h3 { font-size: 1.4rem; }
-
-    .menu-grid { gap: 35px; }
 
     .parallax-section { background-attachment: scroll; padding: 70px 20px; }
 }
@@ -664,9 +629,6 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
     /* Mini features */
     .mini-features { gap: 14px; flex-wrap: wrap; }
 
-    /* Restaurant */
-    .menu-grid { grid-template-columns: 1fr; gap: 28px; }
-
     /* Contact */
     .contact-wrapper { grid-template-columns: 1fr; }
     .map-container { min-height: 260px; }
@@ -767,10 +729,6 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
     /* Stats row */
     .stats-row { flex-direction: column; gap: 14px; }
     .stat-box h4 { font-size: 1.7rem; }
-
-    /* Restaurant */
-    .m-info h4 { font-size: 0.95rem; }
-    .m-price { font-size: 0.92rem; margin-left: 10px; }
 
     /* Parallax */
     .parallax-section { padding: 50px 16px; }
@@ -975,93 +933,220 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
     .wa-float svg { width: 24px; height: 24px; }
 }
 
-/* --- STILURI NOI PENTRU MENIU (Classic Elegant & Sticky Nav) --- */
 
-/* 1. Bara de navigare sticky */
-.menu-nav-wrapper {
-    background: var(--white);
-    border-bottom: 1px solid #eee;
+/* ================================================================
+   RESTAURANT MENU — UNIFIED DESIGN SYSTEM
+   ================================================================
+   Structură: Base (desktop) → @media ≤900px (tablet) → @media ≤480px (telefon)
+   Toate regulile menu sunt DOAR aici. Niciun alt loc din CSS.
+   ================================================================ */
+
+/* ──────────────────────────────
+   STICKY CATEGORY NAV
+   ────────────────────────────── */
+#menuNavWrapper.menu-nav-wrapper {
     position: sticky;
-    top: 70px; /* Sub header-ul principal */
-    z-index: 900;
-    padding: 10px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    overflow-x: auto; /* Permite scroll orizontal pe mobil */
-    scrollbar-width: none; /* Ascunde scrollbar Firefox */
+    top: var(--header-offset-scrolled, 72px);
+    z-index: 950;
+    padding: 10px 0 8px;
+    background: var(--sand);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: top 0.35s ease;
 }
-.menu-nav-wrapper::-webkit-scrollbar { display: none; /* Ascunde scrollbar Chrome/Safari */ }
 
-.menu-nav {
-    display: flex;
-    gap: 15px;
-    white-space: nowrap;
-    padding-bottom: 5px;
+/* Mâncare / Bar toggle */
+#menuNavWrapper .menu-nav-top {
+    display: inline-flex;
+    gap: 2px;
+    background: #f3f1ea;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 999px;
+    padding: 3px;
+    margin: 0 auto 10px;
+    width: fit-content;
 }
-.menu-nav a {
-    color: #888;
-    font-weight: 600;
-    font-size: 0.9rem;
+#menuNavWrapper .menu-nav-toggle {
+    border: 0;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
-    padding: 6px 15px;
-    border-radius: 20px;
-    transition: 0.3s;
+    color: var(--primary);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
 }
-.menu-nav a.active, .menu-nav a:hover {
+#menuNavWrapper .menu-nav-toggle.active {
     background: var(--primary);
-    color: var(--white);
+    color: #fff;
 }
 
-/* 2. Item Meniu — stiluri contextuale restaurant */
-.m-info {
-    flex: 1; 
+/* Category pills */
+#menuNavWrapper .menu-nav-scroller {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 2px 2px;
+}
+#menuNavWrapper .menu-nav-scroller::-webkit-scrollbar { display: none; }
+
+#menuNavWrapper .menu-nav {
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menuNavWrapper .menu-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(30,58,41,0.18);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    background: rgba(255,255,255,0.7);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+#menuNavWrapper .menu-nav a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+#menuNavWrapper .menu-nav a.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+}
+#menuNavWrapper .menu-nav-group { display: none; }
+#menuNavWrapper .menu-nav-group.active { display: flex; }
+
+
+/* ──────────────────────────────
+   MENU GRID — layout categorii
+   ────────────────────────────── */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+.menu-grid.full-width {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ──────────────────────────────
+   CATEGORY
+   ────────────────────────────── */
+.menu-category {
     min-width: 0;
 }
+.menu-category h3 {
+    font-family: var(--font-head);
+    color: var(--gold);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+}
 
+
+/* ──────────────────────────────
+   MENU LIST & MENU ITEM
+   ────────────────────────────── */
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+/* Info (titlu + descriere) */
+.m-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header row: titlu ... preț */
 .m-header {
     display: flex;
     align-items: baseline;
+    gap: 4px;
     min-width: 0;
 }
 
+/* Titlu preparat */
 .m-title {
     font-weight: 700;
     color: var(--primary);
-    font-size: 1.05rem;
-    white-space: nowrap; 
-    margin-right: 5px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.m-title small {
+    font-weight: 400;
+    color: #888;
+    font-size: 0.82em;
 }
 
+/* Linie punctată */
 .m-dots {
     flex: 1;
     border-bottom: 2px dotted #ccc;
-    margin: 0 10px;
+    margin: 0 8px;
     position: relative;
-    top: -5px;
-    opacity: 0.6;
-    min-width: 20px;
+    top: -4px;
+    opacity: 0.5;
+    min-width: 16px;
 }
 
+/* Descriere ingrediente */
 .m-desc {
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 0.82rem;
+    color: #777;
     font-style: italic;
-    margin-top: 2px;
-    line-height: 1.3;
+    margin-top: 3px;
+    line-height: 1.45;
 }
 
+/* Preț */
 .m-price {
     font-weight: 700;
     color: var(--gold);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 1px;
 }
 
-/* 3. Etichete Speciale (Hot/Veg) */
+/* Etichete (HOT / VEG) */
 .diet-tag {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     padding: 2px 6px;
     border-radius: 4px;
     margin-left: 5px;
@@ -1074,87 +1159,82 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
 .tag-veg { background: #e8f5e9; color: #2e7d32; }
 .tag-hot { background: #ffebee; color: #c62828; }
 
-/* 4. Lista pe 2 coloane pe Desktop */
-@media (min-width: 900px) {
-    .two-col-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 60px;
-    }
+/* Two-col list (Ciorbe etc.) */
+.two-col-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
 }
 
-/* ============================================================
-   RESTAURANT MENU — RESPONSIVE MOBILE (max 900px)
-   Meniul se citește vertical, fără scroll orizontal
-   ============================================================ */
+/* Scroll offsets for anchors */
+.menu-anchor[id] {
+    scroll-margin-top: calc(var(--header-offset-scrolled, 72px) + 100px);
+}
+#meniu-content .section-header[id] {
+    scroll-margin-top: calc(var(--header-offset-scrolled, 72px) + 100px);
+}
+
+/* Extras row (sosuri, smântână etc.) */
+.menu-extras {
+    max-width: 620px;
+    margin: 18px auto 0;
+}
+
+/* Bar subcategory headings (Beer, Whiskey, Wine etc.) */
+.bar-subcategory {
+    margin-top: 14px;
+    color: var(--primary);
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+}
+
+
+/* ──────────────────────────────
+   DESKTOP MARE (1024px+)
+   ────────────────────────────── */
+@media (min-width: 1024px) {
+    #menuNavWrapper.menu-nav-wrapper { padding: 12px 0 10px; }
+    #menuNavWrapper .menu-nav a { font-size: 0.86rem; padding: 9px 14px; }
+}
+
+
+/* ──────────────────────────────
+   TABLET (max 900px)
+   ────────────────────────────── */
 @media (max-width: 900px) {
-    /* Grid-ul de categorii devine o singură coloană */
-    .menu-grid { grid-template-columns: 1fr; gap: 28px; }
-
-    /* Două coloane devin una pe mobil */
-    .two-col-list { grid-template-columns: 1fr !important; column-gap: 0; }
-
-    /* Fiecare item de meniu: titlu + preț pe un rând, descriere dedesubt */
-    .menu-item {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 18px;
-        padding-bottom: 14px;
-        border-bottom: 1px solid #eee;
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .menu-grid.full-width {
+        max-width: 100%;
+    }
+    .two-col-list {
+        grid-template-columns: 1fr;
+        column-gap: 0;
     }
 
-    /* Info ia toată lățimea minus preț */
-    .m-info {
-        flex: 1;
-        min-width: 0;
-    }
-
-    /* Header-ul cu titlu: permite wrap */
-    .m-header {
-        display: block;
-        width: 100%;
-    }
-
-    /* Titlul: PERMITE WRAP pe mobil */
+    /* Titlu: permite wrap */
     .m-title {
         white-space: normal;
-        word-wrap: break-word;
+        word-break: break-word;
         font-size: 0.95rem;
-        display: inline;
     }
 
-    /* Ascundem linia punctată pe mobil — nu are loc */
+    /* Ascunde dots pe mobil */
     .m-dots { display: none; }
 
-    /* Prețul stă la dreapta, aliniat sus, NU dedesubt */
-    .m-price {
-        font-size: 1rem;
-        flex-shrink: 0;
-        align-self: flex-start;
-        padding-top: 2px;
+    /* Header devine block (titlu pe un rând, fără dots) */
+    .m-header {
+        display: block;
     }
 
-    /* Descrierea pe tot rândul */
-    .m-desc {
-        font-size: 0.82rem;
-        margin-top: 4px;
-        line-height: 1.5;
-    }
+    .m-price { font-size: 0.95rem; }
+    .m-desc { font-size: 0.8rem; line-height: 1.5; }
+    .menu-category h3 { font-size: 1.25rem; margin-bottom: 12px; }
 
-    /* Categoria h3 mai compactă */
-    .menu-category h3 {
-        font-size: 1.3rem;
-        margin-bottom: 14px;
-    }
-
-    /* ── Sticky nav: pill-uri pe mai multe rânduri, nu scroll ascuns ── */
-    #menuNavWrapper .menu-nav-scroller {
-        overflow-x: visible;
-    }
+    /* Sticky nav: pills wrap */
+    #menuNavWrapper .menu-nav-scroller { overflow-x: visible; }
     #menuNavWrapper .menu-nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -1162,135 +1242,32 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
         gap: 6px;
     }
     #menuNavWrapper .menu-nav a {
-        font-size: 0.75rem;
+        font-size: 0.74rem;
         padding: 7px 10px;
     }
 }
 
-/* Ajustări fine pentru telefoane mici */
-@media (max-width: 600px) {
-    .menu-nav-wrapper { top: 60px; }
 
-    .m-title { font-size: 0.88rem; }
-    .m-price { font-size: 0.95rem; }
-    .m-desc { font-size: 0.78rem; }
-    .menu-category h3 { font-size: 1.1rem; }
-
-    /* Pill-urile și mai compacte */
-    #menuNavWrapper .menu-nav a {
-        font-size: 0.7rem;
-        padding: 6px 9px;
-    }
-    #menuNavWrapper .menu-nav {
-        gap: 5px;
+/* ──────────────────────────────
+   TELEFON (max 480px)
+   ────────────────────────────── */
+@media (max-width: 480px) {
+    #menuNavWrapper.menu-nav-wrapper {
+        padding: 8px 0 6px;
     }
     #menuNavWrapper .menu-nav-toggle {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         padding: 6px 12px;
     }
-}
+    #menuNavWrapper .menu-nav a {
+        font-size: 0.68rem;
+        padding: 5px 8px;
+    }
+    #menuNavWrapper .menu-nav { gap: 4px; }
 
-/* ============================================================
-   Restaurant Sticky Category Nav — v2 (better mobile UX)
-   ============================================================ */
-#menuNavWrapper.menu-nav-wrapper{
-  position: sticky;
-  top: var(--header-offset-scrolled, 72px);
-  z-index: 950;
-  padding: 10px 0 8px;
-  background: var(--sand);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-  text-align: center;
-}
-
-/* top segmented control */
-#menuNavWrapper .menu-nav-top{
-  display: inline-flex;
-  gap: 2px;
-  background: #f3f1ea;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 999px;
-  padding: 3px;
-  margin: 0 auto 10px;
-  width: fit-content;
-}
-
-#menuNavWrapper .menu-nav-toggle{
-  border: 0;
-  background: transparent;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  color: var(--primary);
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-}
-#menuNavWrapper .menu-nav-toggle:active{ transform: scale(0.98); }
-#menuNavWrapper .menu-nav-toggle.active{
-  background: var(--primary);
-  color: #fff;
-}
-
-/* horizontal scroller */
-#menuNavWrapper .menu-nav-scroller{
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0 2px 2px;
-  touch-action: pan-x;
-}
-#menuNavWrapper .menu-nav-scroller::-webkit-scrollbar{ display:none; }
-
-#menuNavWrapper .menu-nav{
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 8px;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  min-width: max-content;
-}
-
-#menuNavWrapper .menu-nav a{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(30,58,41,0.18);
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 0.82rem;
-  white-space: nowrap;
-  background: rgba(255,255,255,0.7);
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  touch-action: manipulation;
-  scroll-snap-align: center;
-}
-#menuNavWrapper .menu-nav a:hover{ border-color: var(--gold); color: var(--gold); }
-#menuNavWrapper .menu-nav a:active{ transform: scale(0.98); }
-
-#menuNavWrapper .menu-nav a.active{
-  background: var(--gold);
-  border-color: var(--gold);
-  color: #fff;
-}
-
-/* hide inactive group cleanly (prevents click blocking) */
-#menuNavWrapper .menu-nav-group{ display: none; }
-#menuNavWrapper .menu-nav-group.active{ display: flex; }
-
-/* better anchor offset when jumping — account for header + sticky nav */
-#meniu-content .section-header[id]{ scroll-margin-top: calc(var(--header-offset-scrolled, 72px) + 100px); }
-.menu-anchor[id] { scroll-margin-top: calc(var(--header-offset-scrolled, 72px) + 100px); }
-
-@media (min-width: 1024px){
-  #menuNavWrapper.menu-nav-wrapper{ padding: 12px 0 10px; }
-  #menuNavWrapper .menu-nav-toggle{ font-size: 0.76rem; padding: 8px 16px; }
-  #menuNavWrapper .menu-nav a{ font-size: 0.86rem; padding: 9px 14px; }
+    .m-title { font-size: 0.88rem; }
+    .m-price { font-size: 0.9rem; }
+    .m-desc { font-size: 0.76rem; }
+    .menu-category h3 { font-size: 1.1rem; }
+    .menu-item { padding: 8px 0; }
 }

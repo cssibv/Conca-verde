@@ -95,8 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 900) {
             if (currentScroll > lastScroll && currentScroll > 120) {
                 header.classList.add('hidden');
+                // Header e ascuns → sticky nav trebuie să urce la top: 0
+                rootEl.style.setProperty('--header-offset-scrolled', '0px');
             } else {
                 header.classList.remove('hidden');
+                // Header e vizibil → recalculăm offset-ul real
+                updateHeaderOffset();
             }
         }
 
