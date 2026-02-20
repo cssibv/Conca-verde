@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <style>
+      .primary-color { fill: #1e3a29; } /* Verde Inchis */
+      .accent-color { fill: #c5a059; }  /* Auriu */
+      .light-bg { fill: #f4f1ea; }      /* Bej deschis pentru scut */
+      .white-snow { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <path class="light-bg" d="M120,200 L380,200 L380,260 L250,330 L120,260 Z" stroke="#c5a059" stroke-width="2"/>
+
+  <g transform="translate(0, -20)">
+      <circle cx="300" cy="120" r="35" class="accent-color" opacity="0.8"/>
+      
+      <path class="primary-color" d="M150,180 L220,60 L280,160 L320,100 L400,180 Z"/>
+      <path class="white-snow" d="M220,60 L245,100 L220,110 L195,100 Z"/>
+      <path class="white-snow" d="M320,100 L340,130 L320,140 L300,130 Z"/>
+  </g>
+
+  <g transform="translate(0, -10)">
+      <path class="primary-color" d="M100,200 L140,130 L180,200 Z"/>
+      <path class="primary-color" d="M360,200 L400,130 L440,200 Z"/>
+      <path class="primary-color" d="M180,200 L210,150 L240,200 Z"/>
+      <path class="primary-color" d="M240,200 L270,160 L300,200 Z"/>
+      <path class="primary-color" d="M300,200 L330,150 L360,200 Z"/>
+  </g>
+
+  <path class="primary-color" d="M80,190 L420,190 L440,225 L420,260 L80,260 L60,225 Z"/>
+  <rect x="100" y="200" width="300" height="50" class="accent-color"/> <text x="250" y="238" font-family="'Playfair Display', serif" font-weight="bold" font-size="38" class="primary-color" text-anchor="middle" letter-spacing="1">CONCA VERDE</text>
+  
+  <text x="250" y="295" font-family="'Brush Script MT', cursive" font-size="22" class="primary-color" text-anchor="middle">Aproape de natură</text>
+
+  <g transform="translate(230, 305) scale(0.5)">
+     <path class="primary-color" d="M40,0 L35,-15 M45,-5 L55,-20 M40,0 L40,30 L60,30 L60,60 L50,60 L50,40 L30,40 L30,60 L20,60 L20,30 L10,10 Z"/>
+     <path class="primary-color" d="M-10,40 L20,40 L20,60 L-20,60 L-20,50 L-10,40 Z" opacity="0.8"/>
+  </g>
+</svg>

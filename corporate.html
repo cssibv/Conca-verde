@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conca Verde Râșnov — Conferințe, Teambuilding și Corporate Retreats în Cheile Râșnoavei. Sală de conferințe, 18 camere, restaurant 300 locuri.">
+    <title>Corporate & Teambuilding | Conca Verde Râșnov</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== LANG SWITCHER ===== */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: 0.3s;
+        }
+        .lang-btn.active { background: var(--gold); border-color: var(--gold); }
+        .lang-btn:hover:not(.active) { border-color: var(--gold); color: var(--gold); }
+        header.scrolled .lang-btn { color: var(--primary); border-color: var(--primary); }
+        header.scrolled .lang-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+        [data-lang="en"] { display: none; }
+        body.lang-en [data-lang="ro"] { display: none; }
+        body.lang-en [data-lang="en"] { display: block; }
+        body.lang-en span[data-lang="en"] { display: inline; }
+        body.lang-en span[data-lang="ro"] { display: none; }
+
+        /* ===== HERO CORPORATE ===== */
+        .hero-corporate {
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(20,45,30,0.92) 0%, rgba(30,58,41,0.80) 100%),
+                        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1920') center/cover no-repeat;
+        }
+        .hero-corporate::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, #fff);
+            pointer-events: none;
+        }
+        .hero-corporate .hero-badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            animation: fadeUp 0.8s ease both;
+        }
+        .hero-corporate h1 {
+            font-family: var(--font-head);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 20px;
+            animation: fadeUp 0.9s 0.1s ease both;
+        }
+        .hero-corporate h1 em {
+            color: var(--gold);
+            font-style: normal;
+        }
+        .hero-corporate p.hero-lead {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 620px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            animation: fadeUp 1s 0.2s ease both;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 1s 0.3s ease both;
+        }
+        .btn-primary-corp {
+            background: var(--gold);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-primary-corp:hover { background: #fff; color: var(--primary); }
+        .btn-secondary-corp {
+            border: 2px solid rgba(255,255,255,0.6);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-secondary-corp:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            background: var(--primary);
+            padding: 22px 0;
+        }
+        .trust-strip-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+        .trust-item .ti-icon {
+            font-size: 1.4rem;
+        }
+        .trust-item strong {
+            color: var(--gold);
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro-text h2 {
+            font-family: var(--font-head);
+            font-size: 2.4rem;
+            color: var(--primary);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+        .intro-text p {
+            color: #555;
+            font-size: 1.02rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .facilities-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e8e0d0;
+            color: #444;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .facilities-list li:last-child { border-bottom: none; }
+
+        .intro-image-wrap {
+            position: relative;
+        }
+        .intro-image-wrap img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(30,58,41,0.2);
+        }
+        .img-overlay-badge {
+            position: absolute;
+            bottom: 25px;
+            left: -20px;
+            background: var(--gold);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(197,160,89,0.4);
+        }
+        .img-overlay-badge span {
+            display: block;
+            font-size: 1.6rem;
+            font-family: var(--font-head);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        /* ===== SALA CONFIG ===== */
+        .sala-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: 0.4s;
+            border-top: 4px solid transparent;
+        }
+        .sala-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--gold);
+            box-shadow: 0 20px 50px rgba(30,58,41,0.15);
+        }
+        .sala-card-body {
+            padding: 30px 25px;
+            text-align: center;
+        }
+        .sala-icon {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .sala-card h4 {
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .sala-capacity {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            font-family: var(--font-head);
+            display: block;
+            margin: 8px 0 4px;
+        }
+        .sala-label {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sala-desc {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== PACHETE ===== */
+        .pachete-section {
+            background: var(--sand);
+        }
+        .pachet-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: 0.4s;
+            position: relative;
+        }
+        .pachet-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(30,58,41,0.15);
+        }
+        .pachet-card.featured {
+            border: 2px solid var(--gold);
+        }
+        .pachet-badge-featured {
+            position: absolute;
+            top: 18px; right: 18px;
+            background: var(--gold);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+        .pachet-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 30px 25px;
+            text-align: center;
+        }
+        .pachet-header h3 {
+            font-family: var(--font-head);
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+        }
+        .pachet-header p {
+            font-size: 0.88rem;
+            opacity: 0.8;
+        }
+        .pachet-body {
+            padding: 30px 25px;
+        }
+        .pachet-include {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        .pachet-include li {
+            padding: 8px 0;
+            font-size: 0.93rem;
+            color: #444;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .pachet-include li:last-child { border: none; }
+        .pi-check { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+        .btn-pachet {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: #fff;
+            padding: 13px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.88rem;
+            transition: 0.3s;
+        }
+        .btn-pachet:hover { background: var(--gold); color: #fff; }
+        .btn-pachet.gold { background: var(--gold); }
+        .btn-pachet.gold:hover { background: var(--primary); }
+
+        /* ===== ACTIVITATI ===== */
+        .activ-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.4s;
+        }
+        .activ-card:hover { transform: translateY(-8px); }
+        .activ-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        .activ-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .activ-card:hover .activ-img img { transform: scale(1.08); }
+        .activ-body {
+            padding: 22px;
+        }
+        .activ-body h3 {
+            font-family: var(--font-head);
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .activ-body p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.65;
+        }
+
+        /* ===== TESTIMONIALE ===== */
+        .testimoniale-section {
+            background: var(--primary);
+            padding: 100px 0;
+        }
+        .testimoniale-section .section-header span { color: var(--gold); }
+        .testimoniale-section .section-header h2 { color: #fff; }
+        .testimoniale-section .line { background: var(--gold); }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testi-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 30px;
+        }
+        .testi-stars {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        .testi-text {
+            color: rgba(255,255,255,0.88);
+            font-size: 0.97rem;
+            line-height: 1.75;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testi-avatar {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .testi-name {
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .testi-role {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section .faq-grid {
+            margin-top: 50px;
+        }
+        .faq-item-corp {
+            border: 1px solid #e8e0d0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .faq-q {
+            width: 100%;
+            background: #fff;
+            border: none;
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-body);
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .faq-q:hover { background: var(--sand); }
+        .faq-q .faq-arrow {
+            font-size: 1.2rem;
+            color: var(--gold);
+            transition: 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+        .faq-q.open .faq-arrow { transform: rotate(180deg); }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: var(--sand);
+        }
+        .faq-a-inner {
+            padding: 0 22px 18px;
+            font-size: 0.93rem;
+            color: #555;
+            line-height: 1.75;
+        }
+
+        /* ===== FORM OFERTA ===== */
+        .oferta-section {
+            background: linear-gradient(135deg, rgba(20,45,30,0.97), rgba(30,58,41,0.95)),
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=1920') center/cover fixed;
+            padding: 100px 0;
+        }
+        .oferta-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .oferta-left h2 {
+            font-family: var(--font-head);
+            font-size: 2.4rem;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .oferta-left p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.97rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .oferta-promise {
+            list-style: none;
+            margin-bottom: 0;
+        }
+        .oferta-promise li {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            padding: 6px 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .oferta-promise li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .oferta-form {
+            background: #fff;
+            border-radius: 14px;
+            padding: 40px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        .oferta-form h3 {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .oferta-form .form-subtitle {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 25px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid #e0d8cc;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text);
+            background: #fafaf8;
+            transition: 0.3s;
+            appearance: auto;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+            background: #fff;
+        }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+        .btn-submit {
+            width: 100%;
+            background: var(--gold);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 5px;
+        }
+        .btn-submit:hover { background: var(--primary); }
+        .form-note {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #aaa;
+            margin-top: 12px;
+        }
+
+        /* ===== SUCCESS MSG ===== */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .form-success .success-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .form-success h4 {
+            color: var(--primary);
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .form-success p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .oferta-inner { grid-template-columns: 1fr; gap: 40px; }
+            .form-row { grid-template-columns: 1fr; }
+            .testi-grid { grid-template-columns: 1fr; }
+            .img-overlay-badge { left: 10px; bottom: -15px; }
+        }
+        @media (max-width: 768px) {
+            .trust-strip-inner { flex-direction: column; gap: 15px; text-align: center; }
+            .oferta-form { padding: 25px; }
+            .hero-cta-group { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="assets/img/logo.png" alt="Conca Verde Logo" class="site-logo">
+        </a>
+
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a></li>
+            <li><a href="cazare.html"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></a></li>
+            <li><a href="restaurant.html"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
+            <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
+            <li><a href="corporate.html" class="active">Corporate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+            <li><a href="#oferta" class="btn-nav"><span data-lang="ro">Cere Ofertă</span><span data-lang="en">Get Quote</span></a></li>
+        </ul>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-corporate">
+        <div style="position:relative; z-index:1; padding: 0 20px; max-width: 820px; margin: 0 auto; text-align: center;">
+            <div class="hero-badge">
+                <span data-lang="ro">Corporate & Teambuilding · Râșnov, România</span>
+                <span data-lang="en">Corporate & Teambuilding · Râșnov, Romania</span>
+            </div>
+            <h1>
+                <span data-lang="ro">Conferințe care <em>Inspiră.</em><br>Echipe care <em>Cresc.</em></span>
+                <span data-lang="en">Conferences that <em>Inspire.</em><br>Teams that <em>Grow.</em></span>
+            </h1>
+            <p class="hero-lead">
+                <span data-lang="ro">Ieșiți din sala de ședințe. La Conca Verde, natura devine cel mai bun facilitator pentru creativitate, coeziune și performanță.</span>
+                <span data-lang="en">Step out of the boardroom. At Conca Verde, nature becomes the ultimate facilitator for creativity, team cohesion and peak performance.</span>
+            </p>
+            <div class="hero-cta-group">
+                <a href="#oferta" class="btn-primary-corp">
+                    <span data-lang="ro">✉ Cere Ofertă Personalizată</span>
+                    <span data-lang="en">✉ Request a Custom Quote</span>
+                </a>
+                <a href="#pachete" class="btn-secondary-corp">
+                    <span data-lang="ro">Vezi Pachete</span>
+                    <span data-lang="en">View Packages</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST STRIP ===== -->
+    <div class="trust-strip">
+        <div class="trust-strip-inner">
+            <div class="trust-item">
+                <span class="ti-icon">🏢</span>
+                <span><strong>200+</strong> <span data-lang="ro">evenimente corporate organizate</span><span data-lang="en">corporate events hosted</span></span>
+            </div>
+            <div class="trust-item">
+                <span class="ti-icon">👥</span>
+                <span><span data-lang="ro">Capacitate până la</span><span data-lang="en">Capacity up to</span> <strong>150 participanți</strong></span>
+            </div>
+            <div class="trust-item">
+                <span class="ti-icon">🌲</span>
+                <span><strong>20.000 mp</strong> <span data-lang="ro">de activități outdoor</span><span data-lang="en">of outdoor activities</span></span>
+            </div>
+            <div class="trust-item">
+                <span class="ti-icon">⚡</span>
+                <span><span data-lang="ro">Răspuns ofertă în</span><span data-lang="en">Quote reply within</span> <strong>24h</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== INTRO ===== -->
+    <section class="container spatiu-mare">
+        <div class="grid-2">
+            <div class="intro-text reveal">
+                <span class="section-subtitle">MEETINGS & INCENTIVES</span>
+                <h2>
+                    <span data-lang="ro">Ședințe care nu se uită. Echipe care se unesc.</span>
+                    <span data-lang="en">Meetings worth remembering. Teams worth building.</span>
+                </h2>
+                <div class="line" style="margin: 20px 0;"></div>
+                <p>
+                    <span data-lang="ro">La Conca Verde, productivitatea capătă un alt sens. Sala noastră de conferințe se transformă după nevoile companiei tale — de la workshop-uri intensive la lansări de produse și gale de premiere.</span>
+                    <span data-lang="en">At Conca Verde, productivity takes on new meaning. Our conference hall adapts to your company's needs — from intensive workshops to product launches and award galas.</span>
+                </p>
+                <p>
+                    <span data-lang="ro">Combinăm tehnologia necesară lucrului eficient cu priveliștea uimitoare a Cheilor Râșnoavei — pentru că cele mai bune decizii se iau cu mintea clară.</span>
+                    <span data-lang="en">We combine the technology needed for efficient work with the breathtaking views of Râșnoavei Gorge — because the best decisions are made with a clear mind.</span>
+                </p>
+
+                <ul class="facilities-list" style="margin-top: 25px;">
+                    <li>💻 <span data-lang="ro">Proiector Full HD & Ecran Electric</span><span data-lang="en">Full HD Projector & Electric Screen</span></li>
+                    <li>🎤 <span data-lang="ro">Sistem Sonorizare Profesional</span><span data-lang="en">Professional Sound System</span></li>
+                    <li>📶 <span data-lang="ro">Wi-Fi High Speed Dedicat (500 Mbps)</span><span data-lang="en">Dedicated High Speed Wi-Fi (500 Mbps)</span></li>
+                    <li>☕ <span data-lang="ro">Coffee Break Premium & Catering Personalizat</span><span data-lang="en">Premium Coffee Breaks & Custom Catering</span></li>
+                    <li>🎨 <span data-lang="ro">Flipchart, Markere & Papetărie</span><span data-lang="en">Flipchart, Markers & Stationery</span></li>
+                    <li>🅿️ <span data-lang="ro">Parcare Gratuită pentru Participanți</span><span data-lang="en">Free Parking for Participants</span></li>
+                </ul>
+            </div>
+
+            <div class="intro-image-wrap reveal">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800" alt="Corporate meeting at Conca Verde">
+                <div class="img-overlay-badge">
+                    <span>15+</span>
+                    <span data-lang="ro">ani de ospitalitate</span><span data-lang="en">years of hospitality</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONFIGURATII SALA ===== -->
+    <section class="bg-sand spatiu-mare">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span><span data-lang="ro">Spații de Lucru</span><span data-lang="en">Workspaces</span></span>
+                <h2><span data-lang="ro">Configurații Sală</span><span data-lang="en">Room Configurations</span></h2>
+                <div class="line center"></div>
+                <p style="margin-top:15px; color:#666; max-width:500px; margin-left:auto; margin-right:auto;">
+                    <span data-lang="ro">Sala se reconfigurează complet în funcție de evenimentul tău.</span>
+                    <span data-lang="en">The room reconfigures completely to match your event format.</span>
+                </p>
+            </div>
+
+            <div class="grid-3">
+                <div class="sala-card reveal">
+                    <div class="sala-card-body">
+                        <span class="sala-icon">🎭</span>
+                        <h4>Theater</h4>
+                        <span class="sala-capacity">150 pax</span>
+                        <span class="sala-label"><span data-lang="ro">capacitate maximă</span><span data-lang="en">maximum capacity</span></span>
+                        <p class="sala-desc">
+                            <span data-lang="ro">Rânduri de scaune orientate spre scenă. Perfect pentru prezentări, keynote-uri și lansări de produse.</span>
+                            <span data-lang="en">Rows of seats facing the stage. Perfect for presentations, keynotes and product launches.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sala-card reveal">
+                    <div class="sala-card-body">
+                        <span class="sala-icon">🎓</span>
+                        <h4>Classroom</h4>
+                        <span class="sala-capacity">80 pax</span>
+                        <span class="sala-label"><span data-lang="ro">capacitate maximă</span><span data-lang="en">maximum capacity</span></span>
+                        <p class="sala-desc">
+                            <span data-lang="ro">Mese și scaune aranjate ca în sală de curs. Ideal pentru training-uri, certificări și workshop-uri cu note.</span>
+                            <span data-lang="en">Tables and chairs arranged classroom-style. Ideal for trainings, certifications and note-taking workshops.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sala-card reveal">
+                    <div class="sala-card-body">
+                        <span class="sala-icon">🤝</span>
+                        <h4>U-Shape</h4>
+                        <span class="sala-capacity">40 pax</span>
+                        <span class="sala-label"><span data-lang="ro">capacitate maximă</span><span data-lang="en">maximum capacity</span></span>
+                        <p class="sala-desc">
+                            <span data-lang="ro">Aranjament în formă de U pentru interacțiune maximă. Perfect pentru board meetings, dezbateri și sesiuni de strategie.</span>
+                            <span data-lang="en">U-shaped arrangement for maximum interaction. Perfect for board meetings, debates and strategy sessions.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sala-card reveal">
+                    <div class="sala-card-body">
+                        <span class="sala-icon">🍽️</span>
+                        <h4>Banquet</h4>
+                        <span class="sala-capacity">120 pax</span>
+                        <span class="sala-label"><span data-lang="ro">capacitate maximă</span><span data-lang="en">maximum capacity</span></span>
+                        <p class="sala-desc">
+                            <span data-lang="ro">Mese rotunde pentru gale, cine de gală și ceremonii de premiere corporate.</span>
+                            <span data-lang="en">Round tables for galas, award ceremonies and formal corporate dinners.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sala-card reveal">
+                    <div class="sala-card-body">
+                        <span class="sala-icon">☕</span>
+                        <h4>Cocktail</h4>
+                        <span class="sala-capacity">150 pax</span>
+                        <span class="sala-label"><span data-lang="ro">capacitate maximă</span><span data-lang="en">maximum capacity</span></span>
+                        <p class="sala-desc">
+                            <span data-lang="ro">Standing, fără mese fixe. Ideal pentru networking events, welcome receptions și lansări informale.</span>
+                            <span data-lang="en">Standing, no fixed tables. Ideal for networking events, welcome receptions and informal launches.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sala-card reveal">
+                    <div class="sala-card-body">
+                        <span class="sala-icon">🌿</span>
+                        <h4>Outdoor</h4>
+                        <span class="sala-capacity">300 pax</span>
+                        <span class="sala-label"><span data-lang="ro">capacitate maximă</span><span data-lang="en">maximum capacity</span></span>
+                        <p class="sala-desc">
+                            <span data-lang="ro">Terasă și grădină pentru events în aer liber. Disponibil cu cort și sistem de sonorizare.</span>
+                            <span data-lang="en">Terrace and garden for open-air events. Available with tent and sound system setup.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PACHETE ===== -->
+    <section class="container spatiu-mare" id="pachete">
+        <div class="section-header" style="text-align:center;">
+            <span><span data-lang="ro">Pachete Incluzive</span><span data-lang="en">All-Inclusive Packages</span></span>
+            <h2><span data-lang="ro">Alege Pachetul Potrivit</span><span data-lang="en">Choose Your Package</span></h2>
+            <div class="line center"></div>
+            <p style="margin-top:15px; color:#666; max-width:540px; margin-left:auto; margin-right:auto;">
+                <span data-lang="ro">Pachete gata pregătite sau 100% personalizate — tu decizi. Toate includ serviciu dedicat de event management.</span>
+                <span data-lang="en">Ready-made or 100% custom packages — you decide. All include dedicated event management service.</span>
+            </p>
+        </div>
+
+        <div class="grid-3" style="margin-top:50px;">
+            <!-- Pachet 1 -->
+            <div class="pachet-card reveal">
+                <div class="pachet-header">
+                    <h3><span data-lang="ro">Half Day</span><span data-lang="en">Half Day</span></h3>
+                    <p><span data-lang="ro">Ședință de zi, 4 ore</span><span data-lang="en">4-hour business meeting</span></p>
+                </div>
+                <div class="pachet-body">
+                    <ul class="pachet-include">
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Sală de conferințe 4 ore</span><span data-lang="en">Conference room 4 hours</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">1 Coffee break (cafea, apă, fructe)</span><span data-lang="en">1 Coffee break (coffee, water, fruit)</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Echipamente AV incluse</span><span data-lang="en">AV equipment included</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Wi-Fi dedicat</span><span data-lang="en">Dedicated Wi-Fi</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Parcare gratuită</span><span data-lang="en">Free parking</span></li>
+                    </ul>
+                    <a href="#oferta" class="btn-pachet">
+                        <span data-lang="ro">Cere Ofertă →</span><span data-lang="en">Request Quote →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pachet 2 - Featured -->
+            <div class="pachet-card featured reveal">
+                <div class="pachet-badge-featured">
+                    <span data-lang="ro">Cel mai ales</span><span data-lang="en">Most popular</span>
+                </div>
+                <div class="pachet-header" style="background: var(--gold);">
+                    <h3><span data-lang="ro">Full Day</span><span data-lang="en">Full Day</span></h3>
+                    <p><span data-lang="ro">Zi completă de lucru & relaxare</span><span data-lang="en">Full day of work & relaxation</span></p>
+                </div>
+                <div class="pachet-body">
+                    <ul class="pachet-include">
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Sală de conferințe toată ziua</span><span data-lang="en">Conference room all day</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">2 Coffee breaks premium</span><span data-lang="en">2 Premium coffee breaks</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Prânz la Restaurant</span><span data-lang="en">Lunch at the Restaurant</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">1 Activitate outdoor la alegere</span><span data-lang="en">1 Outdoor activity of choice</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Echipamente AV + Flipchart</span><span data-lang="en">AV equipment + Flipchart</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Wi-Fi dedicat & parcare</span><span data-lang="en">Dedicated Wi-Fi & parking</span></li>
+                    </ul>
+                    <a href="#oferta" class="btn-pachet gold">
+                        <span data-lang="ro">Cere Ofertă →</span><span data-lang="en">Request Quote →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pachet 3 -->
+            <div class="pachet-card reveal">
+                <div class="pachet-header">
+                    <h3><span data-lang="ro">Retreat 2 Nopți</span><span data-lang="en">2-Night Retreat</span></h3>
+                    <p><span data-lang="ro">Teambuilding complet</span><span data-lang="en">Complete team-building</span></p>
+                </div>
+                <div class="pachet-body">
+                    <ul class="pachet-include">
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Cazare 2 nopți (camere duble)</span><span data-lang="en">2-night accommodation (twin rooms)</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Mic dejun + Prânz + Cină incluse</span><span data-lang="en">Breakfast + Lunch + Dinner included</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Sală de conferințe 2 zile</span><span data-lang="en">Conference room 2 days</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">3 Activități outdoor (tirolianăǔ, rapel, tir cu arcul)</span><span data-lang="en">3 Outdoor activities (zip-line, rappel, archery)</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Seară festivă cu foc de tabără</span><span data-lang="en">Evening celebration with campfire</span></li>
+                        <li><span class="pi-check">✓</span> <span data-lang="ro">Event manager dedicat</span><span data-lang="en">Dedicated event manager</span></li>
+                    </ul>
+                    <a href="#oferta" class="btn-pachet">
+                        <span data-lang="ro">Cere Ofertă →</span><span data-lang="en">Request Quote →</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACTIVITATI OUTDOOR ===== -->
+    <section class="bg-sand spatiu-mare">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span>Outdoor</span>
+                <h2><span data-lang="ro">Activități de Echipă</span><span data-lang="en">Team Activities</span></h2>
+                <div class="line center"></div>
+                <p style="margin-top:15px; color:#666; max-width:500px; margin-left:auto; margin-right:auto;">
+                    <span data-lang="ro">20.000 mp și Cheile Râșnoavei la dispoziția echipei tale.</span>
+                    <span data-lang="en">20,000 sqm and Râșnoavei Gorge at your team's disposal.</span>
+                </p>
+            </div>
+
+            <div class="grid-3" style="margin-top:50px;">
+                <div class="activ-card reveal">
+                    <div class="activ-img">
+                        <img src="https://images.unsplash.com/photo-1533561096933-7227c444bb4f?q=80&w=800" alt="Activitati adrenalina">
+                    </div>
+                    <div class="activ-body">
+                        <h3><span data-lang="ro">Adrenalină în Chei</span><span data-lang="en">Gorge Adventure</span></h3>
+                        <p><span data-lang="ro">Tirolianǎ, escaladǎ și rapel cu instructori autorizați. La 5 minute de hotel, în inima naturii.</span><span data-lang="en">Zip-line, climbing and rappelling with certified instructors. 5 minutes from the hotel, in the heart of nature.</span></p>
+                    </div>
+                </div>
+                <div class="activ-card reveal">
+                    <div class="activ-img">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800" alt="Treasure Hunt">
+                    </div>
+                    <div class="activ-body">
+                        <h3><span data-lang="ro">Treasure Hunt & Jocuri</span><span data-lang="en">Treasure Hunt & Games</span></h3>
+                        <p><span data-lang="ro">Vânǎtoare de comori în pǎdure, tir cu arcul și competiții sportive care unesc echipele.</span><span data-lang="en">Forest treasure hunts, archery and sports competitions that bring teams together.</span></p>
+                    </div>
+                </div>
+                <div class="activ-card reveal">
+                    <div class="activ-img">
+                        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=800" alt="Foc de tabara">
+                    </div>
+                    <div class="activ-body">
+                        <h3><span data-lang="ro">Seara Festivă</span><span data-lang="en">Festive Evening</span></h3>
+                        <p><span data-lang="ro">Foc de tabǎrǎ, muzicǎ live și grǎtar în aer liber. Momentul perfect pentru a celebra echipa.</span><span data-lang="en">Campfire, live music and outdoor grill. The perfect moment to celebrate your team.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALE ===== -->
+    <section class="testimoniale-section">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span><span data-lang="ro">Ce Spun Clienții</span><span data-lang="en">What Clients Say</span></span>
+                <h2><span data-lang="ro">Companii care ne-au ales</span><span data-lang="en">Companies that chose us</span></h2>
+                <div class="line center"></div>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card reveal">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">
+                        <span data-lang="ro">„Am organizat teambuilding-ul anual pentru 80 de persoane. Organizarea a fost impecabilǎ, mâncarea delicioasǎ și activitǎțile outdoor au depǎșit așteptǎrile tuturor."</span>
+                        <span data-lang="en">"We organized our annual team-building for 80 people. The organization was impeccable, the food delicious, and the outdoor activities exceeded everyone's expectations."</span>
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">AM</div>
+                        <div>
+                            <div class="testi-name">Alexandra M.</div>
+                            <div class="testi-role">HR Director, Grup Industrial</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card reveal">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">
+                        <span data-lang="ro">„Sala de conferințe modernǎ, Wi-Fi stabil și un cadru natural care inspira. Ideale pentru sesiunile noastre de strategie anuala."</span>
+                        <span data-lang="en">"Modern conference room, stable Wi-Fi, and a natural setting that inspires. Perfect for our annual strategy sessions."</span>
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">RP</div>
+                        <div>
+                            <div class="testi-name">Radu P.</div>
+                            <div class="testi-role">CEO, Tech Startup</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card reveal">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">
+                        <span data-lang="ro">„Echipa de la Conca Verde ne-a pregǎtit un program personalizat perfect. Ne vom întoarce cu siguranțǎ!"</span>
+                        <span data-lang="en">"The Conca Verde team prepared a perfectly customized program for us. We will definitely be back!"</span>
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">IC</div>
+                        <div>
+                            <div class="testi-name">Ioana C.</div>
+                            <div class="testi-role">Event Manager, Multinational</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="container spatiu-mare faq-section">
+        <div class="section-header" style="text-align:center;">
+            <span>FAQ</span>
+            <h2><span data-lang="ro">Întrebări Frecvente</span><span data-lang="en">Frequently Asked Questions</span></h2>
+            <div class="line center"></div>
+        </div>
+        <div style="max-width: 750px; margin: 50px auto 0;">
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Cât timp durează răspunsul la o cerere de ofertă?</span>
+                    <span data-lang="en">How quickly do you respond to a quote request?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Ne angajǎm sǎ rǎspundem în maxim 24 de ore lucrǎtoare de la primirea cererii, cu o ofertǎ detaliatǎ și personalizatǎ.</span>
+                    <span data-lang="en">We commit to responding within 24 working hours of receiving the request, with a detailed and personalized offer.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Se pot combina sesiunile de lucru cu activitǎțile outdoor?</span>
+                    <span data-lang="en">Can we combine work sessions with outdoor activities?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Absolut! Asta este specialitatea noastrǎ. Construim agende care alterneazǎ sesiunile de lucru cu pauzele active, astfel încât productivitatea rǎmâne ridicatǎ toatǎ ziua.</span>
+                    <span data-lang="en">Absolutely! That's our specialty. We build agendas that alternate work sessions with active breaks, keeping productivity high throughout the day.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Este disponibilǎ facturare pe firmǎ?</span>
+                    <span data-lang="en">Is corporate invoicing available?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Da, emitem facturǎ fiscalǎ pentru toate serviciile corporate. Acceptǎm platǎ prin transfer bancar, card și numerar.</span>
+                    <span data-lang="en">Yes, we issue fiscal invoices for all corporate services. We accept payment by bank transfer, card and cash.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Care este numǎrul minim de participanți?</span>
+                    <span data-lang="en">What is the minimum number of participants?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Nu existǎ un numǎr minim fix. Primim grupuri de la 10 persoane în sus. Pentru grupuri mai mici, oferim spații alternative (sala mică sau terasa).</span>
+                    <span data-lang="en">There is no fixed minimum. We welcome groups from 10 people upwards. For smaller groups, we offer alternative spaces (small meeting room or terrace).</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Activitǎțile outdoor sunt sigure? Cine le coordoneazǎ?</span>
+                    <span data-lang="en">Are outdoor activities safe? Who coordinates them?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Toate activitǎțile de aventurǎ sunt conduse de instructori autorizați ANPC, cu echipament omologat. Siguranța participanților este prioritatea noastrǎ nr. 1.</span>
+                    <span data-lang="en">All adventure activities are led by ANPC-certified instructors with approved equipment. Participant safety is our #1 priority.</span>
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FORM OFERTA ===== -->
+    <section class="oferta-section" id="oferta">
+        <div class="oferta-inner">
+            <div class="oferta-left reveal">
+                <span style="color:var(--gold); font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; display:block; margin-bottom:15px;">
+                    <span data-lang="ro">Ofertǎ Corporate</span><span data-lang="en">Corporate Quote</span>
+                </span>
+                <h2>
+                    <span data-lang="ro">Hai sǎ construim ceva memorabil împreunǎ.</span>
+                    <span data-lang="en">Let's build something memorable together.</span>
+                </h2>
+                <p>
+                    <span data-lang="ro">Completează formularul și vei primi în 24h o ofertǎ personalizatǎ, adaptatǎ exact nevoilor companiei tale.</span>
+                    <span data-lang="en">Fill in the form and you'll receive within 24h a personalized quote, tailored exactly to your company's needs.</span>
+                </p>
+                <ul class="oferta-promise">
+                    <li><span data-lang="ro">Ofertǎ detaliatǎ în 24 ore</span><span data-lang="en">Detailed quote within 24 hours</span></li>
+                    <li><span data-lang="ro">100% personalizatǎ pentru compania ta</span><span data-lang="en">100% customized for your company</span></li>
+                    <li><span data-lang="ro">Fǎrǎ angajamente, fǎrǎ costuri ascunse</span><span data-lang="en">No commitments, no hidden costs</span></li>
+                    <li><span data-lang="ro">Event manager dedicat de la primul contact</span><span data-lang="en">Dedicated event manager from first contact</span></li>
+                    <li><span data-lang="ro">Facturare pe firmǎ disponibilǎ</span><span data-lang="en">Corporate invoicing available</span></li>
+                </ul>
+            </div>
+
+            <div class="oferta-form reveal" id="ofertaFormWrap">
+                <h3><span data-lang="ro">Cere Ofertǎ</span><span data-lang="en">Request Quote</span></h3>
+                <p class="form-subtitle">
+                    <span data-lang="ro">Completați câmpurile de mai jos — durează 2 minute.</span>
+                    <span data-lang="en">Fill in the fields below — it takes 2 minutes.</span>
+                </p>
+
+                <div id="ofertaForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><span data-lang="ro">Nume & Prenume *</span><span data-lang="en">Full Name *</span></label>
+                            <input type="text" id="f-name" placeholder="Ion Popescu" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-lang="ro">Companie *</span><span data-lang="en">Company *</span></label>
+                            <input type="text" id="f-company" placeholder="SC Exemplu SRL" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="f-email" placeholder="contact@companie.ro" required>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-lang="ro">Telefon</span><span data-lang="en">Phone</span></label>
+                            <input type="tel" id="f-phone" placeholder="+40 700 000 000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><span data-lang="ro">Nr. Participanți *</span><span data-lang="en">No. of Participants *</span></label>
+                            <select id="f-pax">
+                                <option value="">— <span data-lang="ro">Selectează</span><span data-lang="en">Select</span> —</option>
+                                <option>10 – 30</option>
+                                <option>30 – 60</option>
+                                <option>60 – 100</option>
+                                <option>100 – 150</option>
+                                <option>150+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><span data-lang="ro">Tip Eveniment</span><span data-lang="en">Event Type</span></label>
+                            <select id="f-type">
+                                <option value=""><span data-lang="ro">Selectează</span><span data-lang="en">Select</span></option>
+                                <option><span data-lang="ro">Conferință / Prezentare</span><span data-lang="en">Conference / Presentation</span></option>
+                                <option>Teambuilding</option>
+                                <option><span data-lang="ro">Training / Workshop</span><span data-lang="en">Training / Workshop</span></option>
+                                <option>Retreat</option>
+                                <option><span data-lang="ro">Galǎ / Dinner</span><span data-lang="en">Gala / Dinner</span></option>
+                                <option><span data-lang="ro">Altul</span><span data-lang="en">Other</span></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><span data-lang="ro">Data Preferatǎ</span><span data-lang="en">Preferred Date</span></label>
+                        <input type="date" id="f-date">
+                    </div>
+                    <div class="form-group">
+                        <label><span data-lang="ro">Mesaj / Cerințe speciale</span><span data-lang="en">Message / Special requirements</span></label>
+                        <textarea id="f-msg" placeholder="Spune-ne mai multe despre evenimentul tău..."></textarea>
+                    </div>
+                    <button class="btn-submit" onclick="submitForm()">
+                        <span data-lang="ro">✉ Trimite Cererea</span>
+                        <span data-lang="en">✉ Send Request</span>
+                    </button>
+                    <p class="form-note">
+                        <span data-lang="ro">Datele tale sunt confidențiale și nu vor fi partajate.</span>
+                        <span data-lang="en">Your data is confidential and will not be shared.</span>
+                    </p>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="success-icon">✅</div>
+                    <h4><span data-lang="ro">Cerere trimisǎ cu succes!</span><span data-lang="en">Request sent successfully!</span></h4>
+                    <p><span data-lang="ro">Te vom contacta în maxim 24 de ore cu oferta personalizatǎ.</span><span data-lang="en">We will contact you within 24 hours with your personalized quote.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container grid-footer">
+            <div class="footer-col">
+                <img src="assets/img/logo.png" alt="Conca Verde Logo" style="height: 60px; margin-bottom: 12px;">
+                <p><span data-lang="ro">Oaza ta de liniște în Cheile Râșnoavei. Ne dedicăm excelenței în ospitalitate.</span><span data-lang="en">Your oasis of tranquility in Râșnoavei Gorge. Dedicated to excellence in hospitality.</span></p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/concaverde" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/concaverde" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title"><span data-lang="ro">Navigare</span><span data-lang="en">Navigation</span></h4>
+                <ul>
+                    <li><a href="cazare.html"><span data-lang="ro">Cazare &amp; Tarife</span><span data-lang="en">Rooms &amp; Rates</span></a></li>
+                    <li><a href="restaurant.html"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
+                    <li><a href="evenimente.html"><span data-lang="ro">Evenimente Private</span><span data-lang="en">Private Events</span></a></li>
+                    <li><a href="corporate.html">Corporate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
+                <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
+                <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p class="highlight-gold"><span data-lang="ro">Program Recepție: Non-Stop</span><span data-lang="en">Reception: 24/7</span></p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Complex Turistic Conca Verde. <span data-lang="ro">Toate drepturile rezervate.</span><span data-lang="en">All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // ===== LANGUAGE SWITCHER =====
+        function setLang(lang) {
+            document.body.classList.toggle('lang-en', lang === 'en');
+            document.querySelectorAll('.lang-btn').forEach(b => {
+                b.classList.toggle('active', b.textContent.trim() === lang.toUpperCase());
+            });
+            localStorage.setItem('cv-lang', lang);
+        }
+        (function() {
+            const saved = localStorage.getItem('cv-lang') || 'ro';
+            setLang(saved);
+        })();
+
+        // ===== FAQ =====
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = btn.classList.contains('open');
+            document.querySelectorAll('.faq-q.open').forEach(q => {
+                q.classList.remove('open');
+                q.nextElementSibling.style.maxHeight = null;
+            });
+            if (!isOpen) {
+                btn.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+
+        // ===== SCROLL REVEAL =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ===== FORM SUBMIT =====
+        function submitForm() {
+            const name = document.getElementById('f-name').value.trim();
+            const email = document.getElementById('f-email').value.trim();
+            const company = document.getElementById('f-company').value.trim();
+            const pax = document.getElementById('f-pax').value;
+            if (!name || !email || !company || !pax) {
+                alert(document.body.classList.contains('lang-en')
+                    ? 'Please fill in all required fields.'
+                    : 'Vă rugăm completați toate câmpurile obligatori

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meniul Restaurantului Conca Verde Râșnov — Preparate tradiționale românești, specialități gourmet. Capacitate 300 locuri, terasă, muzică live weekend.">
+    <title>Meniu Restaurant | Conca Verde Râșnov</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Meniu Restaurant | Conca Verde Râșnov">
+    <meta property="og:description" content="Meniul Restaurantului Conca Verde Râșnov — Preparate tradiționale românești, specialități gourmet. Capacitate 300 locuri, terasă, muzică live weekend.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ro_RO">
+    <link rel="canonical" href="https://concaverde.ro/restaurant.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Stiluri specifice doar pentru aceasta pagina */
+        .lang-switcher { display: flex; align-items: center; gap: 6px; margin-right: 15px; }
+        .lang-btn {
+            background: transparent; border: 1px solid rgba(255,255,255,0.4);
+            color: #fff; font-size: 0.75rem; font-weight: 600; padding: 4px 10px;
+            border-radius: 4px; cursor: pointer; transition: 0.3s;
+        }
+        .lang-btn.active { background: var(--gold); border-color: var(--gold); }
+        header.scrolled .lang-btn { color: var(--primary); border-color: var(--primary); }
+        header.scrolled .lang-btn.active { color: #fff; }
+
+        /* Logica Limba */
+        [data-lang="en"] { display: none; }
+        body.lang-en [data-lang="ro"] { display: none; }
+        body.lang-en [data-lang="en"] { display: block; }
+        body.lang-en span[data-lang="en"] { display: inline; }
+        body.lang-en span[data-lang="ro"] { display: none; }
+    </style>
+</head>
+<body data-page="restaurant">
+
+    <header id="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="assets/img/logo.png" alt="Conca Verde Logo" class="site-logo">
+        </a>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a></li>
+            <li><a href="cazare.html"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></a></li>
+            <li><a href="restaurant.html" class="active"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
+            <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            
+            <li class="lang-switcher-li">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                </div>
+            </li>
+            
+            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" class="btn-nav"><span data-lang="ro">Rezervă Acum</span><span data-lang="en">Book Now</span></a></li>
+        </ul>
+    </header>
+
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/restaurant-header.jpg');">
+        <div class="header-content reveal">
+            <h1>
+                <span data-lang="ro">Meniul Conca Verde</span>
+                <span data-lang="en">Conca Verde Menu</span>
+            </h1>
+            <p>
+                <span data-lang="ro">Tradiție românească și gust autentic</span>
+                <span data-lang="en">A gourmet taste of Romanian tradition</span>
+            </p>
+        </div>
+    </section>
+
+    <div class="menu-nav-wrapper" id="menuNavWrapper" aria-label="Restaurant menu categories">
+        <div class="container">
+            <div class="menu-nav-top" role="tablist" aria-label="Menu groups">
+                <button class="menu-nav-toggle active" type="button" data-group="food" role="tab" aria-selected="true">
+                    <span data-lang="ro">Mâncare</span><span data-lang="en">Food</span>
+                </button>
+                <button class="menu-nav-toggle" type="button" data-group="bar" role="tab" aria-selected="false">
+                    <span data-lang="ro">Bar</span><span data-lang="en">Bar</span>
+                </button>
+            </div>
+
+            <div class="menu-nav-scroller">
+                <ul class="menu-nav menu-nav-group active" data-group="food" role="tablist" aria-label="Food categories">
+                    <li><a href="#micdejun" class="active"><span data-lang="ro">Mic dejun</span><span data-lang="en">Breakfast</span></a></li>
+                    <li><a href="#aperitive"><span data-lang="ro">Aperitive</span><span data-lang="en">Starters</span></a></li>
+                    <li><a href="#ciorbe"><span data-lang="ro">Ciorbe</span><span data-lang="en">Soups</span></a></li>
+                    <li><a href="#porc"><span data-lang="ro">Porc</span><span data-lang="en">Pork</span></a></li>
+                    <li><a href="#pui"><span data-lang="ro">Pui</span><span data-lang="en">Chicken</span></a></li>
+                    <li><a href="#semnatura"><span data-lang="ro">Semnătură</span><span data-lang="en">Signature</span></a></li>
+                    <li><a href="#peste"><span data-lang="ro">Pește</span><span data-lang="en">Fish</span></a></li>
+                    <li><a href="#pizza">Pizza</a></li>
+                    <li><a href="#garnituri"><span data-lang="ro">Garnituri</span><span data-lang="en">Sides</span></a></li>
+                    <li><a href="#salate"><span data-lang="ro">Salate</span><span data-lang="en">Salads</span></a></li>
+                    <li><a href="#desert"><span data-lang="ro">Desert</span><span data-lang="en">Desserts</span></a></li>
+                </ul>
+
+                <ul class="menu-nav menu-nav-group" data-group="bar" role="tablist" aria-label="Bar categories">
+                    <li><a href="#bar-rece" class="active"><span data-lang="ro">Răcoritoare</span><span data-lang="en">Cold</span></a></li>
+                    <li><a href="#bar-calde"><span data-lang="ro">Calde</span><span data-lang="en">Hot</span></a></li>
+                    <li><a href="#bar-alcool"><span data-lang="ro">Alcool</span><span data-lang="en">Alcohol</span></a></li>
+                    <li><a href="#bar-cocktails"><span data-lang="ro">Cocktailuri</span><span data-lang="en">Cocktails</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-sand spatiu-mare" id="meniu-content" style="padding-top: 40px;">
+  <div class="container">
+
+    <!-- BREAKFAST -->
+    <div class="section-header reveal" id="micdejun">
+      <span data-lang="ro">Începe ziua bine</span><span data-lang="en">Start your day right</span>
+      <h2 data-lang="ro">Mic Dejun</h2><h2 data-lang="en">Breakfast</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid reveal">
+      <div class="menu-category">
+        <h3><span data-lang="ro">Mic Dejun</span><span data-lang="en">Breakfast</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header">
+                <span class="m-title"><span data-lang="ro">Omletă Țărănească</span><span data-lang="en">Rustic Omelette</span> <small>300 g</small></span><span class="m-dots"></span>
+              </div>
+              <p class="m-desc"><span data-lang="ro">3 ouă, ceapă, ardei, kaizer, ciuperci, roșii, telemea, condimente</span><span data-lang="en">3 eggs, onion, bell pepper, smoked pork (kaizer), mushrooms, tomatoes, telemea cheese, spices</span></p>
+            </div>
+            <div class="m-price">29 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header">
+                <span class="m-title"><span data-lang="ro">Omletă cu Șuncă &amp; Cașcaval</span><span data-lang="en">Ham &amp; Hard Cheese Omelette</span> <small>250 g</small></span><span class="m-dots"></span>
+              </div>
+              <p class="m-desc"><span data-lang="ro">3 ouă, șuncă, cașcaval, condimente, ulei</span><span data-lang="en">3 eggs, ham, hard cheese, spices, oil</span></p>
+            </div>
+            <div class="m-price">27 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header">
+                <span class="m-title"><span data-lang="ro">Omletă Simplă</span><span data-lang="en">Plain Omelette</span> <small>220 g</small></span><span class="m-dots"></span>
+              </div>
+              <p class="m-desc"><span data-lang="ro">3 ouă, condimente, ulei</span><span data-lang="en">3 eggs, seasoning, oil</span></p>
+            </div>
+            <div class="m-price">18 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header">
+                <span class="m-title"><span data-lang="ro">Platou Mic Dejun</span><span data-lang="en">Breakfast Plate</span></span><span class="m-dots"></span>
+              </div>
+              <p class="m-desc">
+                <span data-lang="ro"><strong>Opțiunea 1:</strong> două ouă, mezeluri, unt, gem/miere, legume<br><strong>Opțiunea 2:</strong> șuncă, cașcaval, telemea, salam, unt, gem/miere</span>
+                <span data-lang="en"><strong>Option 1:</strong> two eggs, cold cuts, butter, jam/honey, vegetables<br><strong>Option 2:</strong> ham, hard cheese, telemea, salami, butter, jam/honey</span>
+              </p>
+            </div>
+            <div class="m-price">35 Lei</div>
+          </li>
+
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Două Ouă Ochiuri</span><span data-lang="en">Two Fried Eggs</span></span><span class="m-dots"></span></div></div>
+            <div class="m-price">10 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Telemea (vacă/oaie)</span><span data-lang="en">Cow/Sheep Telemea Cheese</span> <small>50 g</small></span><span class="m-dots"></span></div></div>
+            <div class="m-price">5 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Gem</span><span data-lang="en">Jam</span> <small>70 g</small></span><span class="m-dots"></span></div></div>
+            <div class="m-price">5 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Cereale &amp; Lapte</span><span data-lang="en">Cereals &amp; Milk</span> <small>50 g / 150 g</small></span><span class="m-dots"></span></div></div>
+            <div class="m-price">20 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Croissant</span><span data-lang="en">Croissant</span></span><span class="m-dots"></span></div></div>
+            <div class="m-price">9 Lei</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3><span data-lang="ro">Alte Specialități</span><span data-lang="en">Other Specialties</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Cașcaval Pane</span><span data-lang="en">Breaded Hard Cheese</span> <small>250 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">cașcaval, ou, făină, pesmet</span><span data-lang="en">hard cheese, egg, flour, breadcrumbs</span></p>
+            </div>
+            <div class="m-price">35 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Bulz Tradițional cu Ou Ochi</span><span data-lang="en">Traditional Bulz with Fried Egg</span> <small>400 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">mămăligă, brânză de burduf, ou, ulei, sare</span><span data-lang="en">cornmeal polenta, egg, sheep’s curd (brânză de burduf), oil, salt</span></p>
+            </div>
+            <div class="m-price">32 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Bulz Tradițional, Ou &amp; Afumătură</span><span data-lang="en">Traditional Bulz, Egg &amp; Smoked Meat</span> <small>470 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">mămăligă, brânză de burduf, ou, ulei, afumătură</span><span data-lang="en">cornmeal polenta, egg, sheep’s curd, oil, smoked meat</span></p>
+            </div>
+            <div class="m-price">38 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Mămăligă cu Brânză &amp; Smântână</span><span data-lang="en">Polenta with Cheese &amp; Sour Cream</span> <small>350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">mămăligă, telemea / brânză de vacă, smântână</span><span data-lang="en">cornmeal, telemea cheese / cow’s cheese, sour cream</span></p>
+            </div>
+            <div class="m-price">30 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Sandwich Șnițel &amp; Cașcaval</span><span data-lang="en">Schnitzel &amp; Cheese Sandwich</span></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">pâine, piept de pui, ou, făină, pesmet, cașcaval, sare</span><span data-lang="en">bread, chicken breast, egg, flour, breadcrumbs, hard cheese, salt</span></p>
+            </div>
+            <div class="m-price">25 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Sandwich Șuncă &amp; Cașcaval</span><span data-lang="en">Ham and Cheese Sandwich</span></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">pâine, șuncă, cașcaval</span><span data-lang="en">bread, ham, hard cheese</span></p>
+            </div>
+            <div class="m-price">20 Lei</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STARTERS -->
+    <div class="section-header reveal" id="aperitive">
+      <span data-lang="ro">Gustări</span><span data-lang="en">Starters</span>
+      <h2 data-lang="ro">Aperitive</h2><h2 data-lang="en">Starters</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid reveal">
+      <div class="menu-category">
+        <h3><span data-lang="ro">Platouri</span><span data-lang="en">Platters</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header">
+                <span class="m-title"><span data-lang="ro">Platou Tradițional</span><span data-lang="en">Traditional Platter</span> <small><span data-lang="ro">– 6 persoane</span><span data-lang="en">– 6 persons</span></small></span><span class="m-dots"></span>
+              </div>
+              <p class="m-desc">
+                <span data-lang="ro">gușă de porc (100 g), slănină afumată (100 g), jumări (100 g), chifteluțe (150 g), crispy pui (150 g), cârnați uscați (100 g), telemea (100 g), urdă (100 g), legume (100 g), mușchi afumat (100 g), caltaboș (100 g)</span>
+                <span data-lang="en">pork jowl (100 g), cured pork fat (100 g), pork cracklings (100 g), meatballs (150 g), crispy chicken bites (150 g), dried sausages (100 g), telemea cheese (100 g), sheep’s curd (100 g), vegetables (100 g), smoked pork tenderloin (100 g), caltabash sausage (100 g)</span>
+              </p>
+            </div>
+            <div class="m-price">230 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header">
+                <span class="m-title"><span data-lang="ro">Platou de Brânzeturi</span><span data-lang="en">Cheese Platter</span> <small><span data-lang="ro">– 4 persoane</span><span data-lang="en">– 4 persons</span></small></span><span class="m-dots"></span>
+              </div>
+              <p class="m-desc">
+                <span data-lang="ro">urdă (150 g), telemea (150 g), caș proaspăt (150 g), brânză cu mucegai (150 g), cașcaval (150 g), legume, fructe</span>
+                <span data-lang="en">sheep’s curd (150 g), Romanian brined cheese (150 g), fresh curd cheese – caș (150 g), blue cheese (150 g), hard cheese (150 g), vegetables, fruits</span>
+              </p>
+            </div>
+            <div class="m-price">170 Lei</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3><span data-lang="ro">Gustări</span><span data-lang="en">Starters</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Pastă de Jumări</span><span data-lang="en">Pork Crackling Spread</span> <small>100 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">burtă de porc, sare, piper, untură</span><span data-lang="en">pork belly grinded, salt, pepper, lard</span></p>
+            </div>
+            <div class="m-price">27 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Jumări</span><span data-lang="en">Pork Cracklings</span> <small>100 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">burtă de porc, sare, piper, untură</span><span data-lang="en">pork belly, salt, pepper, lard</span></p>
+            </div>
+            <div class="m-price">25 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Vinete</span><span data-lang="en">Eggplant Spread</span> <small>200 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">vinete, ceapă, ulei, sare, maioneză</span><span data-lang="en">eggplants, onion, oil, salt, mayonnaise</span></p>
+            </div>
+            <div class="m-price">27 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Icre</span><span data-lang="en">Carp Roe Spread</span> <small>200 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">icre de crap, griș, sare, ulei</span><span data-lang="en">carp roe, semolina, salt, oil</span></p>
+            </div>
+            <div class="m-price">30 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Crochete de Cașcaval</span><span data-lang="en">Cheese Croquettes</span> <small>200 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">cașcaval, făină, ou, pesmet, ulei, piper</span><span data-lang="en">hard cheese, flour, egg, breadcrumbs, oil, pepper</span></p>
+            </div>
+            <div class="m-price">32 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Bruschetta cu Roșii, Usturoi &amp; Busuioc</span><span data-lang="en">Tomatoes, Garlic &amp; Basil Bruschetta</span></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">roșii, usturoi, busuioc, ulei, pâine</span><span data-lang="en">tomatoes, garlic, basil, oil, bread</span></p>
+            </div>
+            <div class="m-price">29 Lei</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SOUPS -->
+    <div class="section-header reveal" id="ciorbe">
+      <span data-lang="ro">Tradițional</span><span data-lang="en">Traditional</span>
+      <h2 data-lang="ro">Ciorbe</h2><h2 data-lang="en">Traditional Soups</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid full-width reveal">
+      <div class="menu-category" style="width:100%;">
+        <ul class="menu-list two-col-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă de Văcuță</span><span data-lang="en">Beef Sour Soup</span> <small>350 g / 50 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">vită, țelină, cartofi, fasole verde, morcovi, ardei, mazăre, condimente, ulei, suc de roșii, leuștean</span><span data-lang="en">beef, celery, potatoes, green beans, carrots, bell pepper, peas, seasoning, oil, tomato juice, lovage</span></p>
+            </div>
+            <div class="m-price">23 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă de Burtă</span><span data-lang="en">Traditional Tripe Soup</span> <small>130 g / 270 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">burtă de vită, ou, smântână, usturoi, morcovi, condimente</span><span data-lang="en">beef tripe, egg, sour cream, garlic, carrots, seasoning</span></p>
+            </div>
+            <div class="m-price">24 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă de Fasole cu Afumătură</span><span data-lang="en">Bean Soup &amp; Smoked Pork</span> <small>50 g / 350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">ciolan afumat, fasole, ardei, țelină, morcovi, ceapă, tarhon, suc de roșii, condimente</span><span data-lang="en">smoked pork hock, beans, bell pepper, celery, carrots, onion, tarragon, tomato juice, seasoning</span></p>
+            </div>
+            <div class="m-price">22 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă Rădăuțeană</span><span data-lang="en">Greek-Style Chicken Soup</span> <small>50 g / 350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">pui, ou, smântână, morcovi, ardei, ceapă, orez, țelină, mărar, condimente</span><span data-lang="en">chicken meat, egg, sour cream, carrots, bell pepper, onion, rice, celery, dill, seasoning</span></p>
+            </div>
+            <div class="m-price">23 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă de Perișoare</span><span data-lang="en">Meatball Sour Soup</span> <small>50 g / 350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">perișoare porc, orez, suc de roșii, ardei, ceapă, țelină, morcovi, condimente, leuștean, borș</span><span data-lang="en">pork meatballs, rice, tomato juice, bell pepper, onion, celery, carrots, seasoning, lovage, borscht</span></p>
+            </div>
+            <div class="m-price">24 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă Ardelenească cu Afumătură</span><span data-lang="en">Transylvanian Smoked Pork Soup</span> <small>50 g / 350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">afumătură, morcovi, țelină, ceapă, cartofi, tarhon, ou, smântână, ardei, condimente</span><span data-lang="en">smoked pork, carrots, celery, onion, potatoes, tarragon, egg, sour cream, bell pepper, seasoning</span></p>
+            </div>
+            <div class="m-price">23 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ciorbă de Legume</span><span data-lang="en">Vegetable Soup</span> <small>350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">suc de roșii, ardei, ceapă, țelină, morcovi, condimente, pătrunjel, borș</span><span data-lang="en">tomato juice, bell pepper, onion, celery, carrots, seasoning, parsley, borscht</span></p>
+            </div>
+            <div class="m-price">20 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Supă de Pui cu Tăiței de Casă</span><span data-lang="en">Chicken Soup with Homemade Noodles</span> <small>50 g / 300 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">pui, morcovi, tăiței de casă (ou, făină), condimente, pătrunjel</span><span data-lang="en">chicken, carrots, homemade noodles (egg, flour), seasoning, parsley</span></p>
+            </div>
+            <div class="m-price">22 Lei</div>
+          </li>
+        </ul>
+
+        <div style="max-width: 620px; margin: 18px auto 0;">
+          <ul class="menu-list">
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Ceapă Roșie</span><span data-lang="en">Red Onion Salad</span> <small>100 g</small></span><span class="m-dots"></span></div></div><div class="m-price">5 Lei</div></li>
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Smântână</span><span data-lang="en">Sour Cream</span> <small>50 g</small></span><span class="m-dots"></span></div></div><div class="m-price">5 Lei</div></li>
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Ardei Iute</span><span data-lang="en">Hot Pepper</span></span><span class="m-dots"></span></div></div><div class="m-price">1 Leu</div></li>
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Pâine</span><span data-lang="en">Bread</span></span><span class="m-dots"></span></div></div><div class="m-price">3 Lei</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIALTIES -->
+    <div class="section-header reveal" id="specialitati">
+      <span data-lang="ro">Fel Principal</span><span data-lang="en">Main Course</span>
+      <h2 data-lang="ro">Specialități</h2><h2 data-lang="en">Chef's Specialties</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid reveal">
+      <div class="menu-category">
+        <div class="menu-anchor" id="porc"></div>
+        <h3><span data-lang="ro">Specialități de Porc</span><span data-lang="en">Chef's Pork Specialties</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Pomana Porcului cu Mămăligă, Telemea &amp; Ou Ochi</span><span data-lang="en">Traditional Pork Stew with Polenta, Telemea &amp; Fried Egg</span> <small>250/200/50/50 g</small></span><span class="m-dots"></span></div>
+            <p class="m-desc"><span data-lang="ro">carne de porc, mălai, pastă de roșii, ulei, ou, condimente (telemea = brânză în saramură)</span><span data-lang="en">pork meat, cornmeal, tomato paste, oil, egg, seasoning (telemea = Romanian brined cheese)</span></p></div>
+            <div class="m-price">45 Lei</div>
+          </li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Carne de Porc Prăjită Lent</span><span data-lang="en">Slow-fried Romanian Pork</span> <small>250/200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">carne de porc, mălai, ulei, condimente</span><span data-lang="en">pork meat, cornmeal, oil, seasoning</span></p></div><div class="m-price">42 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Tochitură Picantă</span><span data-lang="en">Spicy Pork Pan</span> <small>400 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">carne de porc, condimente picante, pastă de roșii</span><span data-lang="en">pork meat, spicy seasoning, tomato paste</span></p></div><div class="m-price">45 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Carne la Garniță</span><span data-lang="en">Jar-Fried Pork (garnită)</span> <small>350 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">carne de porc, sare, piper, ulei</span><span data-lang="en">pork meat, salt, pepper, oil</span></p></div><div class="m-price">42 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Ceafă de Porc la Grătar</span><span data-lang="en">Grilled Pork Collar</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">carne de porc, sare, piper, condimente</span><span data-lang="en">pork meat, salt, pepper, seasoning</span></p></div><div class="m-price">29 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Coaste de Porc la Grătar</span><span data-lang="en">Grilled Pork Ribs</span> <small>400 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">coaste de porc, sare, piper, condimente</span><span data-lang="en">pork ribs, salt, pepper, seasoning</span></p></div><div class="m-price">49 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Ciolan cu Iahnie</span><span data-lang="en">Pork Knuckle with Beans</span> <small>200/200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">ciolan, fasole, condimente, ulei</span><span data-lang="en">pork knuckle, beans, seasoning, oil</span></p></div><div class="m-price">42 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Iahnie cu Cârnați de Casă</span><span data-lang="en">Bean Stew with Homemade Sausages</span></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cârnați de porc, fasole, condimente, ulei</span><span data-lang="en">pork sausages, beans, seasoning, oil</span></p></div><div class="m-price">40 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Șnițel de Porc</span><span data-lang="en">Pork Schnitzel</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">carne de porc, făină, ulei, sare</span><span data-lang="en">pork meat, flour, oil, salt</span></p></div><div class="m-price">29 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Mici</span><span data-lang="en">Mici (Romanian Grilled Minced Rolls)</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">amestec carne porc &amp; vită, condimente</span><span data-lang="en">pork and beef minced, seasoning</span></p></div><div class="m-price">7 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Sarmale cu Mămăligă, Cârnați &amp; Ardei Iute</span><span data-lang="en">Sarmale, Polenta, Homemade Sausages &amp; Hot Pepper</span> <small>200/200/150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">varză murată, orez, ceapă, carne tocată, suc de roșii</span><span data-lang="en">sauerkraut, rice, onion, minced pork, tomato juice</span></p></div><div class="m-price">46 Lei</div></li>
+        </ul>
+
+        <div style="margin-top: 10px;">
+          <ul class="menu-list">
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Smântână</span><span data-lang="en">Sour Cream</span> <small>50 g</small></span><span class="m-dots"></span></div></div><div class="m-price">5 Lei</div></li>
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Pâine</span><span data-lang="en">Bread</span> <small>100 g</small></span><span class="m-dots"></span></div></div><div class="m-price">3 Lei</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <div class="menu-anchor" id="pui"></div>
+        <h3><span data-lang="ro">Pui</span><span data-lang="en">Chicken Specialties</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Pui, Hribi &amp; Mămăligă</span><span data-lang="en">Chicken, Porcini Mushrooms &amp; Polenta</span></span><span class="m-dots"></span></div>
+            <p class="m-desc"><span data-lang="ro">piept de pui, hribi, smântână pentru gătit, ceapă, condimente, ulei <small>150/100/200 g</small></span><span data-lang="en">chicken breast, porcini mushrooms, cooking cream, onion, seasoning, oil <small>150/100/200 g</small></span></p></div>
+            <div class="m-price">47 Lei</div>
+          </li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Șnițel de Pui</span><span data-lang="en">Chicken Schnitzel</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">piept de pui, ou, făină, ulei, sare, pesmet</span><span data-lang="en">chicken breast, egg, flour, oil, salt, breadcrumbs</span></p></div><div class="m-price">29 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Pulpe de Pui Dezosa­te la Grătar</span><span data-lang="en">Grilled Boneless Chicken Thighs</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">pulpe pui, sare, piper</span><span data-lang="en">chicken thighs, salt, pepper</span></p></div><div class="m-price">29 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Piept de Pui la Grătar</span><span data-lang="en">Grilled Chicken Breast</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">piept pui, sare, piper</span><span data-lang="en">chicken breast, salt, pepper</span></p></div><div class="m-price">30 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Piept de Pui cu Gorgonzola</span><span data-lang="en">Grilled Chicken Breast with Gorgonzola</span> <small>250 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">piept pui, gorgonzola, smântână pentru gătit, condimente</span><span data-lang="en">chicken breast, gorgonzola, cooking cream, seasoning</span></p></div><div class="m-price">47 Lei</div></li>
+        </ul>
+
+        <div class="menu-anchor" id="semnatura"></div>
+        <h3 style="margin-top: 18px;"><span data-lang="ro">Transylvanian Gourmet</span><span data-lang="en">Transylvanian Gourmet</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Pastramă de Oaie în Infuzie Aromată de Vin, cu Mămăligă</span><span data-lang="en">Lamb Pastrami in Aromatic Wine Infusion with Polenta</span> <small>200 g / 200 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc">
+                <span data-lang="ro">Pastramă tradițională, gătită lent și aromată cu usturoi, boia afumată și ardei iute; deglasată cu vin sec și servită cu mămăligă cremoasă.</span>
+                <span data-lang="en">Traditional lamb pastrami, slow-sautéed to tenderness and enriched with garlic, smoked paprika and a touch of hot pepper, deglazed with dry wine for depth and served alongside velvety polenta for a refined rustic finish.</span>
+              </p>
+            </div>
+            <div class="m-price">48 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Ragout de Vită în Stil Transilvănean, cu Cartofi</span><span data-lang="en">Transylvanian-Style Beef Ragout with Potatoes</span> <small>250 g / 100 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc">
+                <span data-lang="ro">Gulaș bogat din vită fragedă, gătit încet cu ceapă caramelizată, reducție de roșii, cartofi, usturoi, boia dulce, chimen și un strop de vin roșu sec.</span>
+                <span data-lang="en">A rich Transylvanian-style goulash, crafted from tender beef simmered slowly with caramelized onion, tomato reduction, potatoes, garlic, sweet paprika, caraway seeds and a splash of dry red wine, finished with bell pepper and delicate seasoning.</span>
+              </p>
+            </div>
+            <div class="m-price">45 Lei</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FISH -->
+    <div class="section-header reveal" id="peste">
+      <span data-lang="ro">Din Apă</span><span data-lang="en">From the Water</span>
+      <h2 data-lang="ro">Pește</h2><h2 data-lang="en">Fish</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid full-width reveal">
+      <div class="menu-category" style="width:100%;">
+        <ul class="menu-list two-col-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Păstrăv la Grătar (sau Prăjit)</span><span data-lang="en">Grilled (or Fried) Trout</span> <small>350 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">păstrăv, sare, piper, ulei</span><span data-lang="en">trout, salt, pepper, oil</span></p></div><div class="m-price">46 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Crap Prăjit</span><span data-lang="en">Fried Carp</span> <small>250 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">crap, sare, piper, ulei, mălai, făină</span><span data-lang="en">carp, salt, pepper, oil, cornmeal, flour</span></p></div><div class="m-price">39 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Hamsii Prăjite</span><span data-lang="en">Fried Anchovies</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">hamsii, făină, sare, ulei</span><span data-lang="en">anchovies, flour, salt, oil</span></p></div><div class="m-price">28 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Somon la Grătar</span><span data-lang="en">Grilled Salmon</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">somon, sare, piper</span><span data-lang="en">salmon, salt, pepper</span></p></div><div class="m-price">47 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Saramură de Păstrăv</span><span data-lang="en">Trout in Brine (Saramură)</span> <small>350 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">păstrăv, ardei, roșii, boia, usturoi, ardei iute, sare</span><span data-lang="en">trout, bell pepper, tomatoes, paprika, garlic, hot pepper, salt</span></p></div><div class="m-price">45 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Saramură de Crap</span><span data-lang="en">Carp in Brine (Saramură)</span> <small>250 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">crap, ardei, roșii, boia, usturoi, sare, ardei iute</span><span data-lang="en">carp, bell pepper, tomatoes, paprika, garlic, salt, hot pepper</span></p></div><div class="m-price">45 Lei</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PIZZA -->
+    <div class="section-header reveal" id="pizza">
+      <span data-lang="ro">Cuptor</span><span data-lang="en">Oven</span>
+      <h2 data-lang="ro">Pizza</h2><h2 data-lang="en">Pizza</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid full-width reveal">
+      <div class="menu-category" style="width:100%;">
+        <ul class="menu-list two-col-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Prosciutto <small>550 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, șuncă</span><span data-lang="en">tomato sauce, mozzarella, ham</span></p></div><div class="m-price">32 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Prosciutto Funghi <small>600 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, șuncă, ciuperci</span><span data-lang="en">tomato sauce, mozzarella, ham, mushrooms</span></p></div><div class="m-price">34 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Quatro Stagioni <small>650 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, șuncă, ciuperci, măsline, porumb</span><span data-lang="en">tomato sauce, mozzarella, ham, mushrooms, olives, corn</span></p></div><div class="m-price">36 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Quatro Carni <small>650 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, kaizer, cabanos, salam, șuncă</span><span data-lang="en">tomato sauce, mozzarella, kaizer, cabanos sausage, salami, ham</span></p></div><div class="m-price">37 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Quatro Formaggi <small>600 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, cașcaval, parmezan, gorgonzola</span><span data-lang="en">tomato sauce, mozzarella, hard cheese, parmesan, gorgonzola</span></p></div><div class="m-price">36 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Tonno <small>600 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, ton, ceapă</span><span data-lang="en">tomato sauce, mozzarella, tuna, onion</span></p></div><div class="m-price">35 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Diavola <span class="diet-tag tag-hot">HOT</span> <small>550 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, salam picant, chili</span><span data-lang="en">tomato sauce, mozzarella, spicy salami, chili</span></p></div><div class="m-price">35 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Margherita <small>450 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, busuioc</span><span data-lang="en">tomato sauce, mozzarella, basil</span></p></div><div class="m-price">30 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Vegetarian <span class="diet-tag tag-veg">VEG</span> <small>650 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, dovlecel, ardei, vinete, porumb, măsline</span><span data-lang="en">tomato sauce, mozzarella, zucchini, bell pepper, eggplant, corn, olives</span></p></div><div class="m-price">35 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Conca Verde <small>650 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sos de roșii, mozzarella, șuncă, salam, kaizer, cabanos, porumb, măsline, ciuperci</span><span data-lang="en">tomato sauce, mozzarella, ham, salami, kaizer, cabanos sausage, corn, olives, mushrooms</span></p></div><div class="m-price">38 Lei</div></li>
+        </ul>
+
+        <div style="max-width: 620px; margin: 18px auto 0;">
+          <ul class="menu-list">
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Pizza Sauce <small>(sweet/spicy)</small></span><span class="m-dots"></span></div></div><div class="m-price">5 Lei</div></li>
+            <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Sos de Usturoi</span><span data-lang="en">Garlic Sauce</span></span><span class="m-dots"></span></div></div><div class="m-price">7 Lei</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDES -->
+    <div class="section-header reveal" id="garnituri">
+      <span data-lang="ro">Extra</span><span data-lang="en">Sides</span>
+      <h2 data-lang="ro">Garnituri &amp; Salate</h2><h2 data-lang="en">Side Dishes &amp; Salads</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid reveal">
+      <div class="menu-category">
+        <h3><span data-lang="ro">Garnituri</span><span data-lang="en">Side Dishes</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Cartofi Prăjiți</span><span data-lang="en">French Fries</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cartofi, sare</span><span data-lang="en">white potatoes, salt, fried in palm oil</span></p></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Cartofi Prăjiți cu Telemea</span><span data-lang="en">Cheesy French Fries</span> <small>250 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cartofi, telemea</span><span data-lang="en">white potatoes, telemea (Romanian brined cheese), fried in palm oil</span></p></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Piure</span><span data-lang="en">Mashed Potatoes</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cartofi, sare, lapte, unt</span><span data-lang="en">white potatoes, salt, 1.5% milk, 65% butter</span></p></div><div class="m-price">13 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Piure Rustic</span><span data-lang="en">Rustic Mashed Potatoes</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cartofi, lapte, unt, kaizer, mărar, ardei roșu</span><span data-lang="en">white potatoes, 1.5% milk, 65% butter, smoked pork (kaizer), dill, red pepper</span></p></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Cartofi Copți Rustici</span><span data-lang="en">Rustic Baked Potatoes</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cartofi, ceapă, ardei, kaizer, pătrunjel</span><span data-lang="en">white potatoes, salt, pepper, onion, bell pepper, smoked pork (kaizer), parsley, oil</span></p></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Orez Sârbesc</span><span data-lang="en">Serbian Style Rice</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">orez, morcovi, ardei, ceapă</span><span data-lang="en">rice, carrots, bell pepper, onion, oil, salt, pepper</span></p></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Legume Soté</span><span data-lang="en">Sautéed Vegetables</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">vinete, dovlecel, ceapă, morcovi, ciuperci, ardei</span><span data-lang="en">eggplant, zucchini, onion, carrots, mushrooms, bell pepper, oil</span></p></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Ciuperci Soté</span><span data-lang="en">Sautéed Mushrooms</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">ciuperci, ulei, sare, usturoi</span><span data-lang="en">mushrooms, oil, salt, garlic</span></p></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Mămăligă</span><span data-lang="en">Polenta</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">mălai, ulei, sare</span><span data-lang="en">cornmeal, oil, salt</span></p></div><div class="m-price">9 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Cartofi Fierți cu Unt &amp; Pătrunjel</span><span data-lang="en">Boiled Potatoes, Butter &amp; Parsley</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">cartofi, unt, pătrunjel, sare</span><span data-lang="en">potatoes, butter, parsley, salt</span></p></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Legume Gratin</span><span data-lang="en">Gratinated Vegetables</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">vinete, dovlecel, ceapă, morcovi, ciuperci, ardei</span><span data-lang="en">eggplant, zucchini, onion, carrots, mushrooms, bell pepper</span></p></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Varză Călită</span><span data-lang="en">Braised Cabbage</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">varză albă, ceapă, pastă de roșii, sare, piper</span><span data-lang="en">white cabbage, onion, tomato paste, salt, pepper</span></p></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Fasole Bătută (Iahnie)</span><span data-lang="en">Bean Slow Stew</span> <small>200 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">fasole, morcovi, ceapă, țelină, ardei, pastă de roșii</span><span data-lang="en">beans, carrots, onion, celery, bell pepper, tomato paste</span></p></div><div class="m-price">15 Lei</div></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <div class="menu-anchor" id="salate"></div>
+        <h3><span data-lang="ro">Salate</span><span data-lang="en">Salads</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Vară Asortată</span><span data-lang="en">Assorted Summer Salad</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">roșii, castraveți, ardei, ceapă</span><span data-lang="en">tomatoes, cucumbers, bell pepper, onion</span></p></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Roșii cu Telemea</span><span data-lang="en">Tomato Salad with Telemea</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">roșii, telemea</span><span data-lang="en">tomatoes, telemea (Romanian brined cheese)</span></p></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Varză cu Roșii</span><span data-lang="en">Cabbage &amp; Tomato Salad</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">varză albă, roșii</span><span data-lang="en">white cabbage, tomatoes</span></p></div><div class="m-price">10 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Sfeclă cu Hrean</span><span data-lang="en">Beetroot Horseradish Salad</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">sfeclă roșie, hrean</span><span data-lang="en">red beetroot, horseradish</span></p></div><div class="m-price">13 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Murături Asortate</span><span data-lang="en">Pickled Vegetable Salad</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">murături asortate</span><span data-lang="en">assorted pickled vegetables</span></p></div><div class="m-price">13 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Varză Murată</span><span data-lang="en">Sauerkraut Salad</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">varză murată, boia, ulei</span><span data-lang="en">sauerkraut, paprika, oil</span></p></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Salată de Ardei Copți</span><span data-lang="en">Roasted Pepper Salad</span> <small>150 g</small></span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">ardei kapia copți, oțet</span><span data-lang="en">roasted kapia peppers, vinegar</span></p></div><div class="m-price">15 Lei</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DESSERT -->
+    <div class="section-header reveal" id="desert">
+      <span data-lang="ro">Dulce</span><span data-lang="en">Sweet</span>
+      <h2 data-lang="ro">Deserturi</h2><h2 data-lang="en">House Desserts</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid full-width reveal" style="justify-content:center;">
+      <div class="menu-category" style="width:100%; max-width: 760px;">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Papanași</span><span data-lang="en">Papanash – Romanian Fried Doughnut with Jam &amp; Sour Cream</span> <small>350 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">brânză de vaci, făină, dulceață de afine, ouă, zahăr</span><span data-lang="en">cottage cheese, flour, blueberry jam, eggs, sugar</span></p>
+            </div>
+            <div class="m-price">32 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Clătite cu Dulceață</span><span data-lang="en">Crepes with Jam</span> <small>200 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">făină, arome, lapte, apă minerală, ou, Nutella, nuci, frișcă</span><span data-lang="en">flour, flavor extracts, milk, sparkling water, egg, Nutella, walnuts, whipped cream</span></p>
+            </div>
+            <div class="m-price">28 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Clătite cu Nutella &amp; Frișcă</span><span data-lang="en">Crepes with Nutella &amp; Whipped Cream</span> <small>200 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">făină, arome, lapte, apă minerală, ou, Nutella, nuci, frișcă</span><span data-lang="en">flour, flavor extracts, milk, sparkling water, egg, Nutella, walnuts, whipped cream</span></p>
+            </div>
+            <div class="m-price">32 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Înghețată Asortată cu Frișcă</span><span data-lang="en">Assorted Ice Cream with Whipped Cream</span> <small>150 g</small></span><span class="m-dots"></span></div>
+              <p class="m-desc"><span data-lang="ro">înghețată mixtă (vanilie, ciocolată, căpșuni)</span><span data-lang="en">mixed ice cream (vanilla, chocolate, strawberry)</span></p>
+            </div>
+            <div class="m-price">30 Lei</div>
+          </li>
+          <li class="menu-item">
+            <div class="m-info">
+              <div class="m-header"><span class="m-title"><span data-lang="ro">Bucăți de Prăjitură de Casă</span><span data-lang="en">House-Made Cake Bites</span> <small>150 g</small></span><span class="m-dots"></span></div>
+            </div>
+            <div class="m-price">18 Lei</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BAR -->
+    <div class="section-header reveal" id="bar">
+      <span data-lang="ro">Băuturi</span><span data-lang="en">Drinks</span>
+      <h2 data-lang="ro">Bar Menu</h2><h2 data-lang="en">Bar Menu</h2>
+      <div class="line center"></div>
+    </div>
+
+    <div class="menu-grid reveal">
+      <div class="menu-category">
+        <div class="menu-anchor" id="bar-rece"></div>
+        <h3><span data-lang="ro">Răcoritoare Reci</span><span data-lang="en">Cold Refreshments</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Perla Harghitei <span data-lang="ro">Apă Minerală</span><span data-lang="en">Sparkling Water</span> <small>0,75</small></span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Perla Harghitei <span data-lang="ro">Apă Minerală</span><span data-lang="en">Sparkling Water</span> <small>0,5</small></span><span class="m-dots"></span></div></div><div class="m-price">10 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Perla Harghitei <span data-lang="ro">Apă Platã</span><span data-lang="en">Still Water</span> <small>0,75</small></span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Perla Harghitei <span data-lang="ro">Apă Platã</span><span data-lang="en">Still Water</span> <small>0,5</small></span><span class="m-dots"></span></div></div><div class="m-price">10 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Coca‑Cola / Fanta / Sprite / Pepsi <small>0,5</small></span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Limonadă de Casă</span><span data-lang="en">Homemade Lemonade</span></span><span class="m-dots"></span></div></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Suc Portocale Proaspăt</span><span data-lang="en">Freshly Squeezed Orange Juice</span></span><span class="m-dots"></span></div></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Suc de Fructe</span><span data-lang="en">Fruit Juice</span> <small>Prigat/Santal</small></span><span class="m-dots"></span></div></div><div class="m-price">13 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Iced Tea <small>Nestea/Fuzetea/Lipton</small></span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+        </ul>
+
+        <div class="menu-anchor" id="bar-calde"></div>
+        <h3 style="margin-top:18px;"><span data-lang="ro">Băuturi Calde</span><span data-lang="en">Hot Beverages</span></h3>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Espresso</span><span class="m-dots"></span></div></div><div class="m-price">10 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Espresso Macchiato</span><span class="m-dots"></span></div></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Latte</span><span class="m-dots"></span></div></div><div class="m-price">17 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Hot Chocolate</span><span class="m-dots"></span></div></div><div class="m-price">17 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Cappuccino</span><span class="m-dots"></span></div></div><div class="m-price">17 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Frappe</span><span class="m-dots"></span></div></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Irish Coffee</span><span class="m-dots"></span></div></div><div class="m-price">23 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Tea <small>(various assortments)</small></span><span class="m-dots"></span></div></div><div class="m-price">10 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Vin Fiert</span><span data-lang="en">Mulled Wine</span></span><span class="m-dots"></span></div></div><div class="m-price">20 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Ceai cu Rom</span><span data-lang="en">Tea with Rum</span></span><span class="m-dots"></span></div></div><div class="m-price">23 Lei</div></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <div class="menu-anchor" id="bar-alcool"></div>
+        <h3><span data-lang="ro">Băuturi Alcoolice</span><span data-lang="en">Alcoholic Beverages</span></h3>
+
+        <h4 style="margin-top: 6px; color: var(--primary); font-family: var(--font-head);">Beer – 330 ml</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Stella Artois</span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Stella Artois 0%</span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Ciuc</span><span class="m-dots"></span></div></div><div class="m-price">11 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Ciuc la DRAFT</span><span class="m-dots"></span></div></div><div class="m-price">12 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Ciuc Radler 0%</span><span class="m-dots"></span></div></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Ursus</span><span class="m-dots"></span></div></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Heineken</span><span class="m-dots"></span></div></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Bira Moretti</span><span class="m-dots"></span></div></div><div class="m-price">14 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Peroni</span><span class="m-dots"></span></div></div><div class="m-price">14 Lei</div></li>
+        </ul>
+
+        <h4 style="margin-top: 14px; color: var(--primary); font-family: var(--font-head);">Whiskey – 50 ml</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Jack Daniels</span><span class="m-dots"></span></div></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Ballantine’s</span><span class="m-dots"></span></div></div><div class="m-price">22 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">J&amp;B</span><span class="m-dots"></span></div></div><div class="m-price">22 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Chivas</span><span class="m-dots"></span></div></div><div class="m-price">30 Lei</div></li>
+        </ul>
+
+        <h4 style="margin-top: 14px; color: var(--primary); font-family: var(--font-head);">Spirits – 50 ml</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Martini Bianco</span><span class="m-dots"></span></div></div><div class="m-price">19 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Martini Rosso</span><span class="m-dots"></span></div></div><div class="m-price">19 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Sheridan’s</span><span class="m-dots"></span></div></div><div class="m-price">23 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Baileys</span><span class="m-dots"></span></div></div><div class="m-price">23 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Cognac</span><span class="m-dots"></span></div></div><div class="m-price">22 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Jägermeister</span><span class="m-dots"></span></div></div><div class="m-price">22 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Pălincă</span><span data-lang="en">Pălincă</span></span><span class="m-dots"></span></div></div><div class="m-price">15 Lei</div></li>
+        </ul>
+
+        <h4 style="margin-top: 14px; color: var(--primary); font-family: var(--font-head);">By the Glass – 150 ml</h4>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Prosecco</span><span class="m-dots"></span></div></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Vin Alb</span><span data-lang="en">White Wine</span></span><span class="m-dots"></span></div></div><div class="m-price">20 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Vin Roșu</span><span data-lang="en">Red Wine</span></span><span class="m-dots"></span></div></div><div class="m-price">20 Lei</div></li>
+        </ul>
+
+        <div class="menu-anchor" id="bar-cocktails"></div>
+        <h3 style="margin-top: 18px;">Cocktails</h3>
+        <ul class="menu-list">
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Campari Orange</span><span class="m-dots"></span></div><p class="m-desc">Campari 50 ml, <span data-lang="ro">suc portocale proaspăt</span><span data-lang="en">fresh orange juice</span> 200 ml</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Aperol Spritz</span><span class="m-dots"></span></div><p class="m-desc">Aperol 50 ml, Prosecco 100 ml, <span data-lang="ro">apă minerală</span><span data-lang="en">sparkling water</span> 100 ml</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Cuba Libre</span><span class="m-dots"></span></div><p class="m-desc"><span data-lang="ro">rom</span><span data-lang="en">rum</span> 50 ml, Coca‑Cola 200 ml, lime</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Hugo</span><span class="m-dots"></span></div><p class="m-desc">Elderflower 30 ml, Prosecco 100 ml, sparkling water 100 ml, mint, lime</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Mojito</span><span class="m-dots"></span></div><p class="m-desc">Rum 50 ml, lemon syrup 30 ml, sugar, sparkling water 100 ml, mint</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Tequila Sunrise</span><span class="m-dots"></span></div><p class="m-desc">Tequila 50 ml, grenadine syrup 30 ml, orange juice 150 ml</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Gin Tonic</span><span class="m-dots"></span></div><p class="m-desc">Gin 50 ml, tonic water 200 ml, lemon</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title"><span data-lang="ro">Vodcă cu suc de mere</span><span data-lang="en">Vodka with apple juice</span></span><span class="m-dots"></span></div><p class="m-desc">Vodka 50 ml, apple juice 150 ml</p></div><div class="m-price">25 Lei</div></li>
+          <li class="menu-item"><div class="m-info"><div class="m-header"><span class="m-title">Cocktail Non Alcoholic</span><span class="m-dots"></span></div></div><div class="m-price">20 Lei</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;" class="reveal">
+      <a href="https://wa.me/40799597083" class="btn-primary">
+        <span data-lang="ro">Rezervă o Masă</span><span data-lang="en">Book a Table</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+    <footer>
+        <div class="container grid-footer">
+            <div class="footer-col">
+                <img src="assets/img/logo.png" alt="Conca Verde Logo" style="height: 60px; margin-bottom: 12px;">
+                <p>Oaza ta de liniște în Cheile Râșnoavei. Ne dedicăm excelenței în ospitalitate.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/concaverde" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/concaverde" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Navigare</h4>
+                <ul>
+                    <li><a href="cazare.html">Cazare &amp; Tarife</a></li>
+                    <li><a href="restaurant.html">Restaurant</a></li>
+                    <li><a href="evenimente.html">Evenimente Private</a></li>
+                    <li><a href="corporate.html">Corporate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
+                <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
+                <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p class="highlight-gold">Program Recepție: Non-Stop</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        // Logica Limba
+        function setLang(lang) {
+            document.body.classList.toggle('lang-en', lang === 'en');
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+            });
+            localStorage.setItem('cv-lang', lang);
+        }
+        const savedLang = localStorage.getItem('cv-lang') || 'ro';
+        setLang(savedLang);
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Sticky Nav Logic (v2: smooth + group aware)
+        const wrapper = document.getElementById('menuNavWrapper');
+        const scroller = wrapper ? wrapper.querySelector('.menu-nav-scroller') : null;
+        const groupToggles = wrapper ? wrapper.querySelectorAll('.menu-nav-toggle') : [];
+        const groups = wrapper ? wrapper.querySelectorAll('.menu-nav-group') : [];
+        const links = wrapper ? wrapper.querySelectorAll('.menu-nav-group a[href^="#"]') : [];
+        const sections = document.querySelectorAll('#meniu-content .section-header[id], #meniu-content .menu-anchor[id]');
+
+        function setGroup(groupName) {
+            if (!wrapper) return;
+            groupToggles.forEach(btn => {
+                const isActive = btn.dataset.group === groupName;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            groups.forEach(ul => ul.classList.toggle('active', ul.dataset.group === groupName));
+        }
+
+        function setActiveLink(targetId) {
+            if (!wrapper) return;
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + targetId));
+
+            // Keep active pill centered
+            const active = wrapper.querySelector('.menu-nav-group.active a.active');
+            if (active && scroller) {
+                active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        }
+
+        // Click: smooth-scroll with proper offset
+        links.forEach(a => {
+            a.addEventListener('click', (e) => {
+                const href = a.getAttribute('href');
+                if (!href || !href.startsWith('#')) return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+
+                const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-offset-scrolled')) || 72;
+                const extra = 80; // sticky nav height + breathing room
+                const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset - extra;
+
+                history.pushState(null, '', href);
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }, { passive: false });
+        });
+
+        // Toggle group buttons
+        groupToggles.forEach(btn => {
+            btn.addEventListener('click', () => setGroup(btn.dataset.group));
+        });
+
+        // Scrollspy: IntersectionObserver for smooth active state
+        if (sections.length) {
+            const sectionToGroup = (id) => {
+                // map ids to groups: bar sections contain 'bar-' prefix
+                return id.startsWith('bar-') ? 'bar' : 'food';
+            };
+
+            const io = new IntersectionObserver((entries) => {
+                // pick the most visible intersecting entry
+                const visible = entries
+                    .filter(en => en.isIntersecting)
+                    .sort((a,b) => (b.intersectionRatio - a.intersectionRatio));
+                if (!visible.length) return;
+
+                const id = visible[0].target.id;
+                const grp = sectionToGroup(id);
+                setGroup(grp);
+                setActiveLink(id);
+            }, {
+                root: null,
+                threshold: [0.15, 0.25, 0.35, 0.5, 0.65],
+                rootMargin: '-20% 0px -60% 0px'
+            });
+
+            sections.forEach(sec => io.observe(sec));
+        }
+
+        // Initial state
+        setGroup('food');
+    </script>
+</body>
+</html>
