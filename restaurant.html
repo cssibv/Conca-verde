@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meniul Restaurantului Conca Verde Râșnov — Preparate tradiționale românești, specialități gourmet. Capacitate 300 locuri, terasă, muzică live weekend.">
-    <title>Meniu Restaurant | Conca Verde Râșnov</title>
+    <meta name="description" content="Restaurant tradițional românesc în Cheile Râșnoavei, Râșnov. Meniu complet, pizza, ciorbe, grătar. 300 locuri. Rezervă o masă!">
+    <title>Restaurant Râșnov — Meniu Tradițional Românesc | Conca Verde</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     
@@ -36,6 +36,39 @@
         body.lang-en span[data-lang="en"] { display: inline; }
         body.lang-en span[data-lang="ro"] { display: none; }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Restaurant Conca Verde",
+      "description": "Restaurant tradițional românesc cu 300 locuri în Cheile Râșnoavei, Râșnov.",
+      "servesCuisine": ["Romanian", "Traditional", "European"],
+      "url": "https://concaverde.ro/restaurant.html",
+      "menu": "https://concaverde.ro/restaurant.html",
+      "acceptsReservations": true,
+      "telephone": "+40799597083",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cheile Râșnoavei, DN 73A, Km 55",
+        "addressLocality": "Râșnov",
+        "addressRegion": "Brașov",
+        "postalCode": "505400",
+        "addressCountry": "RO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.553397,
+        "longitude": 25.488664
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "765"
+      },
+      "priceRange": "695"
+    }
+    </script>
 </head>
 <body data-page="restaurant">
 
@@ -61,7 +94,7 @@
                 </div>
             </li>
             
-            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" class="btn-nav"><span data-lang="ro">Rezervă Acum</span><span data-lang="en">Book Now</span></a></li>
+            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" rel="noopener noreferrer" class="btn-nav"><span data-lang="ro">Rezervă Acum</span><span data-lang="en">Book Now</span></a></li>
         </ul>
     </header>
 

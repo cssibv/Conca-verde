@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Pagina nu a fost găsită | Conca Verde Râșnov</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--sand);
+            padding: 40px 20px;
+        }
+        .error-content h1 {
+            font-family: var(--font-head);
+            font-size: clamp(4rem, 12vw, 8rem);
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .error-content h2 {
+            font-family: var(--font-head);
+            color: var(--primary);
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 20px;
+        }
+        .error-content p {
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .error-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .error-links a {
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .error-links .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+        .error-links .btn-primary:hover {
+            background: var(--gold);
+        }
+        .error-links .btn-outline-err {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .error-links .btn-outline-err:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <h1>404</h1>
+            <h2>Pagina nu a fost găsită</h2>
+            <p>Se pare că te-ai rătăcit prin Cheile Râșnoavei. Pagina pe care o cauți nu există sau a fost mutată.</p>
+            <div class="error-links">
+                <a href="index.html" class="btn-primary">Acasă</a>
+                <a href="contact.html" class="btn-outline-err">Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
