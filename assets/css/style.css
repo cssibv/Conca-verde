@@ -156,8 +156,9 @@ header.scrolled .hamburger span { background: var(--primary); }
     backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     z-index: 999; opacity: 0;
     transition: opacity 0.35s ease;
+    pointer-events: none;
 }
-.nav-overlay.active { opacity: 1; }
+.nav-overlay.active { opacity: 1; pointer-events: auto; }
 
 /* --- 3. HERO --- */
 .hero {
