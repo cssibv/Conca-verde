@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Recalculate offset after scrolled class changes
         updateHeaderOffset();
 
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1024) {
             if (currentScroll > lastScroll && currentScroll > 120) {
                 header.classList.add('hidden');
                 // Header e ascuns → sticky nav trebuie să urce la top: 0
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
        9. RESIZE — inchide meniu daca se mareste fereastra
     ───────────────────────────────────────── */
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeMenu();
+        if (window.innerWidth > 1024) closeMenu();
     }, { passive: true });
 
 

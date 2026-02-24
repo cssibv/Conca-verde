@@ -482,16 +482,22 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
    RESPONSIVE — DESKTOP MIC / NAV FIX  (max 1280px)
    ============================================================ */
 @media (max-width: 1280px) {
+    .nav-links { gap: 0px; }
+    .nav-links a { font-size: 0.68rem; letter-spacing: 0.3px; padding: 6px 5px; }
+    .btn-nav { padding: 7px 12px !important; font-size: 0.68rem !important; }
+}
+
+@media (max-width: 1440px) and (min-width: 1281px) {
     .nav-links { gap: 1px; }
-    .nav-links a { font-size: 0.7rem; letter-spacing: 0.5px; padding: 6px 5px; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.5px; padding: 6px 6px; }
     .btn-nav { padding: 8px 14px !important; font-size: 0.72rem !important; }
 }
 
 /* ============================================================
-   RESPONSIVE — TABLET  (max 1024px)
+   RESPONSIVE — TABLET + MOBILE (max 1024px) — HAMBURGER MENU
    ============================================================ */
 @media (max-width: 1024px) {
-    :root { --section-pad: 70px; --container-pad: 24px; }
+    :root { --section-pad: 55px; --container-pad: 24px; }
 
     .site-logo { height: 90px; }
     header.scrolled .site-logo { height: 68px; }
@@ -508,14 +514,6 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
     .room-details h3 { font-size: 1.4rem; }
 
     .parallax-section { background-attachment: scroll; padding: 70px 20px; }
-}
-
-
-/* ============================================================
-   RESPONSIVE — MOBILE LANDSCAPE + TABLET PORTRAIT (max 900px)
-   ============================================================ */
-@media (max-width: 900px) {
-    :root { --section-pad: 55px; --container-pad: 24px; }
 
     .container {
         padding-left: 24px;
