@@ -197,9 +197,42 @@
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="/cdn-cgi/l/email-protection#790b1c1a1c090d101c391a16171a180f1c0b1d1c570b16" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="a4d6c1c7c1d4d0cdc1e4c7cbcac7c5d2c1d6c0c18ad6cb">[email&#160;protected]</span></a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
                 <p class="highlight-gold">Program Recepție: Non-Stop</p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Complex Tu
+            &copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.
+        </div>
+    </footer>
+
+    <script>
+    /* Fallback inline — meniu mobil (rulează doar dacă script.js nu se încarcă) */
+    window.__menuReady = false;
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            if(window.__menuReady) return; // script.js s-a incarcat OK
+            var h = document.querySelector('.hamburger');
+            var n = document.querySelector('.nav-links');
+            if(!h || !n) return;
+            var o = document.createElement('div');
+            o.className = 'nav-overlay';
+            document.body.appendChild(o);
+            function toggle(){
+                var isOpen = n.classList.contains('active');
+                n.classList.toggle('active', !isOpen);
+                h.classList.toggle('open', !isOpen);
+                o.classList.toggle('active', !isOpen);
+                document.body.style.overflow = isOpen ? '' : 'hidden';
+            }
+            h.addEventListener('click', toggle);
+            o.addEventListener('click', function(){
+                n.classList.remove('active'); h.classList.remove('open');
+                o.classList.remove('active'); document.body.style.overflow='';
+            });
+        }, 1500);
+    });
+    </script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+</body>
+</html>
