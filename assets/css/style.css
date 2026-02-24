@@ -66,18 +66,19 @@ header.scrolled .site-logo { height: 52px; filter: none; }
 
 /* ── NAVIGATIE DESKTOP ── */
 .nav-links {
-    display: flex; gap: 4px; align-items: center; list-style: none;
+    display: flex; gap: 2px; align-items: center; list-style: none; flex-wrap: nowrap;
 }
 .nav-links > li { position: relative; }
 
 .nav-links a {
     color: var(--white);
-    font-weight: 500; font-size: 0.82rem;
-    text-transform: uppercase; letter-spacing: 1.2px;
-    padding: 6px 10px; border-radius: 4px;
+    font-weight: 500; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.8px;
+    padding: 6px 7px; border-radius: 4px;
     display: block;
     transition: color 0.25s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 /* linie animata sub link pe desktop */
@@ -476,6 +477,15 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
 .close-modal { position: absolute; top: 16px; right: 16px; font-size: 1.7rem; cursor: pointer; color: var(--primary); }
 .modal-overlay.active { display: flex; }
 
+
+/* ============================================================
+   RESPONSIVE — DESKTOP MIC / NAV FIX  (max 1280px)
+   ============================================================ */
+@media (max-width: 1280px) {
+    .nav-links { gap: 1px; }
+    .nav-links a { font-size: 0.7rem; letter-spacing: 0.5px; padding: 6px 5px; }
+    .btn-nav { padding: 8px 14px !important; font-size: 0.72rem !important; }
+}
 
 /* ============================================================
    RESPONSIVE — TABLET  (max 1024px)
