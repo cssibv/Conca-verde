@@ -287,3 +287,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+/* ========================================
+   FAQ ACCORDION
+   Adaugă la sfârșitul fișierului assets/js/script.js
+   ======================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(function(question) {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isOpen = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQs
+            faqQuestions.forEach(function(q) {
+                q.setAttribute('aria-expanded', 'false');
+                q.nextElementSibling.classList.remove('open');
+            });
+            
+            // Toggle current
+            if (!isOpen) {
+                this.setAttribute('aria-expanded', 'true');
+                answer.classList.add('open');
+            }
+        });
+    });
+});

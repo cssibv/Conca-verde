@@ -36,6 +36,91 @@
       }
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Ce capacitate are sala de evenimente?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sala principală: 240 locuri. Separeu privat: 60 locuri. Capacitate totală: 300 locuri. Dotări: aer condiționat, sonorizare profesională, iluminat arhitectural."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Ce include pachetul de nuntă?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pachetele sunt personalizate și pot include: sală cu sonorizare și lumini, meniu la alegere, cazare pentru miri și invitați, spațiu pentru ceremonie în aer liber, parcare gratuită. Contactați-ne pentru o ofertă pe măsură."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Invitații pot fi cazați pe loc?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, hotelul nostru are 18 camere (44 locuri de cazare) pe același complex. Invitații nu trebuie să se deplaseze după eveniment — petrecerea poate continua până în zori."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Se poate organiza ceremonia în aer liber?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, suprafața de 20.000 mp oferă spații generoase pentru ceremonia civilă sau religioasă în aer liber, cu munții Cheilor Râșnoavei ca fundal natural."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Cât de departe este sala de orașele mari?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Brașov: 18 km (25 min), Bran: 20 km (30 min), București: 170 km (2.5 ore), Ploiești: 115 km (1h 40 min), Sibiu: 95 km (1.5 ore), Cluj: 300 km (4 ore)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Există parcare pentru invitați?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, parcarea este gratuită și generoasă pe suprafața complexului de 20.000 mp. Nu este nevoie de rezervare."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Ce opțiuni aveți pentru botezuri?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Două variante: separeul intim de 60 locuri pentru botezuri mici sau sala principală de 240 locuri pentru sărbători mari. Meniu personalizat, decorațiuni la cerere. Biserica din Râșnov este la doar 5 km."
+            }
+        }
+    ]
+}
+    </script>
+
+    <!-- FAQ Styles -->
+    <style>
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid #e8e4de; border-radius: 10px; margin-bottom: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.3s ease; }
+    .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: none; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-align: left; line-height: 1.5; transition: color 0.2s ease; }
+    .faq-question:hover { color: #c5a059; }
+    .faq-question[aria-expanded='true'] { color: #c5a059; }
+    .faq-icon { font-size: 1.5rem; font-weight: 300; color: #c5a059; flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; line-height: 1; }
+    .faq-question[aria-expanded='true'] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 24px; }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-answer p { color: #555; font-size: 0.95rem; line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) {
+        .faq-question { padding: 15px 18px; font-size: 0.95rem; }
+        .faq-answer { padding: 0 18px; }
+        .faq-answer.open { padding: 0 18px 16px; }
+    }
+    </style>
 </head>
 <body data-page="evenimente">
 
@@ -52,6 +137,7 @@
             <li><a href="restaurant.html">Restaurant</a></li>
             <li><a href="evenimente.html" class="active">Evenimente</a></li>
             <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="locatie-activitati.html">Locație</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" rel="noopener noreferrer" class="btn-nav">Rezervă Acum</a></li>
         </ul>
@@ -218,6 +304,83 @@
         </div>
     </section>
 
+
+    <!-- FAQ Section -->
+    <section class="bg-sand spatiu-mare">
+        <div class="container">
+            <div class="section-header">
+                <span>Întrebări frecvente</span>
+                <h2>Despre evenimente la Conca Verde</h2>
+                <div class="line center"></div>
+            </div>
+            <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Ce capacitate are sala de evenimente?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sala principală: 240 locuri. Separeu privat: 60 locuri. Capacitate totală: 300 locuri. Dotări: aer condiționat, sonorizare profesională, iluminat arhitectural.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Ce include pachetul de nuntă?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Pachetele sunt personalizate și pot include: sală cu sonorizare și lumini, meniu la alegere, cazare pentru miri și invitați, spațiu pentru ceremonie în aer liber, parcare gratuită. Contactați-ne pentru o ofertă pe măsură.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Invitații pot fi cazați pe loc?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, hotelul nostru are 18 camere (44 locuri de cazare) pe același complex. Invitații nu trebuie să se deplaseze după eveniment — petrecerea poate continua până în zori.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Se poate organiza ceremonia în aer liber?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, suprafața de 20.000 mp oferă spații generoase pentru ceremonia civilă sau religioasă în aer liber, cu munții Cheilor Râșnoavei ca fundal natural.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Cât de departe este sala de orașele mari?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Brașov: 18 km (25 min), Bran: 20 km (30 min), București: 170 km (2.5 ore), Ploiești: 115 km (1h 40 min), Sibiu: 95 km (1.5 ore), Cluj: 300 km (4 ore).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Există parcare pentru invitați?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, parcarea este gratuită și generoasă pe suprafața complexului de 20.000 mp. Nu este nevoie de rezervare.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Ce opțiuni aveți pentru botezuri?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Două variante: separeul intim de 60 locuri pentru botezuri mici sau sala principală de 240 locuri pentru sărbători mari. Meniu personalizat, decorațiuni la cerere. Biserica din Râșnov este la doar 5 km.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container grid-footer">
             <div class="footer-col" loading="lazy">
@@ -235,6 +398,7 @@
                     <li><a href="restaurant.html">Restaurant</a></li>
                     <li><a href="evenimente.html">Evenimente Private</a></li>
                     <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="locatie-activitati.html">Locație &amp; Activități</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -242,15 +406,9 @@
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p>✉️ <a href="/cdn-cgi/l/email-protection#334156505643475a5673505c5d505245564157561d415c" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="750710161005011c1035161a1b161403100711105b071a">[email&#160;protected]</span></a></p>
                 <p class="highlight-gold">Program Recepție: Non-Stop</p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.
-        </div>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
+            &copy; 2026 Complex Tu

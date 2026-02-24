@@ -1272,3 +1272,150 @@ footer { background: #1a1a1a; color: #888; padding: 55px 0 20px; }
     .menu-category h3 { font-size: 1.1rem; }
     .menu-item { padding: 8px 0; }
 }
+
+
+/* ========================================
+   FAQ ACCORDION & DISTANCE TABLE
+   Adaugă la sfârșitul fișierului assets/css/style.css
+   ======================================== */
+
+/* Distance Table */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.distance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+}
+
+.distance-table thead th {
+    background: var(--gold, #c5a059);
+    color: #fff;
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.distance-table tbody td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+.distance-table tbody tr:nth-child(even) {
+    background: #faf8f5;
+}
+
+.distance-table tbody tr:hover {
+    background: #f0ece5;
+}
+
+.distance-table tbody td:first-child {
+    color: #222;
+}
+
+/* FAQ Accordion */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid #e8e4de;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+    color: var(--gold, #c5a059);
+}
+
+.faq-question[aria-expanded="true"] {
+    color: var(--gold, #c5a059);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gold, #c5a059);
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 24px;
+}
+
+.faq-answer.open {
+    max-height: 300px;
+    padding: 0 24px 20px;
+}
+
+.faq-answer p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 15px 18px;
+        font-size: 0.95rem;
+    }
+    .faq-answer {
+        padding: 0 18px;
+    }
+    .faq-answer.open {
+        padding: 0 18px 16px;
+    }
+    .distance-table {
+        font-size: 0.85rem;
+    }
+    .distance-table thead th,
+    .distance-table tbody td {
+        padding: 10px 12px;
+    }
+}

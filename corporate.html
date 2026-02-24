@@ -675,6 +675,95 @@
             .hero-cta-group { flex-direction: column; align-items: center; }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Cât timp durează răspunsul la o cerere de ofertă?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ne angajăm să răspundem în maxim 24 de ore lucrătoare de la primirea cererii, cu o ofertă detaliată și personalizată."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Se pot combina sesiunile de lucru cu activitățile outdoor?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolut! Construim agende care alternează sesiunile de lucru cu pauzele active, astfel încât productivitatea rămâne ridicată toată ziua."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Este disponibilă facturare pe firmă?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, emitem factură fiscală pentru toate serviciile corporate. Acceptăm plată prin transfer bancar, card și numerar."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Care este numărul minim de participanți?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nu există un număr minim fix. Primim grupuri de la 10 persoane în sus. Pentru grupuri mai mici, oferim spații alternative."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Activitățile outdoor sunt sigure? Cine le coordonează?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Toate activitățile de aventură sunt conduse de instructori autorizați ANPC, cu echipament omologat."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Ce dotări are sala de conferințe?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sala de conferințe de la etajul hotelului este echipată cu sonorizare, Wi-Fi și aer condiționat. Pentru grupuri mai mari, restaurantul cu 300 de locuri este disponibil."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Câte locuri de cazare aveți pentru participanți?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hotelul are 18 camere cu capacitate totală de 44 locuri, pe același complex cu sala de conferințe și restaurantul."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Oferiți pachete cu cazare incluse?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, oferim pachete flexibile: 1 zi (sală + mese), 2–3 zile retreat (sală + cazare + toate mesele + activități), și pachete team building personalizate."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Ce activități de team building oferiți?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Drumeții ghidate în Cheile Râșnoavei, team games pe 20.000 mp, grătar competitiv pe echipe, pescuit păstrăv, turneu de biliard, workshop-uri creative indoor."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Cât durează drumul de la București?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aproximativ 2 ore și 30 de minute (170 km). Drum asfaltat integral. Accesibil ușor și din Ploiești (115 km / 1h40), Sibiu (95 km / 1h30)."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body data-page="corporate">
 
@@ -694,6 +783,7 @@
             <li><a href="restaurant.html"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
             <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
             <li><a href="corporate.html" class="active">Corporate</a></li>
+            <li><a href="locatie-activitati.html"><span data-lang="ro">Locație</span><span data-lang="en">Location</span></a></li>
             <li><a href="contact.html">Contact</a></li>
             <div class="lang-switcher">
                 <button class="lang-btn active" onclick="setLang('ro')">RO</button>
@@ -1125,6 +1215,62 @@
                     <span data-lang="en">All adventure activities are led by ANPC-certified instructors with approved equipment. Participant safety is our #1 priority.</span>
                 </div></div>
             </div>
+
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Ce dotări are sala de conferințe?</span>
+                    <span data-lang="en">What facilities does the conference room have?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Sala de conferințe de la etajul hotelului este echipată cu sonorizare, Wi-Fi și aer condiționat. Pentru grupuri mai mari, restaurantul cu 300 de locuri este disponibil ca spațiu de conferință.</span>
+                    <span data-lang="en">The conference room on the hotel floor is equipped with sound system, Wi-Fi and air conditioning. For larger groups, the 300-seat restaurant is available as a conference space.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Câte locuri de cazare aveți pentru participanți?</span>
+                    <span data-lang="en">How many accommodation places do you have?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Hotelul are 18 camere cu capacitate totală de 44 locuri, pe același complex cu sala de conferințe și restaurantul. Zero logistică de transport.</span>
+                    <span data-lang="en">The hotel has 18 rooms with a total capacity of 44 places, on the same complex with the conference room and restaurant. Zero transport logistics.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Oferiți pachete cu cazare incluse?</span>
+                    <span data-lang="en">Do you offer packages with accommodation?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Da, oferim pachete flexibile: 1 zi (sală + mese), 2–3 zile retreat (sală + cazare + toate mesele + activități), și pachete team building personalizate.</span>
+                    <span data-lang="en">Yes, we offer flexible packages: 1 day (room + meals), 2-3 day retreat (room + accommodation + all meals + activities), and customized team building packages.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Ce activități de team building oferiți?</span>
+                    <span data-lang="en">What team building activities do you offer?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Drumeții ghidate în Cheile Râșnoavei, team games pe 20.000 mp, grătar competitiv pe echipe, pescuit păstrăv, turneu de biliard, workshop-uri creative indoor.</span>
+                    <span data-lang="en">Guided hikes in Râșnoavei Gorge, team games on 20,000 sqm, competitive barbecue, trout fishing, billiard tournament, creative indoor workshops.</span>
+                </div></div>
+            </div>
+            <div class="faq-item-corp">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span data-lang="ro">Cât durează drumul de la București?</span>
+                    <span data-lang="en">How long is the drive from Bucharest?</span>
+                    <span class="faq-arrow">▾</span>
+                </button>
+                <div class="faq-a"><div class="faq-a-inner">
+                    <span data-lang="ro">Aproximativ 2 ore și 30 de minute (170 km). Drum asfaltat integral. Accesibil ușor și din Ploiești (115 km / 1h40), Sibiu (95 km / 1h30).</span>
+                    <span data-lang="en">Approximately 2 hours and 30 minutes (170 km). Fully paved road. Easily accessible from Ploiești (115 km / 1h40), Sibiu (95 km / 1h30).</span>
+                </div></div>
+            </div>
         </div>
     </section>
 
@@ -1250,6 +1396,7 @@
                     <li><a href="restaurant.html"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
                     <li><a href="evenimente.html"><span data-lang="ro">Evenimente Private</span><span data-lang="en">Private Events</span></a></li>
                     <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="locatie-activitati.html"><span data-lang="ro">Locație &amp; Activități</span><span data-lang="en">Location &amp; Activities</span></a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1257,7 +1404,7 @@
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p>✉️ <a href="/cdn-cgi/l/email-protection#344651575144405d5174575b5a575542514650511a465b" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="156770767065617c7055767a7b767463706771703b677a">[email&#160;protected]</span></a></p>
                 <p class="highlight-gold"><span data-lang="ro">Program Recepție: Non-Stop</span><span data-lang="en">Reception: 24/7</span></p>
             </div>
         </div>
@@ -1266,7 +1413,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/script.js"></script>
     <script>
         // ===== LANGUAGE SWITCHER =====
         function setLang(lang) {
@@ -1312,7 +1459,4 @@
             const email = document.getElementById('f-email').value.trim();
             const company = document.getElementById('f-company').value.trim();
             const pax = document.getElementById('f-pax').value;
-            if (!name || !email || !company || !pax) {
-                alert(document.body.classList.contains('lang-en')
-                    ? 'Please fill in all required fields.'
-                    : 'Vă rugăm completați toate câmpurile obligatori
+     

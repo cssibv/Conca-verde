@@ -45,6 +45,91 @@
       ]
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Care este ora de check-in și check-out?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Check-in: de la ora 14:00. Check-out: până la ora 11:00. Pentru cazuri speciale, vă rugăm să ne contactați în avans."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Se acceptă animale de companie?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Din păcate, nu acceptăm animale de companie la hotel."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Există parcare gratuită?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, complexul dispune de parcare gratuită pe suprafața de 20.000 mp. Nu este nevoie de rezervare separată."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "La ce distanță este de Brașov și Bran?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Brașov: 18 km (25 min), Castelul Bran: 20 km (30 min), Predeal: 30 km (35 min), Sinaia: 55 km (50 min), București: 170 km (2 ore 30 min)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Oferiți mic dejun?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, oaspeții pot servi micul dejun la restaurantul complexului. Restaurantul servește și preparate tradiționale și internaționale pe tot parcursul zilei."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Oferiți cazare pentru invitații la nunți sau conferințe?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, hotelul oferă tarife preferențiale pentru invitații la evenimente organizate în complexul nostru. Capacitate totală: 18 camere, 44 locuri de cazare."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Cât durează drumul de la București?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aproximativ 2 ore și 30 de minute (170 km). Traseul: DN1 până la Brașov, apoi DN73 spre Râșnov și DN73A către Cheile Râșnoavei."
+            }
+        }
+    ]
+}
+    </script>
+
+    <!-- FAQ Styles -->
+    <style>
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid #e8e4de; border-radius: 10px; margin-bottom: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.3s ease; }
+    .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: none; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-align: left; line-height: 1.5; transition: color 0.2s ease; }
+    .faq-question:hover { color: #c5a059; }
+    .faq-question[aria-expanded='true'] { color: #c5a059; }
+    .faq-icon { font-size: 1.5rem; font-weight: 300; color: #c5a059; flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; line-height: 1; }
+    .faq-question[aria-expanded='true'] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 24px; }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-answer p { color: #555; font-size: 0.95rem; line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) {
+        .faq-question { padding: 15px 18px; font-size: 0.95rem; }
+        .faq-answer { padding: 0 18px; }
+        .faq-answer.open { padding: 0 18px 16px; }
+    }
+    </style>
 </head>
 <body data-page="cazare">
 
@@ -61,6 +146,7 @@
             <li><a href="restaurant.html">Restaurant</a></li>
             <li><a href="evenimente.html">Evenimente</a></li>
             <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="locatie-activitati.html">Locație</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" rel="noopener noreferrer" class="btn-nav">Rezervă Acum</a></li>
         </ul>
@@ -229,6 +315,83 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="bg-sand spatiu-mare">
+        <div class="container">
+            <div class="section-header">
+                <span>Întrebări frecvente</span>
+                <h2>Despre cazare la Conca Verde</h2>
+                <div class="line center"></div>
+            </div>
+            <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Care este ora de check-in și check-out?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Check-in: de la ora 14:00. Check-out: până la ora 11:00. Pentru cazuri speciale, vă rugăm să ne contactați în avans.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Se acceptă animale de companie?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Din păcate, nu acceptăm animale de companie la hotel.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Există parcare gratuită?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, complexul dispune de parcare gratuită pe suprafața de 20.000 mp. Nu este nevoie de rezervare separată.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>La ce distanță este de Brașov și Bran?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Brașov: 18 km (25 min), Castelul Bran: 20 km (30 min), Predeal: 30 km (35 min), Sinaia: 55 km (50 min), București: 170 km (2 ore 30 min).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Oferiți mic dejun?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, oaspeții pot servi micul dejun la restaurantul complexului. Restaurantul servește și preparate tradiționale și internaționale pe tot parcursul zilei.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Oferiți cazare pentru invitații la nunți sau conferințe?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, hotelul oferă tarife preferențiale pentru invitații la evenimente organizate în complexul nostru. Capacitate totală: 18 camere, 44 locuri de cazare.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Cât durează drumul de la București?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Aproximativ 2 ore și 30 de minute (170 km). Traseul: DN1 până la Brașov, apoi DN73 spre Râșnov și DN73A către Cheile Râșnoavei.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="parallax-section">
         <div class="parallax-content">
             <h2>Rezervă-ți sejurul acum</h2>
@@ -257,6 +420,7 @@
                     <li><a href="restaurant.html">Restaurant</a></li>
                     <li><a href="evenimente.html">Evenimente Private</a></li>
                     <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="locatie-activitati.html">Locație &amp; Activități</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -264,15 +428,9 @@
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p>✉️ <a href="/cdn-cgi/l/email-protection#c4b6a1a7a1b4b0ada184a7abaaa7a5b2a1b6a0a1eab6ab" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="0e7c6b6d6b7e7a676b4e6d61606d6f786b7c6a6b207c61">[email&#160;protected]</span></a></p>
                 <p class="highlight-gold">Program Recepție: Non-Stop</p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.
-        </div>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
+            &copy; 2026 Complex Tu

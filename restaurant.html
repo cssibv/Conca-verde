@@ -69,6 +69,67 @@
       "priceRange": "695"
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Ce tip de bucătărie serviți?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bucătărie tradițională românească cu ingrediente locale: grătar, ciorbe de casă, mămăligă cu brânză, sarmale, preparate la ceaun. Avem și opțiuni internaționale. Specialitatea casei: păstrăvul proaspăt din iazul nostru, gătit la grătar."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Pot mânca la restaurant fără să fiu cazat la hotel?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, restaurantul este deschis tuturor vizitatorilor, nu doar oaspeților hotelului. Recomandăm rezervarea în avans, mai ales în weekend."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Organizați mese festive (Crăciun, Revelion, Paște)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, organizăm mese festive cu meniu special pentru toate sărbătorile importante. Rezervarea din timp este recomandată datorită cererii mari."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Aveți muzică live?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Da, în fiecare weekend avem muzică live pe terasă, alături de grătar și preparate proaspete. Atmosfera este perfectă pentru o seară relaxantă la munte."
+            }
+        }
+    ]
+}
+    </script>
+
+    <!-- FAQ Styles -->
+    <style>
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid #e8e4de; border-radius: 10px; margin-bottom: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.3s ease; }
+    .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: none; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-align: left; line-height: 1.5; transition: color 0.2s ease; }
+    .faq-question:hover { color: #c5a059; }
+    .faq-question[aria-expanded='true'] { color: #c5a059; }
+    .faq-icon { font-size: 1.5rem; font-weight: 300; color: #c5a059; flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; line-height: 1; }
+    .faq-question[aria-expanded='true'] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 24px; }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-answer p { color: #555; font-size: 0.95rem; line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) {
+        .faq-question { padding: 15px 18px; font-size: 0.95rem; }
+        .faq-answer { padding: 0 18px; }
+        .faq-answer.open { padding: 0 18px 16px; }
+    }
+    </style>
 </head>
 <body data-page="restaurant">
 
@@ -85,6 +146,7 @@
             <li><a href="restaurant.html" class="active"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
             <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
             <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="locatie-activitati.html"><span data-lang="ro">Locație</span><span data-lang="en">Location</span></a></li>
             <li><a href="contact.html">Contact</a></li>
             
             <li class="lang-switcher-li">
@@ -767,6 +829,56 @@
 </section>
 
 
+
+    <!-- FAQ Section -->
+    <section class="bg-sand spatiu-mare">
+        <div class="container">
+            <div class="section-header">
+                <span>Întrebări frecvente</span>
+                <h2>Despre restaurant</h2>
+                <div class="line center"></div>
+            </div>
+            <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Ce tip de bucătărie serviți?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Bucătărie tradițională românească cu ingrediente locale: grătar, ciorbe de casă, mămăligă cu brânză, sarmale, preparate la ceaun. Avem și opțiuni internaționale. Specialitatea casei: păstrăvul proaspăt din iazul nostru, gătit la grătar.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Pot mânca la restaurant fără să fiu cazat la hotel?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, restaurantul este deschis tuturor vizitatorilor, nu doar oaspeților hotelului. Recomandăm rezervarea în avans, mai ales în weekend.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Organizați mese festive (Crăciun, Revelion, Paște)?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, organizăm mese festive cu meniu special pentru toate sărbătorile importante. Rezervarea din timp este recomandată datorită cererii mari.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Aveți muzică live?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, în fiecare weekend avem muzică live pe terasă, alături de grătar și preparate proaspete. Atmosfera este perfectă pentru o seară relaxantă la munte.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container grid-footer">
             <div class="footer-col">
@@ -784,6 +896,7 @@
                     <li><a href="restaurant.html">Restaurant</a></li>
                     <li><a href="evenimente.html">Evenimente Private</a></li>
                     <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="locatie-activitati.html">Locație &amp; Activități</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -791,7 +904,7 @@
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p>✉️ <a href="/cdn-cgi/l/email-protection#c1b3a4a2a4b1b5a8a481a2aeafa2a0b7a4b3a5a4efb3ae" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="067463656376726f634665696865677063746263287469">[email&#160;protected]</span></a></p>
                 <p class="highlight-gold">Program Recepție: Non-Stop</p>
             </div>
         </div>
@@ -800,7 +913,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/script.js"></script>
 
     <script>
         // Logica Limba
@@ -899,15 +1012,4 @@
                 setActiveLink(id);
             }, {
                 root: null,
-                threshold: [0.15, 0.25, 0.35, 0.5, 0.65],
-                rootMargin: '-20% 0px -60% 0px'
-            });
-
-            sections.forEach(sec => io.observe(sec));
-        }
-
-        // Initial state
-        setGroup('food');
-    </script>
-</body>
-</html>
+                thr
