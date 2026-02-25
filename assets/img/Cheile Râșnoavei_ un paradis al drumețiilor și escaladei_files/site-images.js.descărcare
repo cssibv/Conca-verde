@@ -1,0 +1,31 @@
+"use strict";
+
+
+let imagesToLoad = Array.from(document.querySelectorAll("[_js_image]"));
+
+let imagesObserver = new IntersectionObserver(i => {
+    i.forEach(i => {
+        if (i.isIntersecting) {
+            i.target.srcset = i.target.dataset.srcset;
+            i.target.parentElement.setAttribute("_animate", "");
+            i.target.setAttribute("_animate", "");
+            i.target.addEventListener("load", loadImage, {once: true});
+            imagesObserver.unobserve(i.target);
+        }
+    });
+});
+
+
+imagesToLoad.forEach(i => {
+    imagesObserver.observe(i);
+});
+
+
+function loadImage(e) {
+    let image = e.target;
+
+    setTimeout(() => {
+        image.setAttribute("_active", "");
+        image.parentElement.setAttribute("_loaded", "");
+    }, 500);
+}

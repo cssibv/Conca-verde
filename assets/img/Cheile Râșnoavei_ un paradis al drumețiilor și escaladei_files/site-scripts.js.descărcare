@@ -1,0 +1,218 @@
+"use strict";
+
+
+let inertElements = Array.from(document.querySelectorAll("[_js_inert]"));
+let hasScrollBar = null;
+
+
+
+
+let openBookingButtons = Array.from(document.querySelectorAll("[_js_open-booking]"));
+let bookingModal = document.querySelector("[_js_reservation-request]");
+
+openBookingButtons.forEach(i => {
+    i.addEventListener("click", openBookingModal);
+});
+
+function openBookingModal(e) {
+    document.documentElement.setAttribute("_scroll-disabled", "");
+
+    inertElements.forEach(i => {
+        i.setAttribute("_inert", "");
+    });
+
+    bookingModal.addEventListener("transitionend", animateBookingModal);
+
+    bookingModal.setAttribute("_opening", "");
+    bookingModal.setAttribute("_ready", "");
+    bookingModal.setAttribute("_animate", "");
+    bookingModal.setAttribute("_set-overlay", "");
+    bookingModal.setAttribute("_move-content", "");
+}
+
+function animateBookingModal(e) {
+    if (e.propertyName === "transform") {
+        bookingModal.removeAttribute("_animate");
+
+        let closeButtons = Array.from(bookingModal.querySelectorAll("[_js_close]"));
+
+        if (bookingModal.getAttribute("_closing") === null) {
+            bookingModal.querySelector("[_js_send-reservation-request]").addEventListener("submit", submitFormData);
+
+            closeButtons.forEach(i => {
+                i.addEventListener("click", closeBookingModal);
+            });
+
+            bookingModal.removeAttribute("_opening");
+        } else {
+            bookingModal.removeAttribute("_closing");
+            bookingModal.removeAttribute("_ready");
+            bookingModal.removeAttribute("_move-content");
+            bookingModal.removeAttribute("_hide-content");
+
+            bookingModal.querySelector("[_js_send-reservation-request]").removeEventListener("submit", submitFormData);
+
+            closeButtons.forEach(i => {
+                i.removeEventListener("click", closeBookingModal);
+            });
+
+            document.documentElement.removeAttribute("_scroll-disabled");
+
+            inertElements.forEach(i => {
+                i.removeAttribute("_inert");
+            });
+        }
+
+        bookingModal.removeEventListener("transitionend", animateBookingModal);
+    }
+}
+
+function closeBookingModal() {
+    bookingModal.addEventListener("transitionend", animateBookingModal);
+
+    bookingModal.setAttribute("_closing", "");
+    bookingModal.setAttribute("_animate", "");
+    bookingModal.removeAttribute("_set-overlay");
+    bookingModal.setAttribute("_hide-content", "");
+}
+
+
+
+
+let roomsSelectors = Array.from(document.querySelectorAll("[_js_select-rooms]"));
+
+roomsSelectors.forEach(i => {
+    i.addEventListener("change", selectRooms);
+});
+
+function selectRooms(e) {
+    let roomsNo = parseInt(e.target.value);
+    let maxPersonsPerRoom = parseInt(e.target.dataset.maxPersonsPerRoom);
+    let maxPersons = roomsNo * maxPersonsPerRoom;
+    let personsSelector = e.target.parentElement.nextElementSibling.firstElementChild.nextElementSibling;
+    let docFragment = new DocumentFragment();
+
+    while (personsSelector.lastElementChild.getAttribute("hidden") !== "") {
+        personsSelector.lastElementChild.remove();
+    }
+
+    for (let i = 1; i <= maxPersons; i++) {
+        let option = document.createElement("option");
+
+        option.setAttribute("value", i);
+
+        if (i === 1) {
+            option.appendChild(document.createTextNode(i + " " + e.target.dataset.personSingular));
+        } else {
+            option.appendChild(document.createTextNode(i + " " + e.target.dataset.personPlural));
+        }
+
+        docFragment.appendChild(option);
+    }
+
+    personsSelector.appendChild(docFragment);
+}
+
+
+
+
+function getCookie(name) {
+    let cookies = "; " + document.cookie;
+    let target = cookies.split("; " + name + "=");
+    let value = target.pop().split(";").shift();
+
+    return value;
+}
+
+
+
+
+let checkInDateSelector = document.querySelector("[_js_select-check-in-date]");
+
+checkInDateSelector.addEventListener("change", selectCheckInDate);
+
+function selectCheckInDate() {
+    let selectedDate = null;
+
+    if (checkInDateSelector.value) {
+        let dateParts = checkInDateSelector.value.split("-");
+        let day = dateParts[2];
+        let month = dateParts[1];
+        let year = dateParts[0];
+
+        if (getCookie("language") === "ro-RO") {
+            selectedDate = day + "/" + month + "/" + year;
+        } else {
+            selectedDate = month + "/" + day + "/" + year;
+        }
+
+        checkInDateSelector.nextElementSibling.removeChild(checkInDateSelector.nextElementSibling.firstChild);
+        checkInDateSelector.removeAttribute("required");
+
+        let checkInDate = new Date(checkInDateSelector.value);
+        let oneDay = (60 * 60 * 24 * 1000);
+        let checkOutDate = new Date(checkInDate.getTime() + oneDay);
+
+        checkOutDateSelector.setAttribute("min", checkOutDate.toISOString().slice(0, 10));
+    } else {
+        selectedDate = checkInDateSelector.previousElementSibling.lastElementChild.previousElementSibling.dataset.defaultText;
+
+        checkInDateSelector.setAttribute("required", "");
+        checkOutDateSelector.setAttribute("min", checkOutDateSelector.dataset.defaultMin);
+    }
+
+    if (selectedDate) {
+        checkInDateSelector.nextElementSibling.appendChild(document.createTextNode(selectedDate));
+    } else {
+        checkInDateSelector.nextElementSibling.innerHTML = "&nbsp;";
+    }
+}
+
+
+
+
+let checkOutDateSelector = document.querySelector("[_js_select-check-out-date]");
+
+checkOutDateSelector.addEventListener("change", selectCheckOutDate);
+
+function selectCheckOutDate() {
+    let selectedDate = null;
+
+    if (checkOutDateSelector.value) {
+        let dateParts = checkOutDateSelector.value.split("-");
+        let day = dateParts[2];
+        let month = dateParts[1];
+        let year = dateParts[0];
+
+        if (getCookie("language") === "ro-RO") {
+            selectedDate = day + "/" + month + "/" + year;
+        } else {
+            selectedDate = month + "/" + day + "/" + year;
+        }
+
+        checkOutDateSelector.nextElementSibling.removeChild(checkOutDateSelector.nextElementSibling.firstChild);
+        checkOutDateSelector.removeAttribute("required");
+
+        let checkOutDate = new Date(checkOutDateSelector.value);
+        let oneDay = (60 * 60 * 24 * 1000);
+        let checkInDate = new Date(checkOutDate.getTime() - oneDay);
+
+        checkInDateSelector.setAttribute("max", checkInDate.toISOString().slice(0, 10));
+    } else {
+        selectedDate = checkOutDateSelector.previousElementSibling.lastElementChild.previousElementSibling.dataset.defaultText;
+
+        checkOutDateSelector.setAttribute("required", "");
+        checkInDateSelector.setAttribute("max", checkInDateSelector.dataset.defaultMax);
+    }
+
+    if (selectedDate) {
+        checkOutDateSelector.nextElementSibling.appendChild(document.createTextNode(selectedDate));
+    } else {
+        checkOutDateSelector.nextElementSibling.innerHTML = "&nbsp;";
+    }
+}
+
+
+
+
+document.querySelector("[_js_subscribe-to-newsletter]").addEventListener("submit", submitFormData);

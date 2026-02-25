@@ -1,0 +1,28 @@
+"use strict";
+
+
+let jumpLinks = Array.from(document.querySelectorAll("[_js_jumplink]"));
+let contentHeadings;
+
+if (jumpLinks.length > 0) {
+    contentHeadings = Array.from(document.querySelector("[_js_content]").querySelectorAll("h2"));
+
+    jumpLinks.forEach(i => {
+        i.addEventListener("click", goToHeading);
+    });
+}
+
+function goToHeading(e) {
+    contentHeadings.forEach(i => {
+        if (e.target.textContent.trim() == i.textContent.trim()) {
+            let iMargin = parseInt(window.getComputedStyle(i)["margin-top"].replace("px", ""));
+
+            window.scrollTo(
+                {
+                    behavior: "smooth",
+                    top: i.offsetTop - iMargin - siteHeader.scrollHeight
+                }
+            );
+        }
+    });
+}

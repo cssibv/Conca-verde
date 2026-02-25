@@ -1,0 +1,87 @@
+"use strict";
+
+
+let siteHeader = document.querySelector("[_js_header]");
+
+if (window.scrollY > 1) {
+    if (siteHeader.classList.contains("style-transparent")) {
+        siteHeader.setAttribute("_active", "");
+    }
+}
+
+function enableDisableHeader() {
+    if (! siteHeader.classList.contains("style-transparent")) {
+        return;
+    }
+
+    if (window.scrollY > 1) {
+        siteHeader.setAttribute("_active", "");
+    } else {
+        siteHeader.removeAttribute("_active");
+    }
+}
+
+window.addEventListener("scroll", enableDisableHeader);
+
+
+
+
+document.querySelector("[_js_open-menu]").addEventListener("click", toggleNavigation);
+
+function toggleNavigation(e) {
+    hasScrollBar = (window.innerWidth - document.documentElement.clientWidth > 0) ? true : false;
+    let navigation = e.target.parentElement.previousElementSibling;
+
+    navigation.addEventListener("transitionend", animatetoggleNavigation);
+
+    if (e.target.dataset.action === "open") {
+        if (! hasScrollBar) {
+            document.documentElement.setAttribute("_scroll-disabled", "");
+
+            inertElements.forEach(i => {
+                i.setAttribute("_inert", "");
+            });
+        }
+
+        navigation.setAttribute("_opening", "");
+        navigation.setAttribute("_ready", "");
+        navigation.setAttribute("_animate", "");
+        navigation.setAttribute("_set-overlay", "");
+        navigation.setAttribute("_active", "");
+
+        e.target.setAttribute("_animate", "");
+        e.target.setAttribute("_active", "");
+        e.target.dataset.action = "close";
+    } else {
+        navigation.setAttribute("_closing", "");
+        navigation.setAttribute("_animate", "");
+        navigation.removeAttribute("_set-overlay");
+        navigation.removeAttribute("_active");
+
+        e.target.removeAttribute("_active");
+        e.target.dataset.action = "open";
+    }
+}
+
+function animatetoggleNavigation(e) {
+    if (e.propertyName === "transform") {
+        e.target.removeAttribute("_animate");
+
+        if (e.target.getAttribute("_closing") === null) {
+            e.target.removeAttribute("_opening");
+        } else {
+            e.target.removeAttribute("_closing");
+            e.target.removeAttribute("_ready");
+
+            if (! hasScrollBar) {
+                document.documentElement.removeAttribute("_scroll-disabled");
+
+                inertElements.forEach(i => {
+                    i.removeAttribute("_inert");
+                });
+            }
+        }
+
+        e.target.removeEventListener("transitionend", animatetoggleNavigation);
+    }
+}

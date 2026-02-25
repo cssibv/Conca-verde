@@ -1,0 +1,89 @@
+"use strict";
+
+
+function submitFormData(e) {
+    e.preventDefault();
+    e.target.querySelector("[_js_submit]").setAttribute("_active", "");
+    e.target.querySelector("[_js_submit]").setAttribute("disabled", "");
+
+    if (window.grecaptcha === undefined) {
+        let reCAPTCHAScript = document.createElement("script");
+
+        reCAPTCHAScript.setAttribute("src", "https://www.recaptcha.net/recaptcha/api.js?render=" + "6LeTt2coAAAAANr0M8jtHLqiNMftp3mka_YfKhLx");
+
+        document.body.insertBefore(reCAPTCHAScript, document.querySelector("[_js_script]"));
+    }
+
+    let formData = Array.from(e.target.querySelectorAll("[name]"));
+
+    if (! checkFields(e.target, formData)) {
+        return;
+    }
+
+    checkSubmitFormDataReCAPTCHA(e.target, formData);
+}
+
+
+function checkSubmitFormDataReCAPTCHA(eTarget, formData) {
+    if (window.grecaptcha === undefined) {
+        setTimeout(
+            function() {
+                checkSubmitFormDataReCAPTCHA(eTarget, formData);
+            },
+            1000
+        );
+    } else {
+        continueFormSubmission(eTarget, formData);
+    }
+}
+
+
+function continueFormSubmission(eTarget, formData) {
+    grecaptcha.ready(() => {
+        grecaptcha.execute("6LeTt2coAAAAANr0M8jtHLqiNMftp3mka_YfKhLx").then(r => {
+            eTarget.querySelector("[name=recaptcha]").setAttribute("value", r);
+
+            let requestData = [];
+
+            formData.forEach((v, i) => {
+                if (v.type === "checkbox") {
+                    requestData[i] = v.name + "=" + v.checked;
+                } else {
+                    if (v.name === "source") {
+                        v.value = eTarget.dataset.target;
+                    }
+
+                    requestData[i] = v.name + "=" + v.value;
+                }
+            });
+
+            requestData = requestData.filter(i => {
+                return i !== undefined;
+            });
+
+            fetch(window.location.origin + "/ajax/?target=" + eTarget.dataset.target, {
+                body: requestData.join("&"),
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                method: "post",
+                type: "json"
+            }).
+            then(r => {
+                return r.json();
+            }).
+            then(r => {
+                formData.forEach(i => {
+                    if (! [ "response", "source" ].includes(i.getAttribute("name"))) {
+                        i.removeAttribute("name");
+                    }
+                });
+
+                eTarget.querySelector("[name=response]").setAttribute("value", r.response.status);
+                eTarget.setAttribute("action", r.response.redirect);
+                eTarget.setAttribute("method", "post");
+                eTarget.submit();
+            });
+        });
+    });
+}

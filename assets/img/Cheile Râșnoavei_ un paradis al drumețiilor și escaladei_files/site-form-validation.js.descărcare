@@ -1,0 +1,66 @@
+"use strict";
+
+
+function checkFields(eTarget, formData) {
+    let validationPassed = true;
+
+    formData.forEach(i => {
+        if (i.type === "hidden") {
+            return;
+        }
+
+        if (i.type === "checkbox") {
+            if (i.required && ! i.checked) {
+                if (! i.hasAttribute("data-observe-changes")) {
+                    i.addEventListener("click", addValidityMessage.bind(null, i, eTarget));
+                }
+
+                i.setCustomValidity(eTarget.dataset.messageValueMissing);
+                i.setAttribute("data-observe-changes", "observe");
+
+                validationPassed = false;
+            }
+        } else {
+            if (i.validity.valueMissing) {
+                if (! i.hasAttribute("data-observe-changes")) {
+                    i.addEventListener("keyup", addValidityMessage.bind(null, i, eTarget));
+                }
+
+                i.setCustomValidity(eTarget.dataset.messageValueMissing);
+                i.setAttribute("data-observe-changes", "true");
+
+                validationPassed = false;
+            } else if (! i.validity.valid) {
+                if (! i.hasAttribute("data-observe-changes")) {
+                    i.addEventListener("keyup", addValidityMessage.bind(null, i, eTarget));
+                }
+
+                i.setCustomValidity(eTarget.dataset.messagePatternMismatch);
+                i.setAttribute("data-observe-changes", "true");
+
+                validationPassed = false;
+            }
+        }
+    });
+
+    if (! validationPassed) {
+        eTarget.querySelector("[_js_submit]").removeAttribute("_active");
+        eTarget.querySelector("[_js_submit]").removeAttribute("disabled");
+        eTarget.reportValidity();
+    }
+
+    return validationPassed;
+}
+
+
+function addValidityMessage(eTarget, targetForm) {
+    eTarget.setCustomValidity("");
+
+    if (eTarget.validity.valueMissing) {
+        eTarget.setCustomValidity(targetForm.dataset.messageValueMissing);
+    } else if (! eTarget.validity.valid) {
+        eTarget.setCustomValidity(targetForm.dataset.messagePatternMismatch);
+    }
+
+    eTarget.removeEventListener("keyup", addValidityMessage.bind(null, eTarget, targetForm));
+}
