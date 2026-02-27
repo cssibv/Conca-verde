@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Restaurant tradițional românesc în Cheile Râșnoavei, Râșnov. Meniu complet, pizza, ciorbe, grătar. 300 locuri. Rezervă o masă!">
-    <title>Restaurant Râșnov — Meniu Tradițional Românesc | Conca Verde</title>
+    <meta name="description" content="Bucătărie tradițională și internațională la Conca Verde, Cheile Râșnoavei. Terasă cu vedere la munte, la 18 km de Brașov și 20 km de Bran. 300 locuri.">
+    <title>Restaurant Conca Verde – Restaurant în Cheile Râșnoavei, lângă Brașov | Meniu Tradițional</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Meniu Restaurant | Conca Verde Râșnov">
-    <meta property="og:description" content="Meniul Restaurantului Conca Verde Râșnov — Preparate tradiționale românești, specialități gourmet. Capacitate 300 locuri, terasă, muzică live weekend.">
+    <meta property="og:title" content="Restaurant Conca Verde – Bucătărie Autentică în Cheile Râșnoavei, lângă Brașov">
+    <meta property="og:description" content="Bucătărie tradițională și internațională la Conca Verde, Cheile Râșnoavei. Terasă cu vedere la munte, muzică live weekend. La 18 km de Brașov.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ro_RO">
     <link rel="canonical" href="https://concaverde.ro/restaurant.html">
@@ -883,10 +883,10 @@
         <div class="container grid-footer">
             <div class="footer-col">
                 <img src="assets/img/logo.png" alt="Conca Verde Logo" style="height: 60px; margin-bottom: 12px;">
-                <p>Oaza ta de liniște în Cheile Râșnoavei. Ne dedicăm excelenței în ospitalitate.</p>
+                <p>Complex turistic cu pensiune, restaurant și sală de evenimente în Cheile Râșnoavei, Râșnov. La 18 km de Brașov, 20 km de Bran.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/concaverde" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://www.instagram.com/concaverde" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=100057072535199" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/conca.verde/" target="_blank" rel="noopener">Instagram</a>
                 </div>
             </div>
             <div class="footer-col">
@@ -900,11 +900,15 @@
                 </ul>
             </div>
             <div class="footer-col">
+                <h4 class="footer-title">Locații deservite</h4>
+                <p style="font-size:0.85rem; line-height:1.8; color:#aaa;">Râșnov · Brașov · Bran · Poiana Brașov · Predeal · Zărnești · Sinaia · Bușteni · Azuga · Făgăraș · Sibiu · Valea Prahovei · București · Ploiești</p>
+            </div>
+            <div class="footer-col">
                 <h4 class="footer-title">Contact</h4>
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="/cdn-cgi/l/email-protection#c1b3a4a2a4b1b5a8a481a2aeafa2a0b7a4b3a5a4efb3ae" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="067463656376726f634665696865677063746263287469">[email&#160;protected]</span></a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="067463656376726f634665696865677063746263287469">[email&#160;protected]</span></a></p>
                 <p class="highlight-gold">Program Recepție: Non-Stop</p>
             </div>
         </div>
@@ -913,7 +917,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
     <script>
         // Logica Limba
@@ -1012,4 +1016,39 @@
                 setActiveLink(id);
             }, {
                 root: null,
-                thr
+                threshold: [0.2, 0.5]
+            });
+            sections.forEach(s => io.observe(s));
+        }
+    </script>
+
+    <script>
+    /* Fallback inline — meniu mobil */
+    window.__menuReady = false;
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            if(window.__menuReady) return;
+            var h = document.querySelector('.hamburger');
+            var n = document.querySelector('.nav-links');
+            if(!h || !n) return;
+            var o = document.createElement('div');
+            o.className = 'nav-overlay';
+            document.body.appendChild(o);
+            function toggle(){
+                var isOpen = n.classList.contains('active');
+                n.classList.toggle('active', !isOpen);
+                h.classList.toggle('open', !isOpen);
+                o.classList.toggle('active', !isOpen);
+                document.body.style.overflow = isOpen ? '' : 'hidden';
+            }
+            h.addEventListener('click', toggle);
+            o.addEventListener('click', function(){
+                n.classList.remove('active'); h.classList.remove('open');
+                o.classList.remove('active'); document.body.style.overflow='';
+            });
+        }, 1500);
+    });
+    </script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+</body>
+</html>

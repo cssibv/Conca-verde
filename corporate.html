@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teambuilding și conferințe corporate în Cheile Râșnoavei. Sală conferințe, 18 camere, restaurant 300 locuri. Solicită ofertă!">
-    <title>Teambuilding &amp; Conferințe Brașov — Corporate Retreat | Conca Verde Râșnov</title>
+    <meta name="description" content="Conferințe, retreat și team building la munte la Conca Verde, Cheile Râșnoavei. Sală echipată, cazare și restaurant pe loc. La 18 km de Brașov, 2.5h de București.">
+    <title>Evenimente Corporate Brașov – Conferințe, Retreat și Team Building la Munte | Conca Verde</title>
     <!-- Open Graph -->
     <meta property="og:title" content="Corporate & Teambuilding | Conca Verde Râșnov">
     <meta property="og:description" content="Conferințe, Teambuilding și Corporate Retreats în Cheile Râșnoavei. Sală conferințe, 18 camere, restaurant 300 locuri.">
@@ -1383,10 +1383,10 @@
         <div class="container grid-footer">
             <div class="footer-col" loading="lazy">
                 <img src="assets/img/logo.png" alt="Conca Verde Logo" style="height: 60px; margin-bottom: 12px;">
-                <p><span data-lang="ro">Oaza ta de liniște în Cheile Râșnoavei. Ne dedicăm excelenței în ospitalitate.</span><span data-lang="en">Your oasis of tranquility in Râșnoavei Gorge. Dedicated to excellence in hospitality.</span></p>
+                <p><span data-lang="ro">Complex turistic cu pensiune, restaurant și sală de evenimente în Cheile Râșnoavei, Râșnov. La 18 km de Brașov, 20 km de Bran.</span><span data-lang="en">Your oasis of tranquility in Râșnoavei Gorge. Dedicated to excellence in hospitality.</span></p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/concaverde" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://www.instagram.com/concaverde" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=100057072535199" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/conca.verde/" target="_blank" rel="noopener">Instagram</a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1400,11 +1400,15 @@
                 </ul>
             </div>
             <div class="footer-col">
+                <h4 class="footer-title">Locații deservite</h4>
+                <p style="font-size:0.85rem; line-height:1.8; color:#aaa;">Râșnov · Brașov · Bran · Poiana Brașov · Predeal · Zărnești · Sinaia · Bușteni · Azuga · Făgăraș · Sibiu · Valea Prahovei · București · Ploiești</p>
+            </div>
+            <div class="footer-col">
                 <h4 class="footer-title">Contact</h4>
                 <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
-                <p>✉️ <a href="/cdn-cgi/l/email-protection#344651575144405d5174575b5a575542514650511a465b" style="color:#c5a059;"><span class="__cf_email__" data-cfemail="156770767065617c7055767a7b767463706771703b677a">[email&#160;protected]</span></a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
                 <p class="highlight-gold"><span data-lang="ro">Program Recepție: Non-Stop</span><span data-lang="en">Reception: 24/7</span></p>
             </div>
         </div>
@@ -1413,50 +1417,69 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
+
     <script>
-        // ===== LANGUAGE SWITCHER =====
-        function setLang(lang) {
-            document.body.classList.toggle('lang-en', lang === 'en');
-            document.querySelectorAll('.lang-btn').forEach(b => {
-                b.classList.toggle('active', b.textContent.trim() === lang.toUpperCase());
-            });
-            localStorage.setItem('cv-lang', lang);
-        }
-        (function() {
-            const saved = localStorage.getItem('cv-lang') || 'ro';
-            setLang(saved);
-        })();
-
-        // ===== FAQ =====
-        function toggleFaq(btn) {
-            const answer = btn.nextElementSibling;
-            const isOpen = btn.classList.contains('open');
-            document.querySelectorAll('.faq-q.open').forEach(q => {
-                q.classList.remove('open');
-                q.nextElementSibling.style.maxHeight = null;
-            });
-            if (!isOpen) {
-                btn.classList.add('open');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        }
-
-        // ===== SCROLL REVEAL =====
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // ===== FORM SUBMIT =====
         function submitForm() {
             const name = document.getElementById('f-name').value.trim();
             const email = document.getElementById('f-email').value.trim();
             const company = document.getElementById('f-company').value.trim();
             const pax = document.getElementById('f-pax').value;
-     
+            const type = document.getElementById('f-type').value;
+            const date = document.getElementById('f-date').value;
+            const details = document.getElementById('f-details') ? document.getElementById('f-details').value.trim() : '';
+
+            if (!name || !email || !company) {
+                alert('Vă rugăm completați câmpurile obligatorii.');
+                return;
+            }
+
+            let msg = 'Bună ziua! Doresc o ofertă corporate la Conca Verde.\n\n';
+            msg += '👤 Nume: ' + name + '\n';
+            msg += '🏢 Companie: ' + company + '\n';
+            msg += '✉️ Email: ' + email + '\n';
+            if (pax) msg += '👥 Persoane: ' + pax + '\n';
+            if (type) msg += '📋 Tip: ' + type + '\n';
+            if (date) msg += '📅 Dată: ' + date + '\n';
+            if (details) msg += '💬 Detalii: ' + details + '\n';
+            msg += '\nMulțumesc!';
+
+            var success = document.getElementById('formSuccess');
+            if (success) success.style.display = 'block';
+
+            setTimeout(function(){
+                window.open('https://wa.me/40799597083?text=' + encodeURIComponent(msg), '_blank');
+            }, 400);
+        }
+    </script>
+
+    <script>
+    /* Fallback inline — meniu mobil */
+    window.__menuReady = false;
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            if(window.__menuReady) return;
+            var h = document.querySelector('.hamburger');
+            var n = document.querySelector('.nav-links');
+            if(!h || !n) return;
+            var o = document.createElement('div');
+            o.className = 'nav-overlay';
+            document.body.appendChild(o);
+            function toggle(){
+                var isOpen = n.classList.contains('active');
+                n.classList.toggle('active', !isOpen);
+                h.classList.toggle('open', !isOpen);
+                o.classList.toggle('active', !isOpen);
+                document.body.style.overflow = isOpen ? '' : 'hidden';
+            }
+            h.addEventListener('click', toggle);
+            o.addEventListener('click', function(){
+                n.classList.remove('active'); h.classList.remove('open');
+                o.classList.remove('active'); document.body.style.overflow='';
+            });
+        }, 1500);
+    });
+    </script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+</body>
+</html>
