@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Daca userul acceseaza pagina.html, il redirecteaza la pagina (fara .html)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# Intern, serveste fisierul .html chiar daca URL-ul nu are extensia
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_FILENAME}.html [L]
