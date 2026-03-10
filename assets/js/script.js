@@ -1,3 +1,17 @@
+/* ========================================
+   GLOBAL LANGUAGE SWITCHER
+   ======================================== */
+function setLang(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+    });
+    try { localStorage.setItem('cv-lang', lang); } catch(e) {}
+}
+(function() {
+    try { var s = localStorage.getItem('cv-lang'); if (s === 'en') document.body.classList.add('lang-en'); } catch(e) {}
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ─────────────────────────────────────────
@@ -314,4 +328,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+/* Restore lang on load */
+document.addEventListener('DOMContentLoaded', function() {
+    var saved = 'ro';
+    try { saved = localStorage.getItem('cv-lang') || 'ro'; } catch(e) {}
+    setLang(saved);
 });

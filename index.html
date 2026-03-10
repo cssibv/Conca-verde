@@ -104,13 +104,17 @@
             <span></span><span></span><span></span>
         </div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="active">Acasă</a></li>
-            <li><a href="cazare.html">Cazare</a></li>
+            <li><a href="index.html" class="active"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a></li>
+            <li><a href="cazare.html"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></a></li>
             <li><a href="restaurant.html">Restaurant</a></li>
-            <li><a href="evenimente.html">Evenimente</a></li>
+            <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
             <li><a href="corporate.html">Corporate</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" class="btn-nav" data-track="whatsapp-nav">Rezervă Acum</a></li>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" class="btn-nav" data-track="whatsapp-nav"><span data-lang="ro">Rezervă Acum</span><span data-lang="en">Book Now</span></a></li>
         </ul>
     </header>
 
@@ -120,13 +124,13 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-subtitle">BINE AI VENIT LA CONCA VERDE</span>
-            <h1>Complex Turistic în Cheile Râșnoavei —<br>Cazare, Restaurant și Evenimente lângă Brașov</h1>
-            <p>Unde muntele întâlnește ospitalitatea — un loc de poveste, răsfăț și tradiție.</p>
+            <span class="hero-subtitle"><span data-lang="ro">BINE AI VENIT LA CONCA VERDE</span><span data-lang="en">WELCOME TO CONCA VERDE</span></span>
+            <h1><span data-lang="ro">Complex Turistic în Cheile Râșnoavei —<br>Cazare, Restaurant și Evenimente lângă Brașov</span><span data-lang="en">Mountain Resort in Râșnoavei Gorge —<br>Accommodation, Restaurant & Events near Brașov</span></h1>
+            <p><span data-lang="ro">Unde muntele întâlnește ospitalitatea — un loc de poveste, răsfăț și tradiție.</span><span data-lang="en">Where the mountain meets hospitality — a place of wonder, indulgence and tradition.</span></p>
             
             <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
-                <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" class="btn-outline" style="background:var(--gold); color:#fff; border-color:var(--gold);" data-track="whatsapp-hero">Rezervă pe WhatsApp</a>
-                <a href="cazare.html" class="btn-outline">Vezi Camerele</a>
+                <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" class="btn-outline" style="background:var(--gold); color:#fff; border-color:var(--gold);" data-track="whatsapp-hero"><span data-lang="ro">Rezervă pe WhatsApp</span><span data-lang="en">Book on WhatsApp</span></a>
+                <a href="cazare.html" class="btn-outline"><span data-lang="ro">Vezi Camerele</span><span data-lang="en">View Rooms</span></a>
             </div>
         </div>
     </section>
@@ -135,25 +139,27 @@
         <div class="grid-2">
             <div class="story-text">
                 <div class="section-header align-left">
-                    <span>Povestea Noastră</span>
-                    <h2>Mai mult decât un hotel,<br>o destinație în Cheile Râșnoavei.</h2>
+                    <span><span data-lang="ro">Povestea Noastră</span><span data-lang="en">Our Story</span></span>
+                    <h2><span data-lang="ro">Mai mult decât un hotel,<br>o destinație în Cheile Râșnoavei.</span><span data-lang="en">More than a hotel,<br>a destination in Râșnoavei Gorge.</span></h2>
                     <div class="line"></div>
                 </div>
-                <p class="desc-text">Situat în sud-estul Transilvaniei, la doar 5 km de orașul Râșnov, Complexul Turistic Conca Verde se află într-o vale înconjurată de dealuri, izvoare și o coroană de munți cu păduri de brad și fag.</p>
-                <p class="desc-text">Pe o suprafață de 20.000 mp, complexul reunește un hotel elegant cu arhitectură rustică, un restaurant cu 300 de locuri și spații generoase pentru evenimente. Departe de agitație, dar la doar 5 minute de Dino Parc și Cetatea Râșnov.</p>
+                <p class="desc-text" data-lang="ro">Situat în sud-estul Transilvaniei, la doar 5 km de orașul Râșnov, Complexul Turistic Conca Verde se află într-o vale înconjurată de dealuri, izvoare și o coroană de munți cu păduri de brad și fag.</p>
+                <p class="desc-text" data-lang="en">Located in southeastern Transylvania, just 5 km from Râșnov, Conca Verde Resort sits in a valley surrounded by hills, springs and a crown of mountains covered with fir and beech forests.</p>
+                <p class="desc-text" data-lang="ro">Pe o suprafață de 20.000 mp, complexul reunește un hotel elegant cu arhitectură rustică, un restaurant cu 300 de locuri și spații generoase pentru evenimente. Departe de agitație, dar la doar 5 minute de Dino Parc și Cetatea Râșnov.</p>
+                <p class="desc-text" data-lang="en">Spread across 20,000 sqm, the resort combines an elegant rustic hotel, a 300-seat restaurant and spacious event halls. Away from the hustle, yet just 5 minutes from Dino Parc and Râșnov Fortress.</p>
                 
                 <div class="stats-row">
                     <div class="stat-box">
                         <p class="stat-number">20.000</p>
-                        <span>mp Natură</span>
+                        <span><span data-lang="ro">mp Natură</span><span data-lang="en">sqm of Nature</span></span>
                     </div>
                     <div class="stat-box">
                         <p class="stat-number">300</p>
-                        <span>Locuri Restaurant</span>
+                        <span><span data-lang="ro">Locuri Restaurant</span><span data-lang="en">Restaurant Seats</span></span>
                     </div>
                     <div class="stat-box">
                         <p class="stat-number">18</p>
-                        <span>Camere & Apartamente</span>
+                        <span><span data-lang="ro">Camere & Apartamente</span><span data-lang="en">Rooms & Apartments</span></span>
                     </div>
                 </div>
             </div>
@@ -161,7 +167,7 @@
                 <img src="assets/img/exterior.jpeg" class="story-img" alt="Exterior Complex Turistic Conca Verde în Cheile Râșnoavei, lângă Brașov" width="600" height="400" loading="lazy">
                 <a href="https://www.google.com/maps/place/45%C2%B033'12.2%22N+25%C2%B029'19.2%22E/@45.553397,25.488664,17z" target="_blank" class="review-badge" style="text-decoration:none;" rel="noopener">
                     <p class="score">⭐ 4.4 / 5</p>
-                    <p class="source">Recenzii Google →</p>
+                    <p class="source"><span data-lang="ro">Recenzii Google →</span><span data-lang="en">Google Reviews →</span></p>
                 </a>
             </div>
         </div>
@@ -170,8 +176,8 @@
     <section class="bg-sand spatiu-mare">
         <div class="container">
             <div class="section-header">
-                <span>Experiențe</span>
-                <h2>Ce îți oferim la Conca Verde?</h2>
+                <span><span data-lang="ro">Experiențe</span><span data-lang="en">Experiences</span></span>
+                <h2><span data-lang="ro">Ce îți oferim la Conca Verde?</span><span data-lang="en">What we offer at Conca Verde</span></h2>
                 <div class="line center"></div>
             </div>
 
@@ -181,10 +187,10 @@
                         <img src="assets/img/cazare-card.jpeg" alt="Cazare Conca Verde — Camere cu balcon și TV satelit în Cheile Râșnoavei" width="400" height="267" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3>Cazare Premium</h3>
-                        <p>18 camere cu balcon, TV satelit, minibar și internet. Arhitectură rustică pe 2 niveluri, cu vedere spre munți.</p>
-                        <span class="price-hint">De la 250 lei / noapte</span>
-                        <a href="cazare.html" class="btn-link">Vezi Camerele</a>
+                        <h3><span data-lang="ro">Cazare Premium</span><span data-lang="en">Premium Rooms</span></h3>
+                        <p><span data-lang="ro">18 camere cu balcon, TV satelit, minibar și internet. Arhitectură rustică pe 2 niveluri, cu vedere spre munți.</span><span data-lang="en">18 rooms with balcony, satellite TV, minibar and Wi-Fi. Rustic architecture on 2 levels, with mountain views.</span></p>
+                        <span class="price-hint"><span data-lang="ro">De la 250 lei / noapte</span><span data-lang="en">From 250 RON / night</span></span>
+                        <a href="cazare.html" class="btn-link"><span data-lang="ro">Vezi Camerele</span><span data-lang="en">View Rooms</span></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -193,8 +199,8 @@
                     </div>
                     <div class="card-body">
                         <h3>Restaurant & Bar</h3>
-                        <p>Capacitate 300 de locuri, terasă, bar și muzică live în fiecare weekend. Ingrediente locale, gust autentic.</p>
-                        <a href="restaurant.html" class="btn-link">Vezi Meniul</a>
+                        <p><span data-lang="ro">Capacitate 300 de locuri, terasă, bar și muzică live în fiecare weekend. Ingrediente locale, gust autentic.</span><span data-lang="en">300-seat capacity, terrace, bar and live music every weekend. Local ingredients, authentic taste.</span></p>
+                        <a href="restaurant.html" class="btn-link"><span data-lang="ro">Vezi Meniul</span><span data-lang="en">View Menu</span></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -202,9 +208,9 @@
                         <img src="assets/img/evenimente-card.jpeg" alt="Evenimente Conca Verde — Nunți, botezuri și corporate lângă Brașov" width="400" height="267" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3>Evenimente & Corporate</h3>
-                        <p>Sală pentru 240 persoane + separeu 60 locuri. Nunți, botezuri, conferințe și teambuilding în natură.</p>
-                        <a href="evenimente.html" class="btn-link">Organizează Eveniment</a>
+                        <h3><span data-lang="ro">Evenimente & Corporate</span><span data-lang="en">Events & Corporate</span></h3>
+                        <p><span data-lang="ro">Sală pentru 240 persoane + separeu 60 locuri. Nunți, botezuri, conferințe și teambuilding în natură.</span><span data-lang="en">Hall for 240 guests + private room for 60. Weddings, christenings, conferences and team building in nature.</span></p>
+                        <a href="evenimente.html" class="btn-link"><span data-lang="ro">Organizează Eveniment</span><span data-lang="en">Plan Your Event</span></a>
                     </div>
                 </div>
             </div>
@@ -213,9 +219,9 @@
 
     <section class="parallax-section">
         <div class="parallax-content">
-            <h2>Nunta ta de vis în inima naturii</h2>
-            <p>Imaginează-ți ceremonia pe iarbă verde, înconjurată de pădure, urmată de o petrecere în sala noastră de 240 locuri sau pe terasă.</p>
-            <a href="evenimente.html" class="btn-outline">Cere o ofertă personalizată</a>
+            <h2><span data-lang="ro">Nunta ta de vis în inima naturii</span><span data-lang="en">Your dream wedding in the heart of nature</span></h2>
+            <p><span data-lang="ro">Imaginează-ți ceremonia pe iarbă verde, înconjurată de pădure, urmată de o petrecere în sala noastră de 240 locuri sau pe terasă.</span><span data-lang="en">Imagine the ceremony on green grass, surrounded by forest, followed by a celebration in our 240-seat hall or on the terrace.</span></p>
+            <a href="evenimente.html" class="btn-outline"><span data-lang="ro">Cere o ofertă personalizată</span><span data-lang="en">Request a personalized offer</span></a>
         </div>
     </section>
 
@@ -223,39 +229,39 @@
     <section class="bg-sand spatiu-mare">
         <div class="container">
             <div class="section-header">
-                <span>Ce spun oaspeții noștri</span>
-                <h2>Recenzii de la clienți reali</h2>
+                <span><span data-lang="ro">Ce spun oaspeții noștri</span><span data-lang="en">What our guests say</span></span>
+                <h2><span data-lang="ro">Recenzii de la clienți reali</span><span data-lang="en">Reviews from real guests</span></h2>
                 <div class="line center"></div>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Locație superbă, înconjurată de natură. Camerele sunt curate și spațioase, personalul foarte amabil. Am revenit cu drag!"</p>
+                    <p class="testimonial-text"><span data-lang="ro">"Locație superbă, înconjurată de natură. Camerele sunt curate și spațioase, personalul foarte amabil. Am revenit cu drag!"</span><span data-lang="en">"Superb location, surrounded by nature. Rooms are clean and spacious, staff very friendly. We came back with pleasure!"</span></p>
                     <p class="testimonial-author">Maria D.</p>
                     <p class="testimonial-source">Google Reviews</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Am organizat nunta aici și a fost perfectă. Sala mare, mâncare excelentă, peisaj de vis. Invitații au fost încântați!"</p>
+                    <p class="testimonial-text"><span data-lang="ro">"Am organizat nunta aici și a fost perfectă. Sala mare, mâncare excelentă, peisaj de vis. Invitații au fost încântați!"</span><span data-lang="en">"We organized our wedding here and it was perfect. Large hall, excellent food, dreamy scenery. Our guests were thrilled!"</span></p>
                     <p class="testimonial-author">Andreea & Radu P.</p>
                     <p class="testimonial-source">Google Reviews</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★☆</div>
-                    <p class="testimonial-text">"Restaurant foarte bun, porții generoase, prețuri corecte. Terasa e minunată vara. Recomand ciorba și păstrăvul!"</p>
+                    <p class="testimonial-text"><span data-lang="ro">"Restaurant foarte bun, porții generoase, prețuri corecte. Terasa e minunată vara. Recomand ciorba și păstrăvul!"</span><span data-lang="en">"Very good restaurant, generous portions, fair prices. The terrace is wonderful in summer. I recommend the soup and trout!"</span></p>
                     <p class="testimonial-author">Ion M.</p>
                     <p class="testimonial-source">Restaurant Guru</p>
                 </div>
             </div>
             <div style="text-align:center; margin-top:24px;">
-                <a href="https://www.google.com/maps/search/Conca+Verde+Cheile+Rasnoavei/@45.553397,25.488664,17z" target="_blank" rel="noopener" class="btn-link" style="color:var(--gold);">Vezi toate recenziile pe Google →</a>
+                <a href="https://www.google.com/maps/search/Conca+Verde+Cheile+Rasnoavei/@45.553397,25.488664,17z" target="_blank" rel="noopener" class="btn-link" style="color:var(--gold);"><span data-lang="ro">Vezi toate recenziile pe Google →</span><span data-lang="en">See all reviews on Google →</span></a>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp Float -->
     <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20informații%20despre%20Conca%20Verde." target="_blank" rel="noopener" class="wa-float" aria-label="Contactează-ne pe WhatsApp" data-track="whatsapp-float">
-        <span class="wa-float-label">Scrie-ne pe WhatsApp</span>
+        <span class="wa-float-label"><span data-lang="ro">Scrie-ne pe WhatsApp</span><span data-lang="en">Message us on WhatsApp</span></span>
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
@@ -270,7 +276,7 @@
                 </div>
             </div>
             <div class="footer-col">
-                <h4 class="footer-title">Navigare</h4>
+                <h4 class="footer-title"><span data-lang="ro">Navigare</span><span data-lang="en">Navigation</span></h4>
                 <ul>
                     <li><a href="cazare.html">Cazare &amp; Tarife</a></li>
                     <li><a href="restaurant.html">Restaurant</a></li>
@@ -281,7 +287,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 class="footer-title">Locații deservite</h4>
+                <h4 class="footer-title"><span data-lang="ro">Locații deservite</span><span data-lang="en">Areas Served</span></h4>
                 <p style="font-size:0.85rem; line-height:1.8; color:#aaa;">Râșnov · Brașov · Bran · Poiana Brașov · Predeal · Zărnești · Sinaia · Bușteni · Azuga · Făgăraș · Sibiu · Valea Prahovei · București · Ploiești</p>
             </div>
             <div class="footer-col">
@@ -290,11 +296,11 @@
                 <p>📞 <a href="tel:+40799597083" style="color:#c5a059;" data-track="phone-footer">0799 597 083</a></p>
                 <p>📞 <a href="tel:+40733228872" style="color:#c5a059;" data-track="phone-footer">0733 228 872</a></p>
                 <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;" data-track="email-footer">receptie@concaverde.ro</a></p>
-                <p class="highlight-gold">Program Recepție: Non-Stop</p>
+                <p class="highlight-gold"><span data-lang="ro">Program Recepție: Non-Stop</span><span data-lang="en">Reception: 24/7</span></p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.
+            &copy; 2026 Complex Turistic Conca Verde. <span data-lang="ro">Toate drepturile rezervate.</span><span data-lang="en">All rights reserved.</span>
         </div>
     </footer>
 
