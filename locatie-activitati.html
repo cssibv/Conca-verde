@@ -453,6 +453,20 @@
         </div>
     </footer>
 
+    <!-- GA4 Event Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',page:location.pathname}); });
+        });
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname}); });
+        });
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','email_click',{event_category:'contact',event_label:el.href.replace('mailto:',''),page:location.pathname}); });
+        });
+    });
+    </script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
