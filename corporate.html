@@ -1425,6 +1425,29 @@
 
     <script src="assets/js/script.js"></script>
 
+    <!-- FAQ Toggle -->
+    <script>
+    function toggleFaq(btn) {
+        var answer = btn.nextElementSibling;
+        var isOpen = btn.classList.contains('open');
+        // Close all other FAQs
+        document.querySelectorAll('.faq-q.open').forEach(function(q) {
+            if (q !== btn) {
+                q.classList.remove('open');
+                q.nextElementSibling.style.maxHeight = null;
+            }
+        });
+        // Toggle clicked
+        if (isOpen) {
+            btn.classList.remove('open');
+            answer.style.maxHeight = null;
+        } else {
+            btn.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    }
+    </script>
+
     <script>
         function submitForm() {
             const name = document.getElementById('f-name').value.trim();
