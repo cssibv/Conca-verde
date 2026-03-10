@@ -336,3 +336,16 @@ document.addEventListener('DOMContentLoaded', function() {
     try { saved = localStorage.getItem('cv-lang') || 'ro'; } catch(e) {}
     setLang(saved);
 });
+
+/* ========================================
+   PDF SAVE BUTTON
+   ======================================== */
+document.addEventListener('DOMContentLoaded', function() {
+    var pdfBtn = document.querySelector('.pdf-float');
+    if (pdfBtn) {
+        pdfBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.print();
+        });
+    }
+});
