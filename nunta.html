@@ -291,24 +291,7 @@
     document.addEventListener('DOMContentLoaded',function(){
         document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',page:location.pathname})})});
         document.querySelectorAll('a[href^="tel:"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname})})});
-        // FAQ toggle — delay to avoid script.js override
-        setTimeout(function(){
-            document.querySelectorAll('.faq-question').forEach(function(q){
-                q.addEventListener('click',function(e){
-                    e.preventDefault();
-                    var a=this.nextElementSibling;
-                    var isOpen=this.getAttribute('aria-expanded')==='true';
-                    document.querySelectorAll('.faq-question').forEach(function(qq){
-                        qq.setAttribute('aria-expanded','false');
-                        qq.nextElementSibling.classList.remove('open');
-                    });
-                    if(!isOpen){
-                        this.setAttribute('aria-expanded','true');
-                        a.classList.add('open');
-                    }
-                });
-            });
-        }, 300);
+
     });
     </script>
     <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
