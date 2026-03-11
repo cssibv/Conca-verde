@@ -199,6 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.eventType) message += '🎉 Tip: ' + data.eventType + '\n';
                 if (data.date) message += '📅 Dată: ' + data.date + '\n';
                 if (data.guests) message += '👥 Persoane: ' + data.guests + '\n';
+            } else if (leadType === 'cazare') {
+                message += 'Doresc să fac o rezervare de cazare la Conca Verde.\n\n';
+                if (data.name) message += '👤 Nume: ' + data.name + '\n';
+                if (data.phone) message += '📞 Telefon: ' + data.phone + '\n';
+                if (data.checkin) message += '📅 Check-in: ' + data.checkin + '\n';
+                if (data.checkout) message += '📅 Check-out: ' + data.checkout + '\n';
+                if (data.roomType) message += '🛏️ Tip cameră: ' + data.roomType + '\n';
+                if (data.guests) message += '👥 Persoane: ' + data.guests + '\n';
             } else if (leadType === 'contact') {
                 message += 'Am un mesaj pentru Conca Verde.\n\n';
                 if (data.name) message += '👤 Nume: ' + data.name + '\n';
