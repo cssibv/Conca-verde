@@ -1086,34 +1086,78 @@
     <script>
     document.addEventListener('DOMContentLoaded', function(){
         var barAnchorIds = ['bar-rece','bar-calde','bar-alcool','bar-cocktails'];
-        // Tag each .menu-category with data-group
+
+        // 1. Tag each .menu-category with data-group="food" or "bar"
         document.querySelectorAll('.menu-category').forEach(function(cat){
             var isBar = false;
             barAnchorIds.forEach(function(id){
-                if(cat.querySelector('#'+id)) isBar = true;
+                if(cat.querySelector('#'+id) || cat.querySelector('[id="'+id+'"]')) isBar = true;
             });
             cat.dataset.group = isBar ? 'bar' : 'food';
         });
-        // Hide bar categories by default
-        document.querySelectorAll('.menu-category[data-group="bar"]').forEach(function(c){ c.style.display='none'; });
-        // Toggle buttons
+
+        // 2. Detect if URL hash points to a bar section
+        var hash = window.location.hash.replace('#','');
+        var startGroup = barAnchorIds.indexOf(hash) !== -1 ? 'bar' : 'food';
+
+        // 3. Function to switch between food/bar
+        function switchGroup(group){
+            // Buttons
+            document.querySelectorAll('.menu-nav-toggle').forEach(function(b){
+                var isActive = b.dataset.group === group;
+                b.classList.toggle('active', isActive);
+                b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            // Sub-nav (Mic dejun/Aperitive vs Răcoritoare/Calde)
+            document.querySelectorAll('.menu-nav-group').forEach(function(n){
+                var show = n.dataset.group === group;
+                n.classList.toggle('active', show);
+                n.style.display = show ? 'flex' : 'none';
+            });
+            // Content sections
+            document.querySelectorAll('.menu-category').forEach(function(c){
+                c.style.display = c.dataset.group === group ? '' : 'none';
+            });
+        }
+
+        // 4. Initialize with correct group
+        switchGroup(startGroup);
+
+        // 5. If hash exists, scroll to it after switching
+        if(hash && document.getElementById(hash)){
+            setTimeout(function(){
+                document.getElementById(hash).scrollIntoView({behavior:'smooth', block:'start'});
+            }, 100);
+        }
+
+        // 6. Click handlers on Mâncare/Bar buttons
         document.querySelectorAll('.menu-nav-toggle').forEach(function(btn){
-            btn.addEventListener('click', function(){
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
                 var group = btn.dataset.group;
-                // Toggle active state on buttons
-                document.querySelectorAll('.menu-nav-toggle').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-                btn.classList.add('active'); btn.setAttribute('aria-selected','true');
-                // Toggle nav groups
-                document.querySelectorAll('.menu-nav-group').forEach(function(n){ n.classList.remove('active'); n.style.display='none'; });
-                var activeNav = document.querySelector('.menu-nav-group[data-group="'+group+'"]');
-                if(activeNav){ activeNav.classList.add('active'); activeNav.style.display='flex'; }
-                // Toggle content sections
-                document.querySelectorAll('.menu-category').forEach(function(c){
-                    c.style.display = c.dataset.group === group ? '' : 'none';
-                });
-                // Scroll to first visible category
+                switchGroup(group);
+                // Scroll to first visible section
                 var first = document.querySelector('.menu-category[data-group="'+group+'"]');
-                if(first) first.scrollIntoView({behavior:'smooth', block:'start'});
+                if(first) setTimeout(function(){ first.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+            });
+        });
+
+        // 7. Sub-nav links (Răcoritoare, Calde etc.) — ensure they switch group first
+        document.querySelectorAll('.menu-nav-group a[href^="#"]').forEach(function(link){
+            link.addEventListener('click', function(e){
+                var targetId = link.getAttribute('href').replace('#','');
+                var targetGroup = barAnchorIds.indexOf(targetId) !== -1 ? 'bar' : 'food';
+                // Switch group if needed
+                var currentGroup = document.querySelector('.menu-nav-toggle.active');
+                if(currentGroup && currentGroup.dataset.group !== targetGroup){
+                    switchGroup(targetGroup);
+                }
+                // Scroll to target
+                var target = document.getElementById(targetId);
+                if(target){
+                    e.preventDefault();
+                    setTimeout(function(){ target.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+                }
             });
         });
     });
