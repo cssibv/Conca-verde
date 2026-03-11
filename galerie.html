@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie foto Complex Turistic Conca Verde – Cheile Râșnoavei. Hotel, restaurant, sală evenimente, natură și activități lângă Brașov.">
+    <title>Galerie Foto – Complex Turistic Conca Verde | Cheile Râșnoavei, Brașov</title>
+    <link rel="canonical" href="https://concaverde.ro/galerie.html">
+    <meta property="og:title" content="Galerie Foto | Complex Turistic Conca Verde">
+    <meta property="og:description" content="Descoperă în imagini Complexul Turistic Conca Verde din Cheile Râșnoavei – hotel, restaurant, evenimente și natură.">
+    <meta property="og:image" content="https://concaverde.ro/assets/img/og-default.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ro_RO">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGSRGB0BCS"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XGSRGB0BCS');</script>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Lang */
+        .lang-switcher{display:flex;align-items:center;gap:6px;margin-right:10px}
+        .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:1px;padding:4px 10px;border-radius:3px;cursor:pointer;font-family:var(--font-body);transition:.3s}
+        .lang-btn.active{background:var(--gold);border-color:var(--gold)}
+        .lang-btn:hover:not(.active){border-color:var(--gold);color:var(--gold)}
+        header.scrolled .lang-btn{color:var(--primary);border-color:var(--primary)}
+        header.scrolled .lang-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
+
+        /* Gallery Filter */
+        .gallery-filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+        .gf-btn{padding:10px 24px;border:2px solid #e0d8cc;border-radius:50px;background:transparent;font-family:var(--font-body);font-size:.9rem;font-weight:600;color:var(--primary);cursor:pointer;transition:.3s}
+        .gf-btn.active,.gf-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+        /* Gallery Grid */
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+        .gallery-item{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#f0ebe3}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .3s}
+        .gallery-item:hover img{transform:scale(1.06);filter:brightness(1.08)}
+        .gallery-item .gi-overlay{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(30,58,41,.7));opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:20px}
+        .gallery-item:hover .gi-overlay{opacity:1}
+        .gi-overlay span{color:#fff;font-size:.9rem;font-weight:600}
+
+        /* Lightbox */
+        .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:20px}
+        .lightbox.open{display:flex}
+        .lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+        .lb-close{position:absolute;top:20px;right:30px;color:#fff;font-size:2.5rem;cursor:pointer;z-index:10000;line-height:1;opacity:.7;transition:.2s}
+        .lb-close:hover{opacity:1;transform:scale(1.2)}
+        .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:3rem;cursor:pointer;opacity:.6;transition:.2s;user-select:none;padding:20px}
+        .lb-prev:hover,.lb-next:hover{opacity:1}
+        .lb-prev{left:10px}
+        .lb-next{right:10px}
+        .lb-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-size:.95rem;text-align:center;max-width:600px}
+        .lb-counter{position:absolute;top:25px;left:30px;color:rgba(255,255,255,.6);font-size:.85rem}
+
+        @media(max-width:768px){
+            .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+            .gallery-item{border-radius:8px}
+            .lb-prev,.lb-next{font-size:2rem;padding:10px}
+            .gf-btn{padding:8px 16px;font-size:.8rem}
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://concaverde.ro/"},{"@type":"ListItem","position":2,"name":"Galerie","item":"https://concaverde.ro/galerie"}]}
+    </script>
+</head>
+<body data-page="galerie">
+    <a href="#main" class="skip-link">Sari la conținut</a>
+
+    <header id="navbar">
+        <a href="/" class="logo-container">
+            <img src="assets/img/logo.png" alt="Conca Verde Logo" class="site-logo">
+        </a>
+        <div class="hamburger" aria-label="Deschide meniul" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a></li>
+            <li><a href="cazare.html"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></a></li>
+            <li><a href="restaurant.html">Restaurant</a></li>
+            <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="locatie-activitati.html"><span data-lang="ro">Locație</span><span data-lang="en">Location</span></a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" rel="noopener noreferrer" class="btn-nav"><span data-lang="ro">Rezervă Acum</span><span data-lang="en">Book Now</span></a></li>
+        </ul>
+    </header>
+
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/exterior.jpeg');">
+        <div class="header-content">
+            <h1><span data-lang="ro">Galerie Foto</span><span data-lang="en">Photo Gallery</span></h1>
+            <p><span data-lang="ro">Descoperă Conca Verde în imagini</span><span data-lang="en">Discover Conca Verde through images</span></p>
+        </div>
+    </section>
+
+    <section class="container spatiu-mare" id="main">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a><span class="sep">›</span><strong><span data-lang="ro">Galerie</span><span data-lang="en">Gallery</span></strong>
+        </nav>
+
+        <div class="section-header" style="margin-top:16px;">
+            <span><span data-lang="ro">Fotografii</span><span data-lang="en">Photos</span></span>
+            <h2><span data-lang="ro">Complexul în imagini</span><span data-lang="en">The resort in images</span></h2>
+            <div class="line center"></div>
+        </div>
+
+        <div class="gallery-filters">
+            <button class="gf-btn active" data-filter="all"><span data-lang="ro">Toate</span><span data-lang="en">All</span></button>
+            <button class="gf-btn" data-filter="exterior"><span data-lang="ro">Exterior & Natură</span><span data-lang="en">Exterior & Nature</span></button>
+            <button class="gf-btn" data-filter="cazare"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></button>
+            <button class="gf-btn" data-filter="restaurant"><span data-lang="ro">Restaurant</span><span data-lang="en">Restaurant</span></button>
+            <button class="gf-btn" data-filter="evenimente"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></button>
+            <button class="gf-btn" data-filter="activitati"><span data-lang="ro">Activități</span><span data-lang="en">Activities</span></button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Exterior & Natură -->
+            <div class="gallery-item" data-cat="exterior" data-caption-ro="Complexul Conca Verde – vedere exterioară" data-caption-en="Conca Verde Resort – exterior view">
+                <img src="assets/img/exterior.jpeg" alt="Exterior Complex Turistic Conca Verde" width="600" height="400" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Vedere exterioară</span><span data-lang="en">Exterior view</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="exterior" data-caption-ro="Cheile Râșnoavei – natură sălbatică" data-caption-en="Râșnoavei Gorge – wild nature">
+                <img src="assets/img/cheile-rasnoavei.webp" alt="Cheile Râșnoavei lângă Conca Verde" width="600" height="400" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Cheile Râșnoavei</span><span data-lang="en">Râșnoavei Gorge</span></span></div>
+            </div>
+
+            <!-- Cazare -->
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Interior hotel – recepție și lounge" data-caption-en="Hotel interior – reception and lounge">
+                <img src="assets/img/hotel-interior.jpeg" alt="Interior Hotel Conca Verde" width="800" height="533" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Interior hotel</span><span data-lang="en">Hotel interior</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Cameră dublă – vedere 1" data-caption-en="Double room – view 1">
+                <img src="assets/img/camera-dubla1.jpeg" alt="Cameră Dublă Conca Verde" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Cameră dublă</span><span data-lang="en">Double room</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Cameră dublă – vedere 2" data-caption-en="Double room – view 2">
+                <img src="assets/img/camera-dubla2.jpeg" alt="Cameră Dublă Conca Verde – alt unghi" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Cameră dublă</span><span data-lang="en">Double room</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Cameră dublă – vedere 3" data-caption-en="Double room – view 3">
+                <img src="assets/img/camera-dubla3.jpeg" alt="Cameră Dublă Conca Verde – baie" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Cameră dublă</span><span data-lang="en">Double room</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament cu living separat" data-caption-en="Apartment with separate living room">
+                <img src="assets/img/apartament-living1.jpeg" alt="Apartament cu Living Conca Verde" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Apartament living</span><span data-lang="en">Living apartment</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament cu living – dormitor" data-caption-en="Living apartment – bedroom">
+                <img src="assets/img/apartament-living2.jpeg" alt="Apartament Living Conca Verde – dormitor" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Dormitor apartament</span><span data-lang="en">Apartment bedroom</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament 2 camere" data-caption-en="2-bedroom apartment">
+                <img src="assets/img/apartament-2camere1.jpeg" alt="Apartament 2 Camere Conca Verde" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Apartament 2 camere</span><span data-lang="en">2-bedroom apartment</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament 2 camere – alt unghi" data-caption-en="2-bedroom apartment – another angle">
+                <img src="assets/img/apartament-2camere2.jpeg" alt="Apartament 2 Camere – vedere" width="750" height="500" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Apartament 2 camere</span><span data-lang="en">2-bedroom apartment</span></span></div>
+            </div>
+
+            <!-- Restaurant -->
+            <div class="gallery-item" data-cat="restaurant" data-caption-ro="Restaurant Conca Verde – interior" data-caption-en="Conca Verde Restaurant – interior">
+                <img src="assets/img/restaurant-card.jpeg" alt="Restaurant Conca Verde" width="400" height="267" loading="lazy">
+                <div class="gi-overlay"><span>Restaurant</span></div>
+            </div>
+
+            <!-- Evenimente -->
+            <div class="gallery-item" data-cat="evenimente" data-caption-ro="Nuntă în aer liber la Conca Verde" data-caption-en="Outdoor wedding at Conca Verde">
+                <img src="assets/img/nunta.jpg" alt="Nuntă la Conca Verde Râșnov" width="680" height="510" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Nuntă în natură</span><span data-lang="en">Outdoor wedding</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="evenimente" data-caption-ro="Sala mare – 240 locuri" data-caption-en="Main hall – 240 seats">
+                <img src="assets/img/sala-mare.jpg" alt="Sala evenimente Conca Verde" width="383" height="510" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Sala mare</span><span data-lang="en">Main hall</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="evenimente" data-caption-ro="Separeu – 60 locuri" data-caption-en="Private room – 60 seats">
+                <img src="assets/img/separeu.jpg" alt="Separeu Conca Verde" width="680" height="510" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Separeu privat</span><span data-lang="en">Private room</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="evenimente" data-caption-ro="Eveniment corporate la Conca Verde" data-caption-en="Corporate event at Conca Verde">
+                <img src="assets/img/evenimente-card.jpeg" alt="Evenimente corporate Conca Verde" width="400" height="267" loading="lazy">
+                <div class="gi-overlay"><span>Corporate</span></div>
+            </div>
+
+            <!-- Activități -->
+            <div class="gallery-item" data-cat="activitati" data-caption-ro="Activități de aventură în Cheile Râșnoavei" data-caption-en="Adventure activities in Râșnoavei Gorge">
+                <img src="assets/img/Activitati-adrenalina.jpg" alt="Activități aventură Conca Verde" width="600" height="400" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Aventură în chei</span><span data-lang="en">Gorge adventure</span></span></div>
+            </div>
+            <div class="gallery-item" data-cat="exterior" data-caption-ro="Cazare – vedere generală complex" data-caption-en="Accommodation – resort overview">
+                <img src="assets/img/cazare-card.jpeg" alt="Cazare Conca Verde" width="400" height="267" loading="lazy">
+                <div class="gi-overlay"><span><span data-lang="ro">Complex turistic</span><span data-lang="en">Resort overview</span></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="parallax-section">
+        <div class="parallax-content">
+            <h2><span data-lang="ro">Vrei să vezi totul live?</span><span data-lang="en">Want to see it all in person?</span></h2>
+            <p><span data-lang="ro">Rezervă o vizită sau un sejur la Conca Verde.</span><span data-lang="en">Book a visit or a stay at Conca Verde.</span></p>
+            <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+                <a href="cazare.html" class="btn-outline"><span data-lang="ro">Vezi Camerele</span><span data-lang="en">View Rooms</span></a>
+                <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20informații%20despre%20Conca%20Verde." target="_blank" rel="noopener noreferrer" class="btn-outline" style="background:var(--gold); color:#fff; border-color:var(--gold);"><span data-lang="ro">Contactează-ne</span><span data-lang="en">Contact Us</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+        <span class="lb-close" id="lbClose" aria-label="Închide">&times;</span>
+        <span class="lb-prev" id="lbPrev" aria-label="Anterioara">&#8249;</span>
+        <span class="lb-next" id="lbNext" aria-label="Următoarea">&#8250;</span>
+        <img src="" alt="" id="lbImg">
+        <div class="lb-caption" id="lbCaption"></div>
+        <div class="lb-counter" id="lbCounter"></div>
+    </div>
+
+    <button class="pdf-float" aria-label="Salvează PDF"><span class="pdf-float-label"><span data-lang="ro">Salvează PDF</span><span data-lang="en">Save as PDF</span></span><svg viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg></button>
+    <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20informații%20Conca%20Verde." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><span class="wa-float-label"><span data-lang="ro">Scrie-ne pe WhatsApp</span><span data-lang="en">Message us on WhatsApp</span></span><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+    <footer>
+        <div class="container grid-footer">
+            <div class="footer-col">
+                <img src="assets/img/logo.png" alt="Conca Verde Logo" style="height: 60px; margin-bottom: 12px;">
+                <p><span data-lang="ro">Complex turistic cu pensiune, restaurant și sală de evenimente în Cheile Râșnoavei, Râșnov. La 18 km de Brașov, 20 km de Bran.</span><span data-lang="en">Tourism resort with guesthouse, restaurant and event hall in Râșnoavei Gorge, Râșnov. 18 km from Brașov, 20 km from Bran.</span></p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100057072535199" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/conca.verde/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title"><span data-lang="ro">Navigare</span><span data-lang="en">Navigation</span></h4>
+                <ul>
+                    <li><a href="cazare.html"><span data-lang="ro">Cazare &amp; Tarife</span><span data-lang="en">Rooms &amp; Rates</span></a></li>
+                    <li><a href="restaurant.html"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
+                    <li><a href="evenimente.html"><span data-lang="ro">Evenimente Private</span><span data-lang="en">Private Events</span></a></li>
+                    <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="locatie-activitati.html"><span data-lang="ro">Locație &amp; Activități</span><span data-lang="en">Location &amp; Activities</span></a></li>
+                    <li style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.1);"><a href="politica-confidentialitate.html">Politica de Confidențialitate</a></li>
+                    <li><a href="termeni.html">Termeni și Condiții</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title"><span data-lang="ro">Locații deservite</span><span data-lang="en">Areas Served</span></h4>
+                <p style="font-size:0.85rem; line-height:1.8; color:#aaa;">Râșnov · Brașov · Bran · Poiana Brașov · Predeal · Zărnești · Sinaia · Bușteni · Azuga · Făgăraș · Sibiu · Valea Prahovei · București · Ploiești</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
+                <p>📞 <a href="tel:+40799597083" style="color:#c5a059;">0799 597 083</a></p>
+                <p>📞 <a href="tel:+40733228872" style="color:#c5a059;">0733 228 872</a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059;">receptie@concaverde.ro</a></p>
+                <p class="highlight-gold"><span data-lang="ro">Program Recepție: Non-Stop</span><span data-lang="en">Reception: 24/7</span></p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Complex Turistic Conca Verde. <span data-lang="ro">Toate drepturile rezervate.</span><span data-lang="en">All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Gallery + Lightbox JS -->
+    <script>
+    (function(){
+        // Filter
+        var btns = document.querySelectorAll('.gf-btn');
+        var items = document.querySelectorAll('.gallery-item');
+        btns.forEach(function(btn){
+            btn.addEventListener('click', function(){
+                btns.forEach(function(b){ b.classList.remove('active'); });
+                btn.classList.add('active');
+                var f = btn.dataset.filter;
+                items.forEach(function(item){
+                    item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
+                });
+            });
+        });
+
+        // Lightbox
+        var lb = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lbImg');
+        var lbCaption = document.getElementById('lbCaption');
+        var lbCounter = document.getElementById('lbCounter');
+        var currentIdx = 0;
+        var visibleItems = [];
+
+        function getVisible(){
+            return Array.from(items).filter(function(i){ return i.style.display !== 'none'; });
+        }
+
+        function openLb(idx){
+            visibleItems = getVisible();
+            currentIdx = idx;
+            showSlide();
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showSlide(){
+            var item = visibleItems[currentIdx];
+            var img = item.querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            var lang = document.body.classList.contains('lang-en') ? 'en' : 'ro';
+            lbCaption.textContent = item.dataset['caption' + lang.charAt(0).toUpperCase() + lang.slice(1)] || '';
+            lbCounter.textContent = (currentIdx + 1) + ' / ' + visibleItems.length;
+        }
+
+        function closeLb(){
+            lb.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        items.forEach(function(item, i){
+            item.addEventListener('click', function(){ openLb(Array.from(getVisible()).indexOf(item)); });
+        });
+
+        document.getElementById('lbClose').addEventListener('click', closeLb);
+        document.getElementById('lbPrev').addEventListener('click', function(){
+            currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length;
+            showSlide();
+        });
+        document.getElementById('lbNext').addEventListener('click', function(){
+            currentIdx = (currentIdx + 1) % visibleItems.length;
+            showSlide();
+        });
+        lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+        document.addEventListener('keydown', function(e){
+            if(!lb.classList.contains('open')) return;
+            if(e.key === 'Escape') closeLb();
+            if(e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+            if(e.key === 'ArrowRight') document.getElementById('lbNext').click();
+        });
+    })();
+    </script>
+
+    <!-- Lang Switcher -->
+    <script>
+    function setLang(lang){
+        document.body.classList.toggle('lang-en', lang === 'en');
+        document.querySelectorAll('.lang-btn').forEach(function(btn){
+            btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+        });
+        localStorage.setItem('cv-lang', lang);
+    }
+    var savedLang = localStorage.getItem('cv-lang') || 'ro';
+    setLang(savedLang);
+    </script>
+
+    <script>
+    window.__menuReady = false;
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            if(window.__menuReady) return;
+            var h=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');
+            if(!h||!n)return;
+            var o=document.createElement('div');o.className='nav-overlay';document.body.appendChild(o);
+            function toggle(){var isOpen=n.classList.contains('active');n.classList.toggle('active',!isOpen);h.classList.toggle('open',!isOpen);o.classList.toggle('active',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
+            h.addEventListener('click',toggle);
+            o.addEventListener('click',function(){n.classList.remove('active');h.classList.remove('open');o.classList.remove('active');document.body.style.overflow='';});
+        },1500);
+    });
+    </script>
+    <!-- GA4 Event Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',page:location.pathname}); });
+        });
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname}); });
+        });
+    });
+    </script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+</body>
+</html>

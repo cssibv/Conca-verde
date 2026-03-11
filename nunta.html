@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organizează nunta visurilor tale în natură la Conca Verde, Cheile Râșnoavei. Sală 240 locuri, ceremonie în aer liber, cazare 44 locuri, restaurant pe loc. La 18 km de Brașov.">
+    <title>Nuntă în Natură lângă Brașov – Sală Evenimente Cheile Râșnoavei | Conca Verde</title>
+    <link rel="canonical" href="https://concaverde.ro/nunta.html">
+    <meta property="og:title" content="Nuntă în Natură lângă Brașov | Complex Turistic Conca Verde">
+    <meta property="og:description" content="Ceremonie în aer liber, sală 240 locuri, cazare pe loc. Nuntă de vis în Cheile Râșnoavei, la 18 km de Brașov.">
+    <meta property="og:image" content="https://concaverde.ro/assets/img/og-default.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ro_RO">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGSRGB0BCS"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XGSRGB0BCS');</script>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        .lang-switcher{display:flex;align-items:center;gap:6px;margin-right:10px}
+        .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:1px;padding:4px 10px;border-radius:3px;cursor:pointer;font-family:var(--font-body);transition:.3s}
+        .lang-btn.active{background:var(--gold);border-color:var(--gold)}
+        .lang-btn:hover:not(.active){border-color:var(--gold);color:var(--gold)}
+        header.scrolled .lang-btn{color:var(--primary);border-color:var(--primary)}
+        header.scrolled .lang-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
+
+        /* Hero Landing */
+        .hero-nunta{height:95vh;min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(20,45,30,.85),rgba(30,58,41,.7)),url('assets/img/nunta.jpg') center/cover no-repeat}
+        .hero-nunta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(transparent,#fff);pointer-events:none}
+        .hero-nunta .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 22px;border-radius:50px;margin-bottom:28px;animation:fadeUp .8s ease both}
+        .hero-nunta h1{font-family:var(--font-head);font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.08;margin-bottom:22px;animation:fadeUp .9s .1s ease both}
+        .hero-nunta h1 em{color:var(--gold);font-style:normal}
+        .hero-nunta .lead{font-size:1.2rem;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 40px;font-weight:300;animation:fadeUp 1s .2s ease both}
+        .hero-ctas{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s .3s ease both}
+        .btn-gold{background:var(--gold);color:#fff;padding:16px 40px;border-radius:4px;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:1rem;transition:.3s;display:inline-block}
+        .btn-gold:hover{background:#fff;color:var(--primary)}
+        .btn-ghost{border:2px solid rgba(255,255,255,.6);color:#fff;padding:16px 40px;border-radius:4px;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:1px;transition:.3s;display:inline-block}
+        .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+        /* USP Strip */
+        .usp-strip{background:var(--primary);padding:24px 0}
+        .usp-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:20px}
+        .usp-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.9);font-size:1rem;font-weight:500}
+        .usp-item strong{color:var(--gold)}
+
+        /* Sections */
+        .wedding-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-top:50px}
+        .wf-card{background:#fff;border-radius:12px;padding:35px 25px;text-align:center;box-shadow:0 4px 25px rgba(0,0,0,.06);transition:.4s;border-top:3px solid transparent}
+        .wf-card:hover{transform:translateY(-8px);border-top-color:var(--gold);box-shadow:0 16px 50px rgba(30,58,41,.12)}
+        .wf-icon{font-size:2.6rem;margin-bottom:14px;display:block}
+        .wf-card h3{font-family:var(--font-head);font-size:1.3rem;color:var(--primary);margin-bottom:8px}
+        .wf-card p{color:#666;font-size:.95rem;line-height:1.7}
+
+        /* Form */
+        .nunta-form-wrap{background:#fff;border-radius:14px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+        .nunta-form-wrap h3{font-family:var(--font-head);font-size:1.5rem;color:var(--primary);margin-bottom:6px}
+        .form-subtitle{font-size:.92rem;color:#888;margin-bottom:25px}
+        .form-group{margin-bottom:15px}
+        .form-group label{display:block;font-size:.85rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid #e0d8cc;border-radius:6px;font-family:var(--font-body);font-size:.95rem;color:var(--text);background:#fafaf8;transition:.3s}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);outline:none;background:#fff}
+        .form-group textarea{resize:vertical;min-height:80px}
+        .btn-submit-nunta{width:100%;background:var(--gold);color:#fff;border:none;padding:16px;border-radius:6px;font-family:var(--font-body);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:.3s;margin-top:5px}
+        .btn-submit-nunta:hover{background:var(--primary)}
+        .form-note{text-align:center;font-size:.85rem;color:#aaa;margin-top:12px}
+        .form-success{display:none;text-align:center;padding:20px 0}
+        .form-success h4{color:var(--primary);font-family:var(--font-head);font-size:1.3rem;margin:10px 0 6px}
+
+        @keyframes fadeUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+        @media(max-width:768px){.usp-inner{flex-direction:column;gap:15px;text-align:center}.hero-ctas{flex-direction:column;align-items:center}}
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"EventVenue","name":"Conca Verde – Locație Nuntă în Natură","description":"Sală evenimente 300 locuri + ceremonie în aer liber pentru nunți la Conca Verde, Cheile Râșnoavei, lângă Brașov.","url":"https://concaverde.ro/nunta.html","maximumAttendeeCapacity":300,"telephone":"+40799597083","address":{"@type":"PostalAddress","streetAddress":"Cheile Râșnoavei, DN 73A, Km 55","addressLocality":"Râșnov","addressRegion":"Brașov","addressCountry":"RO"},"geo":{"@type":"GeoCoordinates","latitude":45.553397,"longitude":25.488664}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Câte persoane pot fi la nuntă la Conca Verde?","acceptedAnswer":{"@type":"Answer","text":"Sala principală: 240 locuri. Separeu: 60 locuri. Total: 300 locuri + terasă exterioară vara."}},
+        {"@type":"Question","name":"Se poate face ceremonia în aer liber?","acceptedAnswer":{"@type":"Answer","text":"Da, pe cei 20.000 mp ai complexului, cu munții Cheilor Râșnoavei ca decor natural."}},
+        {"@type":"Question","name":"Invitații pot fi cazați pe loc?","acceptedAnswer":{"@type":"Answer","text":"Da, 18 camere cu 44 locuri de cazare, pe același complex. Petrecerea continuă fără deplasare."}},
+        {"@type":"Question","name":"Cât costă o nuntă la Conca Verde?","acceptedAnswer":{"@type":"Answer","text":"Pachetele sunt personalizate. Contactați-ne pentru o ofertă pe măsură – răspundem în 24h."}}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://concaverde.ro/"},{"@type":"ListItem","position":2,"name":"Evenimente","item":"https://concaverde.ro/evenimente"},{"@type":"ListItem","position":3,"name":"Nuntă în Natură","item":"https://concaverde.ro/nunta"}]}
+    </script>
+</head>
+<body data-page="nunta">
+    <a href="#main" class="skip-link">Sari la conținut</a>
+
+    <header id="navbar">
+        <a href="/" class="logo-container"><img src="assets/img/logo.png" alt="Conca Verde Logo" class="site-logo"></a>
+        <div class="hamburger" aria-label="Deschide meniul" role="button" tabindex="0"><span></span><span></span><span></span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a></li>
+            <li><a href="cazare.html"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></a></li>
+            <li><a href="restaurant.html">Restaurant</a></li>
+            <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="locatie-activitati.html"><span data-lang="ro">Locație</span><span data-lang="en">Location</span></a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+            <li><a href="#oferta-nunta" class="btn-nav"><span data-lang="ro">Cere Ofertă</span><span data-lang="en">Get Quote</span></a></li>
+        </ul>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-nunta">
+        <div style="position:relative;z-index:1;padding:0 20px;max-width:800px">
+            <div class="badge"><span data-lang="ro">Nunți în Natură · Cheile Râșnoavei</span><span data-lang="en">Weddings in Nature · Râșnoavei Gorge</span></div>
+            <h1><span data-lang="ro">Nunta ta de vis,<br>în inima <em>naturii.</em></span><span data-lang="en">Your dream wedding,<br>in the heart of <em>nature.</em></span></h1>
+            <p class="lead"><span data-lang="ro">Ceremonie pe iarbă verde, petrecere sub stele, cazare pentru invitați — totul într-un singur loc magic, la 18 km de Brașov.</span><span data-lang="en">Ceremony on green grass, party under the stars, guest accommodation — all in one magical place, 18 km from Brașov.</span></p>
+            <div class="hero-ctas">
+                <a href="#oferta-nunta" class="btn-gold"><span data-lang="ro">✉ Cere Ofertă Personalizată</span><span data-lang="en">✉ Request Custom Quote</span></a>
+                <a href="tel:+40799597083" class="btn-ghost"><span data-lang="ro">📞 Sună Acum</span><span data-lang="en">📞 Call Now</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Strip -->
+    <div class="usp-strip">
+        <div class="usp-inner">
+            <div class="usp-item">💒 <span><span data-lang="ro">Ceremonie în <strong>aer liber</strong></span><span data-lang="en"><strong>Outdoor</strong> ceremony</span></span></div>
+            <div class="usp-item">🏰 <span><span data-lang="ro">Sală <strong>240 locuri</strong></span><span data-lang="en">Hall <strong>240 seats</strong></span></span></div>
+            <div class="usp-item">🛏️ <span><span data-lang="ro"><strong>44 locuri</strong> cazare</span><span data-lang="en"><strong>44 beds</strong> on-site</span></span></div>
+            <div class="usp-item">🍽️ <span><span data-lang="ro">Restaurant <strong>pe loc</strong></span><span data-lang="en">Restaurant <strong>on-site</strong></span></span></div>
+            <div class="usp-item">🌲 <span><strong>20.000 mp</strong> <span data-lang="ro">natură</span><span data-lang="en">nature</span></span></div>
+        </div>
+    </div>
+
+    <!-- De ce Conca Verde -->
+    <section class="container spatiu-mare" id="main">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a><span class="sep">›</span><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a><span class="sep">›</span><strong><span data-lang="ro">Nuntă în Natură</span><span data-lang="en">Wedding in Nature</span></strong></nav>
+
+        <div class="section-header" style="text-align:center;margin-top:16px">
+            <span><span data-lang="ro">De ce noi</span><span data-lang="en">Why us</span></span>
+            <h2><span data-lang="ro">Tot ce ai nevoie, într-un singur loc</span><span data-lang="en">Everything you need, in one place</span></h2>
+            <div class="line center"></div>
+        </div>
+
+        <div class="wedding-features">
+            <div class="wf-card"><span class="wf-icon">💒</span><h3><span data-lang="ro">Ceremonie în Aer Liber</span><span data-lang="en">Outdoor Ceremony</span></h3><p><span data-lang="ro">20.000 mp de peluze verzi, cu munții Cheilor Râșnoavei ca fundal. Spațiu pentru altar, aranjamente florale și invitați.</span><span data-lang="en">20,000 sqm of green lawns with Râșnoavei Gorge mountains as backdrop. Space for altar, floral arrangements and guests.</span></p></div>
+            <div class="wf-card"><span class="wf-icon">🏛️</span><h3><span data-lang="ro">Sală Elegantă</span><span data-lang="en">Elegant Hall</span></h3><p><span data-lang="ro">240 locuri în sala principală cu aer condiționat, sonorizare profesională și iluminat arhitectural. Plus separeu 60 locuri.</span><span data-lang="en">240 seats in the main hall with AC, professional sound and architectural lighting. Plus 60-seat private room.</span></p></div>
+            <div class="wf-card"><span class="wf-icon">🍽️</span><h3><span data-lang="ro">Gastronomie Autentică</span><span data-lang="en">Authentic Gastronomy</span></h3><p><span data-lang="ro">Meniuri personalizate cu bucătărie tradițională românească și internațională. Open bar, candy bar, tort la comandă.</span><span data-lang="en">Custom menus with traditional Romanian and international cuisine. Open bar, candy bar, custom cake.</span></p></div>
+            <div class="wf-card"><span class="wf-icon">🛏️</span><h3><span data-lang="ro">Cazare pe Loc</span><span data-lang="en">On-site Accommodation</span></h3><p><span data-lang="ro">18 camere (44 locuri) în același complex. Invitații nu trebuie să conducă după petrecere — petrecerea continuă până în zori.</span><span data-lang="en">18 rooms (44 beds) in the same complex. Guests don't need to drive after the party — the celebration continues until dawn.</span></p></div>
+            <div class="wf-card"><span class="wf-icon">📸</span><h3><span data-lang="ro">Peisaje pentru Foto</span><span data-lang="en">Photo Scenery</span></h3><p><span data-lang="ro">Cheile Râșnoavei, păduri de brad, iazul cu păstrăvi — locuri unice pentru ședința foto, la câțiva pași de sală.</span><span data-lang="en">Râșnoavei Gorge, fir forests, trout pond — unique photo spots just steps from the hall.</span></p></div>
+            <div class="wf-card"><span class="wf-icon">🅿️</span><h3><span data-lang="ro">Parcare & Acces</span><span data-lang="en">Parking & Access</span></h3><p><span data-lang="ro">Parcare gratuită nelimitată. Drum asfaltat integral. La 18 km de Brașov, 20 km de Bran, 2.5h de București.</span><span data-lang="en">Free unlimited parking. Fully paved road. 18 km from Brașov, 20 km from Bran, 2.5h from Bucharest.</span></p></div>
+        </div>
+    </section>
+
+    <!-- Galerie preview -->
+    <section class="bg-sand spatiu-mare">
+        <div class="container">
+            <div class="section-header" style="text-align:center">
+                <span><span data-lang="ro">Inspirație</span><span data-lang="en">Inspiration</span></span>
+                <h2><span data-lang="ro">Imagini de la evenimente</span><span data-lang="en">Images from events</span></h2>
+                <div class="line center"></div>
+            </div>
+            <div class="grid-3" style="margin-top:40px">
+                <div class="service-card"><div class="card-img-wrap"><img src="assets/img/nunta.jpg" alt="Nuntă în aer liber Conca Verde" width="680" height="510" loading="lazy"></div><div class="card-body"><h3><span data-lang="ro">Ceremonie în Natură</span><span data-lang="en">Nature Ceremony</span></h3></div></div>
+                <div class="service-card"><div class="card-img-wrap"><img src="assets/img/sala-mare.jpg" alt="Sala mare Conca Verde" width="383" height="510" loading="lazy"></div><div class="card-body"><h3><span data-lang="ro">Sala Principală</span><span data-lang="en">Main Hall</span></h3></div></div>
+                <div class="service-card"><div class="card-img-wrap"><img src="assets/img/separeu.jpg" alt="Separeu Conca Verde" width="680" height="510" loading="lazy"></div><div class="card-body"><h3><span data-lang="ro">Separeu Privat</span><span data-lang="en">Private Room</span></h3></div></div>
+            </div>
+            <div style="text-align:center;margin-top:30px"><a href="galerie.html" class="btn-link" style="color:var(--gold)"><span data-lang="ro">Vezi toate fotografiile →</span><span data-lang="en">View all photos →</span></a></div>
+        </div>
+    </section>
+
+    <!-- Formular ofertă nuntă -->
+    <section class="container spatiu-mare" id="oferta-nunta" style="background:linear-gradient(135deg,rgba(20,45,30,.97),rgba(30,58,41,.95)),url('assets/img/exterior.jpeg') center/cover;margin:0;max-width:100%;padding:80px 20px;border-radius:0">
+        <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start">
+            <div>
+                <span style="color:var(--gold);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:15px"><span data-lang="ro">Ofertă Nuntă</span><span data-lang="en">Wedding Quote</span></span>
+                <h2 style="font-family:var(--font-head);font-size:2.2rem;color:#fff;margin-bottom:18px;line-height:1.2"><span data-lang="ro">Hai să planificăm ziua cea mare.</span><span data-lang="en">Let's plan the big day.</span></h2>
+                <p style="color:rgba(255,255,255,.75);font-size:1rem;line-height:1.8;margin-bottom:25px"><span data-lang="ro">Completează formularul și primești în 24h o ofertă personalizată. Fără obligații.</span><span data-lang="en">Fill in the form and receive a custom quote within 24h. No obligations.</span></p>
+                <ul style="list-style:none;padding:0">
+                    <li style="color:rgba(255,255,255,.85);padding:6px 0;display:flex;gap:10px;align-items:center">✓ <span data-lang="ro">Răspuns în maxim 24 ore</span><span data-lang="en">Response within 24 hours</span></li>
+                    <li style="color:rgba(255,255,255,.85);padding:6px 0;display:flex;gap:10px;align-items:center">✓ <span data-lang="ro">Pachet 100% personalizat</span><span data-lang="en">100% customized package</span></li>
+                    <li style="color:rgba(255,255,255,.85);padding:6px 0;display:flex;gap:10px;align-items:center">✓ <span data-lang="ro">Vizionare locație gratuită</span><span data-lang="en">Free venue visit</span></li>
+                    <li style="color:rgba(255,255,255,.85);padding:6px 0;display:flex;gap:10px;align-items:center">✓ <span data-lang="ro">Facturare pe firmă disponibilă</span><span data-lang="en">Corporate invoicing available</span></li>
+                </ul>
+            </div>
+            <div class="nunta-form-wrap">
+                <h3><span data-lang="ro">Cere Ofertă Nuntă</span><span data-lang="en">Request Wedding Quote</span></h3>
+                <p class="form-subtitle"><span data-lang="ro">Completează — durează 2 minute.</span><span data-lang="en">Fill in — takes 2 minutes.</span></p>
+                <form class="js-wa-lead" data-lead-type="eveniment" id="nuntaForm">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <div class="form-group"><label><span data-lang="ro">Numele tău *</span><span data-lang="en">Your name *</span></label><input name="name" type="text" required placeholder="ex: Ana Popescu"></div>
+                        <div class="form-group"><label><span data-lang="ro">Telefon *</span><span data-lang="en">Phone *</span></label><input name="phone" type="tel" required placeholder="07xx xxx xxx"></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <div class="form-group"><label><span data-lang="ro">Data nuntă *</span><span data-lang="en">Wedding date *</span></label><input name="date" type="date" required></div>
+                        <div class="form-group"><label><span data-lang="ro">Nr. invitați *</span><span data-lang="en">Guests *</span></label><input name="guests" type="number" min="20" max="300" required placeholder="ex: 120"></div>
+                    </div>
+                    <div class="form-group" style="display:none"><select name="eventType"><option value="Nuntă" selected>Nuntă</option></select></div>
+                    <div class="form-group"><label><span data-lang="ro">Mesaj / Cerințe speciale</span><span data-lang="en">Message / Special requirements</span></label><textarea name="message" placeholder="Spune-ne mai multe despre nunta visurilor tale..."></textarea></div>
+                    <button type="submit" class="btn-submit-nunta"><span data-lang="ro">✉ Trimite Cererea pe WhatsApp</span><span data-lang="en">✉ Send Request via WhatsApp</span></button>
+                    <p class="form-note"><span data-lang="ro">Datele tale sunt confidențiale. Răspundem în max. 24h.</span><span data-lang="en">Your data is confidential. We respond within 24h.</span></p>
+                </form>
+                <div class="form-success" id="nuntaSuccess"><div style="font-size:3rem">✅</div><h4><span data-lang="ro">Cerere trimisă cu succes!</span><span data-lang="en">Request sent successfully!</span></h4><p><span data-lang="ro">Te contactăm în maxim 24 ore.</span><span data-lang="en">We'll contact you within 24 hours.</span></p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container spatiu-mare">
+        <div class="section-header" style="text-align:center">
+            <span>FAQ</span>
+            <h2><span data-lang="ro">Întrebări despre nunți</span><span data-lang="en">Wedding FAQs</span></h2>
+            <div class="line center"></div>
+        </div>
+        <div class="faq-list" style="max-width:750px;margin:40px auto 0">
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Câte persoane pot fi la nuntă?</span><span data-lang="en">How many guests can attend?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Sala principală: 240 locuri. Separeu: 60 locuri. Total: 300 locuri. Vara, terasa oferă locuri suplimentare.</span><span data-lang="en">Main hall: 240 seats. Private room: 60 seats. Total: 300. In summer, the terrace offers additional seating.</span></p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Se poate face ceremonia în aer liber?</span><span data-lang="en">Can the ceremony be held outdoors?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Da, pe cei 20.000 mp ai complexului, cu munții Cheilor Râșnoavei ca decor natural.</span><span data-lang="en">Yes, on the 20,000 sqm grounds, with Râșnoavei Gorge mountains as a natural backdrop.</span></p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Invitații pot fi cazați pe loc?</span><span data-lang="en">Can guests stay on-site?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Da, 18 camere cu 44 locuri. Tarife preferențiale pentru invitații la nuntă. Petrecerea continuă fără deplasare.</span><span data-lang="en">Yes, 18 rooms with 44 beds. Preferential rates for wedding guests. The party continues without anyone needing to leave.</span></p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Cât costă o nuntă la Conca Verde?</span><span data-lang="en">How much does a wedding cost?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Pachetele sunt personalizate în funcție de numărul de invitați, meniu, cazare și servicii extra. Trimite-ne o cerere pentru o ofertă detaliată — răspundem în 24h.</span><span data-lang="en">Packages are customized based on guest count, menu, accommodation and extras. Send us a request for a detailed quote — we respond within 24h.</span></p></div></div>
+        </div>
+    </section>
+
+    <button class="pdf-float" aria-label="Salvează PDF"><span class="pdf-float-label"><span data-lang="ro">Salvează PDF</span><span data-lang="en">Save as PDF</span></span><svg viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg></button>
+    <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20o%20ofertă%20pentru%20nuntă%20la%20Conca%20Verde." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><span class="wa-float-label"><span data-lang="ro">Scrie-ne pe WhatsApp</span><span data-lang="en">Message us on WhatsApp</span></span><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+    <footer>
+        <div class="container grid-footer">
+            <div class="footer-col">
+                <img src="assets/img/logo.png" alt="Conca Verde Logo" style="height:60px;margin-bottom:12px">
+                <p><span data-lang="ro">Complex turistic cu pensiune, restaurant și sală de evenimente în Cheile Râșnoavei, Râșnov. La 18 km de Brașov, 20 km de Bran.</span><span data-lang="en">Tourism resort with guesthouse, restaurant and event hall in Râșnoavei Gorge. 18 km from Brașov, 20 km from Bran.</span></p>
+                <div class="social-links"><a href="https://www.facebook.com/profile.php?id=100057072535199" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/conca.verde/" target="_blank" rel="noopener">Instagram</a></div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title"><span data-lang="ro">Navigare</span><span data-lang="en">Navigation</span></h4>
+                <ul>
+                    <li><a href="cazare.html"><span data-lang="ro">Cazare &amp; Tarife</span><span data-lang="en">Rooms &amp; Rates</span></a></li>
+                    <li><a href="restaurant.html"><span data-lang="ro">Restaurant</span><span data-lang="en">Dining</span></a></li>
+                    <li><a href="evenimente.html"><span data-lang="ro">Evenimente Private</span><span data-lang="en">Private Events</span></a></li>
+                    <li><a href="corporate.html">Corporate</a></li>
+                    <li><a href="locatie-activitati.html"><span data-lang="ro">Locație &amp; Activități</span><span data-lang="en">Location &amp; Activities</span></a></li>
+                    <li style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)"><a href="politica-confidentialitate.html">Politica de Confidențialitate</a></li>
+                    <li><a href="termeni.html">Termeni și Condiții</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title"><span data-lang="ro">Locații deservite</span><span data-lang="en">Areas Served</span></h4>
+                <p style="font-size:.85rem;line-height:1.8;color:#aaa">Râșnov · Brașov · Bran · Poiana Brașov · Predeal · Zărnești · Sinaia · Bușteni · Azuga · Făgăraș · Sibiu · Valea Prahovei · București · Ploiești</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <p>📍 Cheile Râșnoavei, DN 73A, Km 55, Râșnov</p>
+                <p>📞 <a href="tel:+40799597083" style="color:#c5a059">0799 597 083</a></p>
+                <p>📞 <a href="tel:+40733228872" style="color:#c5a059">0733 228 872</a></p>
+                <p>✉️ <a href="mailto:receptie@concaverde.ro" style="color:#c5a059">receptie@concaverde.ro</a></p>
+                <p class="highlight-gold"><span data-lang="ro">Program Recepție: Non-Stop</span><span data-lang="en">Reception: 24/7</span></p>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2026 Complex Turistic Conca Verde. <span data-lang="ro">Toate drepturile rezervate.</span><span data-lang="en">All rights reserved.</span></div>
+    </footer>
+
+    <script>
+    function setLang(lang){document.body.classList.toggle('lang-en',lang==='en');document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang)});localStorage.setItem('cv-lang',lang)}
+    setLang(localStorage.getItem('cv-lang')||'ro');
+    </script>
+    <script>
+    window.__menuReady=false;document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(window.__menuReady)return;var h=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');if(!h||!n)return;var o=document.createElement('div');o.className='nav-overlay';document.body.appendChild(o);function toggle(){var isOpen=n.classList.contains('active');n.classList.toggle('active',!isOpen);h.classList.toggle('open',!isOpen);o.classList.toggle('active',!isOpen);document.body.style.overflow=isOpen?'':'hidden'}h.addEventListener('click',toggle);o.addEventListener('click',function(){n.classList.remove('active');h.classList.remove('open');o.classList.remove('active');document.body.style.overflow=''})},1500)});
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',page:location.pathname})})});
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname})})});
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(function(q){q.addEventListener('click',function(){var a=this.nextElementSibling;var open=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-question').forEach(function(qq){qq.setAttribute('aria-expanded','false');qq.nextElementSibling.classList.remove('open')});if(!open){this.setAttribute('aria-expanded','true');a.classList.add('open')}})});
+    });
+    </script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+</body>
+</html>
