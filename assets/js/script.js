@@ -307,45 +307,52 @@ document.addEventListener('DOMContentLoaded', () => {
    Adaugă la sfârșitul fișierului assets/js/script.js
    ======================================== */
 
-document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(function(question) {
-        question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            const isOpen = this.getAttribute('aria-expanded') === 'true';
-            
-            // Close all other FAQs
-            faqQuestions.forEach(function(q) {
-                q.setAttribute('aria-expanded', 'false');
-                q.nextElementSibling.classList.remove('open');
+(function(){
+    function initFaqAccordion() {
+        var faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(function(question) {
+            question.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var isOpen = this.getAttribute('aria-expanded') === 'true';
+                faqQuestions.forEach(function(q) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('open');
+                });
+                if (!isOpen) {
+                    this.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('open');
+                }
             });
-            
-            // Toggle current
-            if (!isOpen) {
-                this.setAttribute('aria-expanded', 'true');
-                answer.classList.add('open');
-            }
         });
-    });
-});
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initFaqAccordion);
+    else initFaqAccordion();
+})();
 
 /* Restore lang on load */
-document.addEventListener('DOMContentLoaded', function() {
-    var saved = 'ro';
-    try { saved = localStorage.getItem('cv-lang') || 'ro'; } catch(e) {}
-    setLang(saved);
-});
+(function(){
+    function restoreLang() {
+        var saved = 'ro';
+        try { saved = localStorage.getItem('cv-lang') || 'ro'; } catch(e) {}
+        setLang(saved);
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', restoreLang);
+    else restoreLang();
+})();
 
 /* ========================================
    PDF SAVE BUTTON
    ======================================== */
-document.addEventListener('DOMContentLoaded', function() {
-    var pdfBtn = document.querySelector('.pdf-float');
-    if (pdfBtn) {
-        pdfBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.print();
-        });
+(function(){
+    function initPDF() {
+        var pdfBtn = document.querySelector('.pdf-float');
+        if (pdfBtn) {
+            pdfBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.print();
+            });
+        }
     }
-});
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initPDF);
+    else initPDF();
+})();
