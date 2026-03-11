@@ -28,8 +28,8 @@
         header.scrolled .lang-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
 
         /* Hero Landing */
-        .hero-nunta{height:95vh;min-height:650px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(20,45,30,.85),rgba(30,58,41,.7)),url('assets/img/nunta.jpg') center/cover no-repeat}
-        .hero-nunta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(transparent,#fff);pointer-events:none}
+        .hero-nunta{height:78vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden;padding-top:90px;background:linear-gradient(135deg,rgba(20,45,30,.85),rgba(30,58,41,.7)),url('assets/img/nunta.jpg') center/cover no-repeat}
+        .hero-nunta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,#fff);pointer-events:none}
         .hero-nunta .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 22px;border-radius:50px;margin-bottom:28px;animation:fadeUp .8s ease both}
         .hero-nunta h1{font-family:var(--font-head);font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.08;margin-bottom:22px;animation:fadeUp .9s .1s ease both}
         .hero-nunta h1 em{color:var(--gold);font-style:normal}
@@ -69,6 +69,19 @@
         .form-success{display:none;text-align:center;padding:20px 0}
         .form-success h4{color:var(--primary);font-family:var(--font-head);font-size:1.3rem;margin:10px 0 6px}
 
+        /* FAQ */
+        .faq-list{max-width:750px;margin:0 auto}
+        .faq-item{border:1px solid #e8e4de;border-radius:10px;margin-bottom:12px;overflow:hidden;background:#fff;transition:box-shadow .3s}
+        .faq-item:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+        .faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;color:#333;text-align:left;line-height:1.5;transition:color .2s}
+        .faq-question:hover{color:#c5a059}
+        .faq-question[aria-expanded='true']{color:#c5a059}
+        .faq-icon{font-size:1.5rem;font-weight:300;color:#c5a059;flex-shrink:0;margin-left:16px;transition:transform .3s;line-height:1}
+        .faq-question[aria-expanded='true'] .faq-icon{transform:rotate(45deg)}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px}
+        .faq-answer.open{max-height:300px;padding:0 24px 20px}
+        .faq-answer p{color:#555;font-size:.95rem;line-height:1.7;margin:0}
+
         @keyframes fadeUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
         @media(max-width:768px){.usp-inner{flex-direction:column;gap:15px;text-align:center}.hero-ctas{flex-direction:column;align-items:center}}
     </style>
@@ -81,7 +94,10 @@
         {"@type":"Question","name":"Câte persoane pot fi la nuntă la Conca Verde?","acceptedAnswer":{"@type":"Answer","text":"Sala principală: 240 locuri. Separeu: 60 locuri. Total: 300 locuri + terasă exterioară vara."}},
         {"@type":"Question","name":"Se poate face ceremonia în aer liber?","acceptedAnswer":{"@type":"Answer","text":"Da, pe cei 20.000 mp ai complexului, cu munții Cheilor Râșnoavei ca decor natural."}},
         {"@type":"Question","name":"Invitații pot fi cazați pe loc?","acceptedAnswer":{"@type":"Answer","text":"Da, 18 camere cu 44 locuri de cazare, pe același complex. Petrecerea continuă fără deplasare."}},
-        {"@type":"Question","name":"Cât costă o nuntă la Conca Verde?","acceptedAnswer":{"@type":"Answer","text":"Pachetele sunt personalizate. Contactați-ne pentru o ofertă pe măsură – răspundem în 24h."}}
+        {"@type":"Question","name":"Cât costă o nuntă la Conca Verde?","acceptedAnswer":{"@type":"Answer","text":"Pachetele sunt personalizate. Contactați-ne pentru o ofertă pe măsură – răspundem în 24h."}},
+        {"@type":"Question","name":"Cum ajung la Conca Verde din Brașov sau București?","acceptedAnswer":{"@type":"Answer","text":"Din Brașov: 18 km (25 min) pe DN73 și DN73A. Din București: 170 km (2.5 ore) pe DN1. Drum asfaltat integral, accesibil cu orice mașină."}},
+        {"@type":"Question","name":"Oferiți decorațiuni și aranjamente florale pentru nuntă?","acceptedAnswer":{"@type":"Answer","text":"Oferim aranjamente de bază. Pentru decorațiuni personalizate, aranjamente florale sau tematici speciale, vă invităm la o vizionare gratuită a locației."}},
+        {"@type":"Question","name":"Acceptă Conca Verde tichete de vacanță?","acceptedAnswer":{"@type":"Answer","text":"Da, acceptăm tichete Sodexo, Edenred și Up Romania (hârtie și card) pentru cazare și restaurant. Emitem factură fiscală."}}
     ]}
     </script>
     <script type="application/ld+json">
@@ -184,6 +200,7 @@
                     <li style="color:rgba(255,255,255,.85);padding:6px 0;display:flex;gap:10px;align-items:center">✓ <span data-lang="ro">Vizionare locație gratuită</span><span data-lang="en">Free venue visit</span></li>
                     <li style="color:rgba(255,255,255,.85);padding:6px 0;display:flex;gap:10px;align-items:center">✓ <span data-lang="ro">Facturare pe firmă disponibilă</span><span data-lang="en">Corporate invoicing available</span></li>
                 </ul>
+                <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.7;margin-top:20px;padding:14px 18px;border-left:3px solid var(--gold);background:rgba(255,255,255,.06);border-radius:0 8px 8px 0"><span data-lang="ro">💡 Pentru decorațiuni, aranjamente speciale sau orice alt tip de eveniment, vă invităm la o <strong style="color:var(--gold)">vizionare gratuită</strong> a locației — programați telefonic sau pe WhatsApp.</span><span data-lang="en">💡 For decorations, special arrangements or any other type of event, we invite you to a <strong style="color:var(--gold)">free venue visit</strong> — schedule by phone or WhatsApp.</span></p>
             </div>
             <div class="nunta-form-wrap">
                 <h3><span data-lang="ro">Cere Ofertă Nuntă</span><span data-lang="en">Request Wedding Quote</span></h3>
@@ -219,6 +236,9 @@
             <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Se poate face ceremonia în aer liber?</span><span data-lang="en">Can the ceremony be held outdoors?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Da, pe cei 20.000 mp ai complexului, cu munții Cheilor Râșnoavei ca decor natural.</span><span data-lang="en">Yes, on the 20,000 sqm grounds, with Râșnoavei Gorge mountains as a natural backdrop.</span></p></div></div>
             <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Invitații pot fi cazați pe loc?</span><span data-lang="en">Can guests stay on-site?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Da, 18 camere cu 44 locuri. Tarife preferențiale pentru invitații la nuntă. Petrecerea continuă fără deplasare.</span><span data-lang="en">Yes, 18 rooms with 44 beds. Preferential rates for wedding guests. The party continues without anyone needing to leave.</span></p></div></div>
             <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Cât costă o nuntă la Conca Verde?</span><span data-lang="en">How much does a wedding cost?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Pachetele sunt personalizate în funcție de numărul de invitați, meniu, cazare și servicii extra. Trimite-ne o cerere pentru o ofertă detaliată — răspundem în 24h.</span><span data-lang="en">Packages are customized based on guest count, menu, accommodation and extras. Send us a request for a detailed quote — we respond within 24h.</span></p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Cum ajung la Conca Verde din Brașov sau București?</span><span data-lang="en">How do I get to Conca Verde from Brașov or Bucharest?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Din Brașov: 18 km (25 min) pe DN73 și DN73A. Din București: 170 km (2.5 ore) pe DN1. Drum asfaltat integral, accesibil cu orice mașină, inclusiv iarna.</span><span data-lang="en">From Brașov: 18 km (25 min) via DN73 and DN73A. From Bucharest: 170 km (2.5 hours) via DN1. Fully paved road, accessible with any car, including in winter.</span></p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Oferiți decorațiuni și aranjamente florale?</span><span data-lang="en">Do you provide decorations and floral arrangements?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Oferim aranjamente de bază (mese, scaune, fețe de masă premium). Pentru decorațiuni personalizate, aranjamente florale sau tematici speciale, vă invităm la o vizionare gratuită a locației unde discutăm toate detaliile.</span><span data-lang="en">We provide basic arrangements (tables, chairs, premium tablecloths). For custom decorations, floral arrangements or special themes, we invite you to a free venue visit where we discuss all the details.</span></p></div></div>
+            <div class="faq-item"><button class="faq-question" aria-expanded="false"><span><span data-lang="ro">Acceptă Conca Verde tichete de vacanță?</span><span data-lang="en">Does Conca Verde accept holiday vouchers?</span></span><span class="faq-icon">+</span></button><div class="faq-answer"><p><span data-lang="ro">Da, acceptăm tichete de vacanță Sodexo, Edenred și Up Romania (hârtie și card) pentru cazare și restaurant. Emitem factură fiscală la cerere.</span><span data-lang="en">Yes, we accept Sodexo, Edenred and Up Romania holiday vouchers (paper and card) for accommodation and restaurant. Fiscal invoices available on request.</span></p></div></div>
         </div>
     </section>
 
@@ -271,8 +291,24 @@
     document.addEventListener('DOMContentLoaded',function(){
         document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',page:location.pathname})})});
         document.querySelectorAll('a[href^="tel:"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname})})});
-        // FAQ toggle
-        document.querySelectorAll('.faq-question').forEach(function(q){q.addEventListener('click',function(){var a=this.nextElementSibling;var open=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-question').forEach(function(qq){qq.setAttribute('aria-expanded','false');qq.nextElementSibling.classList.remove('open')});if(!open){this.setAttribute('aria-expanded','true');a.classList.add('open')}})});
+        // FAQ toggle — delay to avoid script.js override
+        setTimeout(function(){
+            document.querySelectorAll('.faq-question').forEach(function(q){
+                q.addEventListener('click',function(e){
+                    e.preventDefault();
+                    var a=this.nextElementSibling;
+                    var isOpen=this.getAttribute('aria-expanded')==='true';
+                    document.querySelectorAll('.faq-question').forEach(function(qq){
+                        qq.setAttribute('aria-expanded','false');
+                        qq.nextElementSibling.classList.remove('open');
+                    });
+                    if(!isOpen){
+                        this.setAttribute('aria-expanded','true');
+                        a.classList.add('open');
+                    }
+                });
+            });
+        }, 300);
     });
     </script>
     <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
