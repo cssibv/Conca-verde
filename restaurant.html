@@ -1082,6 +1082,42 @@
         });
     });
     </script>
+    <!-- Menu Group Toggle (Mâncare/Bar) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var barAnchorIds = ['bar-rece','bar-calde','bar-alcool','bar-cocktails'];
+        // Tag each .menu-category with data-group
+        document.querySelectorAll('.menu-category').forEach(function(cat){
+            var isBar = false;
+            barAnchorIds.forEach(function(id){
+                if(cat.querySelector('#'+id)) isBar = true;
+            });
+            cat.dataset.group = isBar ? 'bar' : 'food';
+        });
+        // Hide bar categories by default
+        document.querySelectorAll('.menu-category[data-group="bar"]').forEach(function(c){ c.style.display='none'; });
+        // Toggle buttons
+        document.querySelectorAll('.menu-nav-toggle').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var group = btn.dataset.group;
+                // Toggle active state on buttons
+                document.querySelectorAll('.menu-nav-toggle').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+                btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+                // Toggle nav groups
+                document.querySelectorAll('.menu-nav-group').forEach(function(n){ n.classList.remove('active'); n.style.display='none'; });
+                var activeNav = document.querySelector('.menu-nav-group[data-group="'+group+'"]');
+                if(activeNav){ activeNav.classList.add('active'); activeNav.style.display='flex'; }
+                // Toggle content sections
+                document.querySelectorAll('.menu-category').forEach(function(c){
+                    c.style.display = c.dataset.group === group ? '' : 'none';
+                });
+                // Scroll to first visible category
+                var first = document.querySelector('.menu-category[data-group="'+group+'"]');
+                if(first) first.scrollIntoView({behavior:'smooth', block:'start'});
+            });
+        });
+    });
+    </script>
     <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
 </body>
 </html>
