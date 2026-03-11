@@ -1423,21 +1423,21 @@ header.scrolled .lang-btn { color: var(--primary); border-color: var(--primary);
 header.scrolled .lang-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
 
 /* Language toggle logic */
-[data-lang="en"] { display: none; }
-body.lang-en [data-lang="ro"] { display: none; }
-body.lang-en [data-lang="en"] { display: block; }
+[data-lang="en"] { display: none !important; }
+body.lang-en [data-lang="ro"] { display: none !important; }
+body.lang-en [data-lang="en"] { display: block !important; }
 body.lang-en span[data-lang="en"],
 body.lang-en a[data-lang="en"],
-body.lang-en option[data-lang="en"] { display: inline; }
+body.lang-en option[data-lang="en"] { display: inline !important; }
 body.lang-en span[data-lang="ro"],
 body.lang-en a[data-lang="ro"],
-body.lang-en option[data-lang="ro"] { display: none; }
-body.lang-en li[data-lang="en"] { display: list-item; }
-body.lang-en li[data-lang="ro"] { display: none; }
+body.lang-en option[data-lang="ro"] { display: none !important; }
+body.lang-en li[data-lang="en"] { display: list-item !important; }
+body.lang-en li[data-lang="ro"] { display: none !important; }
 body.lang-en p[data-lang="en"],
-body.lang-en div[data-lang="en"] { display: block; }
+body.lang-en div[data-lang="en"] { display: block !important; }
 body.lang-en p[data-lang="ro"],
-body.lang-en div[data-lang="ro"] { display: none; }
+body.lang-en div[data-lang="ro"] { display: none !important; }
 
 /* --- SKIP TO CONTENT --- */
 .skip-link {
