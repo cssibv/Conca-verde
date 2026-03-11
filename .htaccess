@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# Redirect /index la / (homepage curat)
+RewriteRule ^index$ / [L,R=301]
+
 # Daca userul acceseaza pagina.html, il redirecteaza la pagina (fara .html)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [L,R=301]
