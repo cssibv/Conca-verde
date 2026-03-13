@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://concaverde.ro/sitemap.xml
+Sitemap: https://conca-verde.ro/sitemap.xml
