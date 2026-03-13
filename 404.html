@@ -5,80 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Pagina nu a fost găsită | Conca Verde Râșnov</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        .error-page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: var(--sand);
-            padding: 40px 20px;
-        }
-        .error-content h1 {
-            font-family: var(--font-head);
-            font-size: clamp(4rem, 12vw, 8rem);
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-        .error-content h2 {
-            font-family: var(--font-head);
-            color: var(--primary);
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            margin-bottom: 20px;
-        }
-        .error-content p {
-            color: #666;
-            margin-bottom: 30px;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .error-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .error-links a {
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .error-links .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-        .error-links .btn-primary:hover {
-            background: var(--gold);
-        }
-        .error-links .btn-outline-err {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        .error-links .btn-outline-err:hover {
-            background: var(--primary);
-            color: #fff;
-        }
+        .error-page{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px}
+        .error-content{max-width:600px}
+        .error-icon{font-size:5rem;margin-bottom:10px;display:block}
+        .error-content h1{font-family:var(--font-head);font-size:clamp(5rem,14vw,9rem);color:var(--gold);line-height:1;margin-bottom:0;letter-spacing:-3px}
+        .error-content h2{font-family:var(--font-head);color:var(--primary);font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:16px}
+        .error-content p{color:#666;margin-bottom:35px;font-size:1.05rem;line-height:1.7}
+        .error-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:50px}
+        .error-links a{padding:14px 32px;border-radius:6px;font-weight:700;font-size:.9rem;transition:.3s;text-transform:uppercase;letter-spacing:1px}
+        .error-links .btn-gold{background:var(--gold);color:#fff}
+        .error-links .btn-gold:hover{background:var(--primary)}
+        .error-links .btn-ghost-err{border:2px solid var(--primary);color:var(--primary)}
+        .error-links .btn-ghost-err:hover{background:var(--primary);color:#fff}
+        .error-suggestions{margin-top:40px;text-align:left;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+        .es-card{background:#fff;border:1px solid #e8e4de;border-radius:10px;padding:20px;transition:.3s}
+        .es-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--gold)}
+        .es-card h3{font-family:var(--font-head);font-size:1rem;color:var(--primary);margin-bottom:6px}
+        .es-card p{font-size:.85rem;color:#888;margin-bottom:10px;line-height:1.5}
+        .es-card a{color:var(--gold);font-weight:600;font-size:.85rem}
+        @media(max-width:600px){.error-suggestions{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
+    <header id="navbar">
+        <a href="/" class="logo-container"><img src="assets/img/logo.png" alt="Conca Verde Logo" class="site-logo"></a>
+        <div class="hamburger" aria-label="Deschide meniul" role="button" tabindex="0"><span></span><span></span><span></span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/"><span data-lang="ro">Acasă</span><span data-lang="en">Home</span></a></li>
+            <li><a href="cazare.html"><span data-lang="ro">Cazare</span><span data-lang="en">Rooms</span></a></li>
+            <li><a href="restaurant.html">Restaurant</a></li>
+            <li><a href="evenimente.html"><span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+            <li><a href="locatie-activitati.html"><span data-lang="ro">Locație</span><span data-lang="en">Location</span></a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="galerie.html"><span data-lang="ro">Galerie</span><span data-lang="en">Gallery</span></a></li>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+            <li><a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20să%20fac%20o%20rezervare%20la%20Conca%20Verde." target="_blank" rel="noopener noreferrer" class="btn-nav"><span data-lang="ro">Rezervă Acum</span><span data-lang="en">Book Now</span></a></li>
+        </ul>
+    </header>
+
     <div class="error-page">
         <div class="error-content">
+            <span class="error-icon">🏔️</span>
             <h1>404</h1>
-            <h2>Pagina nu a fost găsită</h2>
-            <p>Se pare că te-ai rătăcit prin Cheile Râșnoavei. Pagina pe care o cauți nu există sau a fost mutată.</p>
+            <h2><span data-lang="ro">Pagina nu a fost găsită</span><span data-lang="en">Page not found</span></h2>
+            <p><span data-lang="ro">Se pare că te-ai rătăcit prin Cheile Râșnoavei. Pagina pe care o cauți nu există sau a fost mutată. Dar nu-ți face griji — avem locuri minunate de explorat!</span><span data-lang="en">It seems you've wandered off the trail in Râșnoavei Gorge. The page you're looking for doesn't exist or has been moved. But don't worry — we have wonderful places to explore!</span></p>
             <div class="error-links">
-                <a href="index.html" class="btn-primary">Acasă</a>
-                <a href="contact.html" class="btn-outline-err">Contact</a>
+                <a href="/" class="btn-gold"><span data-lang="ro">🏠 Pagina Principală</span><span data-lang="en">🏠 Homepage</span></a>
+                <a href="contact.html" class="btn-ghost-err"><span data-lang="ro">📞 Contact</span><span data-lang="en">📞 Contact</span></a>
+            </div>
+
+            <div class="error-suggestions">
+                <div class="es-card">
+                    <h3>🛏️ <span data-lang="ro">Cazare</span><span data-lang="en">Accommodation</span></h3>
+                    <p><span data-lang="ro">22 camere cu vedere la munți</span><span data-lang="en">22 rooms with mountain views</span></p>
+                    <a href="cazare.html"><span data-lang="ro">Vezi camerele →</span><span data-lang="en">View rooms →</span></a>
+                </div>
+                <div class="es-card">
+                    <h3>🍽️ Restaurant</h3>
+                    <p><span data-lang="ro">Bucătărie tradițională, 300 locuri</span><span data-lang="en">Traditional cuisine, 300 seats</span></p>
+                    <a href="restaurant.html"><span data-lang="ro">Vezi meniul →</span><span data-lang="en">View menu →</span></a>
+                </div>
+                <div class="es-card">
+                    <h3>💒 <span data-lang="ro">Evenimente</span><span data-lang="en">Events</span></h3>
+                    <p><span data-lang="ro">Nunți, botezuri, corporate</span><span data-lang="en">Weddings, christenings, corporate</span></p>
+                    <a href="evenimente.html"><span data-lang="ro">Organizează →</span><span data-lang="en">Plan event →</span></a>
+                </div>
+                <div class="es-card">
+                    <h3>📸 <span data-lang="ro">Galerie</span><span data-lang="en">Gallery</span></h3>
+                    <p><span data-lang="ro">Descoperă complexul în imagini</span><span data-lang="en">Discover the resort in images</span></p>
+                    <a href="galerie.html"><span data-lang="ro">Vezi pozele →</span><span data-lang="en">See photos →</span></a>
+                </div>
             </div>
         </div>
     </div>
+
+    <a href="https://wa.me/40799597083?text=Bună%20ziua!%20Doresc%20informații%20Conca%20Verde." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><span class="wa-float-label"><span data-lang="ro">Scrie-ne pe WhatsApp</span><span data-lang="en">Message us on WhatsApp</span></span><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+    <script>
+    function setLang(lang){document.body.classList.toggle('lang-en',lang==='en');document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang)});try{localStorage.setItem('cv-lang',lang)}catch(e){}}
+    try{setLang(localStorage.getItem('cv-lang')||'ro')}catch(e){setLang('ro')}
+    </script>
+    <script>
+    window.__menuReady=false;document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(window.__menuReady)return;var h=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');if(!h||!n)return;var o=document.createElement('div');o.className='nav-overlay';document.body.appendChild(o);function closeMenu(){n.classList.remove('active');h.classList.remove('open');o.classList.remove('active');document.body.style.overflow=''}function toggle(){var isOpen=n.classList.contains('active');if(isOpen){closeMenu()}else{n.classList.add('active');h.classList.add('open');o.classList.add('active');document.body.style.overflow='hidden'}}h.addEventListener('click',toggle);o.addEventListener('click',closeMenu);n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)})},1500)});
+    </script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
 </body>
 </html>
