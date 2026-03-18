@@ -79,12 +79,41 @@
         "latitude": 45.553397,
         "longitude": 25.488664
       },
+      "image": "https://conca-verde.ro/assets/img/restaurant-card.jpeg",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.4",
         "reviewCount": "765"
       },
-      "priceRange": "695"
+      "priceRange": "30-120 RON",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "00:00"
+        }
+      ],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Meniu Restaurant Conca Verde",
+        "description": "Bucătărie tradițională românească — grătar pe jar, ciorbe, pizza artizanală, pește, mămăligă cu brânză",
+        "hasMenuSection": [
+          {"@type": "MenuSection", "name": "Aperitive și Salate"},
+          {"@type": "MenuSection", "name": "Ciorbe și Supe"},
+          {"@type": "MenuSection", "name": "Preparate Principale"},
+          {"@type": "MenuSection", "name": "Grătar pe Jar"},
+          {"@type": "MenuSection", "name": "Pizza Artizanală"},
+          {"@type": "MenuSection", "name": "Deserturi"},
+          {"@type": "MenuSection", "name": "Băuturi"}
+        ]
+      }
     }
     </script>
 
