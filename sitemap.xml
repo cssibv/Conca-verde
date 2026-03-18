@@ -109,6 +109,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://conca-verde.ro/blog</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://conca-verde.ro/blog-ce-vizitezi-langa-rasnov</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://conca-verde.ro/blog-weekend-la-munte-langa-brasov</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://conca-verde.ro/blog-cum-organizezi-nunta-in-natura</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://conca-verde.ro/blog-trasee-cheile-rasnoavei</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://conca-verde.ro/politica-confidentialitate</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>yearly</changefreq>
