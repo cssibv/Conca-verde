@@ -33,6 +33,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <style>
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid #e8e4de; border-radius: 10px; margin-bottom: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.3s ease; }
+    .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: none; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-align: left; line-height: 1.5; transition: color 0.2s ease; }
+    .faq-question:hover { color: #c5a059; }
+    .faq-question[aria-expanded='true'] { color: #c5a059; }
+    .faq-icon { font-size: 1.5rem; font-weight: 300; color: #c5a059; flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; line-height: 1; }
+    .faq-question[aria-expanded='true'] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 24px; }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-answer p { color: #555; font-size: 0.95rem; line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) {
+        .faq-question { padding: 15px 18px; font-size: 0.95rem; }
+        .faq-answer { padding: 0 18px; }
+        .faq-answer.open { padding: 0 18px 16px; }
+    }
+    </style>
+
     <!-- Schema.org BlogPosting -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BlogPosting","headline":"Drum spre Castelul Bran (Dracula) — Oprire la Conca Verde | Ghid Complet 2026","description":"Ghid complet pe drumul spre Castelul Bran. Ce vizitezi, unde mănânci, unde dormi lângă Bran. Sfaturi locale, atracții pe traseu, distanțe și costuri.","image":"https://conca-verde.ro/assets/img/exterior.jpeg","datePublished":"2026-03-18T08:00:00+02:00","dateModified":"2026-03-18T08:00:00+02:00","author":{"@type":"Organization","name":"Complex Turistic Conca Verde"},"publisher":{"@type":"Organization","name":"Complex Turistic Conca Verde","logo":{"@type":"ImageObject","url":"https://conca-verde.ro/assets/img/logo.png"}},"mainEntityOfPage":"https://conca-verde.ro/blog-drum-spre-castelul-bran","keywords":"Castelul Bran, Dracula, drum spre Bran, cazare lângă Castelul Bran, restaurant lângă Bran, ce vizitezi lângă Bran, Cheile Râșnoavei, Râșnov"}
@@ -304,32 +323,32 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Cât costă intrarea la Castelul Bran în 2026?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Biletul standard: ~50 lei adulți, ~25 lei copii 7-17 ani, gratuit sub 7 ani. Program: 9:00-18:00 vara, 9:00-16:00 iarna (luni de la 12:00).</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Cât costă intrarea la Castelul Bran în 2026?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Biletul standard: ~50 lei adulți, ~25 lei copii 7-17 ani, gratuit sub 7 ani. Program: 9:00-18:00 vara, 9:00-16:00 iarna (luni de la 12:00).</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Unde mănânci pe drumul spre Castelul Bran?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Restaurant Conca Verde, pe DN73A în Cheile Râșnoavei, la 20 km de Bran. 300 locuri, bucătărie tradițională, terasă cu vedere la munte.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Unde mănânci pe drumul spre Castelul Bran?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Restaurant Conca Verde, pe DN73A în Cheile Râșnoavei, la 20 km de Bran. 300 locuri, bucătărie tradițională, terasă cu vedere la munte.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Unde te cazezi lângă Castelul Bran fără aglomerație?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Conca Verde, la 20 km de Bran. De la 250 lei/noapte — mai ieftin și mai liniștit decât pensiunile din Bran. Restaurant, parcare gratuită, 22 camere.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Unde te cazezi lângă Castelul Bran fără aglomerație?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Conca Verde, la 20 km de Bran. De la 250 lei/noapte — mai ieftin și mai liniștit decât pensiunile din Bran. Restaurant, parcare gratuită, 22 camere.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Cât e de la Brașov la Castelul Bran?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Aproximativ 30 km (40 minute). Conca Verde e pe traseu, la 18 km de Brașov și 20 km de Bran.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Cât e de la Brașov la Castelul Bran?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Aproximativ 30 km (40 minute). Conca Verde e pe traseu, la 18 km de Brașov și 20 km de Bran.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Este Castelul Bran chiar castelul lui Dracula?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Nu în mod direct. Este asociat cu legenda lui Dracula din romanul lui Bram Stoker, dar Vlad Țepeș nu a locuit aici. Castelul rămâne spectaculos și merită vizitat.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Este Castelul Bran chiar castelul lui Dracula?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Nu în mod direct. Este asociat cu legenda lui Dracula din romanul lui Bram Stoker, dar Vlad Țepeș nu a locuit aici. Castelul rămâne spectaculos și merită vizitat.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Ce mai vizitezi lângă Castelul Bran?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Cetatea Râșnov, Dino Parc, Cheile Râșnoavei, Brașov centru, Poiana Brașov, Piatra Craiului. Toate la maxim 35 min de Conca Verde.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Ce mai vizitezi lângă Castelul Bran?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Cetatea Râșnov, Dino Parc, Cheile Râșnoavei, Brașov centru, Poiana Brașov, Piatra Craiului. Toate la maxim 35 min de Conca Verde.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Merită vizitat Castelul Bran?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Da! Dincolo de legenda Dracula, e o clădire medievală impresionantă. Sfat: mergi dimineața devreme sau după 15:00 pentru a evita mulțimile.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Merită vizitat Castelul Bran?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Da! Dincolo de legenda Dracula, e o clădire medievală impresionantă. Sfat: mergi dimineața devreme sau după 15:00 pentru a evita mulțimile.</p></div>
                 </div>
             </div>
         </div>
@@ -430,6 +449,15 @@
             el.addEventListener('click', function(){
                 if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname});
             });
+        });
+    });
+    </script>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            this.nextElementSibling.classList.toggle('open');
         });
     });
     </script>

@@ -34,6 +34,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <style>
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { border: 1px solid #e8e4de; border-radius: 10px; margin-bottom: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.3s ease; }
+    .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: none; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-align: left; line-height: 1.5; transition: color 0.2s ease; }
+    .faq-question:hover { color: #c5a059; }
+    .faq-question[aria-expanded='true'] { color: #c5a059; }
+    .faq-icon { font-size: 1.5rem; font-weight: 300; color: #c5a059; flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; line-height: 1; }
+    .faq-question[aria-expanded='true'] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 24px; }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 20px; }
+    .faq-answer p { color: #555; font-size: 0.95rem; line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) { .faq-question { padding: 15px 18px; font-size: 0.95rem; } .faq-answer { padding: 0 18px; } .faq-answer.open { padding: 0 18px 16px; } }
+    </style>
+
     <!-- Schema.org HotelRoom -->
     <script type="application/ld+json">
     {
@@ -183,20 +198,20 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Cât costă o cameră triplă la Conca Verde?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Tariful este de 300 lei/noapte (fără TVA), incluzând Wi-Fi, parcare gratuită și acces la restaurant, terasă și sală de jocuri.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Cât costă o cameră triplă la Conca Verde?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Tariful este de 300 lei/noapte (fără TVA), incluzând Wi-Fi, parcare gratuită și acces la restaurant, terasă și sală de jocuri.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Camera triplă are pat suplimentar?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Camera are pat matrimonial și pat single incluse. Pentru pat suplimentar, contactați recepția.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Camera triplă are pat suplimentar?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Camera are pat matrimonial și pat single incluse. Pentru pat suplimentar, contactați recepția.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Este potrivită pentru familii cu copii?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Da, camera triplă este ideală pentru familii cu un copil. Complexul are și grădină, loc de joacă și sală de jocuri cu biliard.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Este potrivită pentru familii cu copii?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Da, camera triplă este ideală pentru familii cu un copil. Complexul are și grădină, loc de joacă și sală de jocuri cu biliard.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-q" aria-expanded="false"><span>Se acceptă tichete de vacanță?</span><span class="faq-arrow">▾</span></button>
-                    <div class="faq-a"><p>Da, acceptăm tichete Sodexo, Edenred și Up Romania (hârtie și card) pentru cazare și restaurant.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Se acceptă tichete de vacanță?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Da, acceptăm tichete Sodexo, Edenred și Up Romania (hârtie și card) pentru cazare și restaurant.</p></div>
                 </div>
             </div>
         </div>
@@ -303,6 +318,15 @@
     });
     </script>
 
+    <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            this.nextElementSibling.classList.toggle('open');
+        });
+    });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
