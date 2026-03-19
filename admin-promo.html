@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin Panel — Conca Verde</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;color:#333;min-height:100vh;}
+.top{background:linear-gradient(135deg,#1e3a29,#2d5a3f);color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.top h1{font-size:1.1rem;display:flex;align-items:center;gap:8px;}
+.top .save-btn{background:#c5a059;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem;transition:all .2s;}
+.top .save-btn:hover{background:#d4b068;transform:translateY(-1px);}
+.top .save-btn.saved{background:#2e7d32;}
+.wrap{display:grid;grid-template-columns:1fr 320px;gap:20px;max-width:1100px;margin:20px auto;padding:0 20px;}
+@media(max-width:900px){.wrap{grid-template-columns:1fr;}}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:20px;margin-bottom:16px;}
+.card h2{font-size:1rem;color:#1e3a29;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #f0f2f5;display:flex;align-items:center;gap:8px;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg{margin-bottom:12px;}
+.fg label{display:block;font-weight:600;font-size:.78rem;color:#888;margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px;}
+.fg input,.fg select{width:100%;padding:9px 12px;border:1.5px solid #e0e0e0;border-radius:8px;font-size:.9rem;outline:none;transition:border .2s;}
+.fg input:focus,.fg select:focus{border-color:#c5a059;}
+.toggle-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:12px 16px;border-radius:10px;background:#f8f8f8;}
+.sw{position:relative;width:48px;height:26px;flex-shrink:0;}
+.sw input{opacity:0;width:0;height:0;}
+.sw .sl{position:absolute;cursor:pointer;inset:0;background:#ccc;border-radius:26px;transition:.3s;}
+.sw .sl:before{content:'';position:absolute;height:20px;width:20px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s;}
+.sw input:checked+.sl{background:#2d5a3f;}
+.sw input:checked+.sl:before{transform:translateX(22px);}
+.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.7rem;font-weight:700;}
+.tag-on{background:#e8f5e9;color:#2e7d32;}
+.tag-off{background:#ffebee;color:#c62828;}
+/* Phone preview */
+.phone{background:#1a1a1a;border-radius:28px;padding:8px;width:280px;margin:0 auto;position:sticky;top:80px;}
+.phone-screen{background:#fff;border-radius:22px;overflow:hidden;height:500px;position:relative;}
+.phone-notch{background:#1a1a1a;width:100px;height:22px;border-radius:0 0 14px 14px;margin:0 auto;position:relative;z-index:2;}
+.phone-popup{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:10px;z-index:1;}
+.phone-popup.hidden{display:none;}
+.pp-card{background:#fff;border-radius:12px;width:100%;max-width:260px;overflow:hidden;font-size:11px;box-shadow:0 10px 30px rgba(0,0,0,.2);}
+.pp-head{background:linear-gradient(135deg,#1e3a29,#2d5a3f);color:#fff;padding:16px 14px;text-align:center;}
+.pp-head .pp-badge{display:inline-block;background:rgba(197,160,89,.2);border:1px solid rgba(197,160,89,.4);color:#c5a059;font-size:6px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:2px 8px;border-radius:12px;margin-bottom:6px;}
+.pp-head h4{font-family:Georgia,serif;font-size:13px;margin:0 0 4px;}
+.pp-head p{opacity:.8;font-size:8px;margin:0;}
+.pp-body{padding:12px 14px 14px;}
+.pp-perks{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-bottom:10px;}
+.pp-perk{font-size:6.5px;background:#f8f5f0;padding:2px 6px;border-radius:10px;color:#555;}
+.pp-input{width:100%;padding:7px 8px;border:1px solid #e0dcd6;border-radius:6px;font-size:9px;margin-bottom:6px;color:#999;}
+.pp-btn{width:100%;padding:8px;background:linear-gradient(135deg,#c5a059,#d4b068);color:#fff;border:none;border-radius:6px;font-size:9px;font-weight:700;}
+.pp-note{text-align:center;font-size:6px;color:#bbb;margin-top:6px;}
+/* Code output */
+.code{background:#1e1e1e;color:#d4d4d4;padding:14px;border-radius:8px;font-family:Consolas,monospace;font-size:.75rem;line-height:1.5;overflow-x:auto;white-space:pre;margin-top:10px;display:none;position:relative;}
+.code .ln{color:#569cd6;}
+.code .str{color:#ce9178;}
+.code .num{color:#b5cea8;}
+.code .cm{color:#6a9955;}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:#2e7d32;color:#fff;padding:12px 28px;border-radius:10px;font-weight:700;font-size:.9rem;transition:transform .3s ease;z-index:999;}
+.copy-toast.show{transform:translateX(-50%) translateY(0);}
+.help{font-size:.78rem;color:#999;line-height:1.6;margin-top:8px;}
+.help code{background:#f5f5f5;padding:1px 5px;border-radius:3px;font-size:.72rem;}
+.steps{counter-reset:step;list-style:none;padding:0;}
+.steps li{counter-increment:step;padding:6px 0 6px 32px;position:relative;font-size:.82rem;color:#555;}
+.steps li::before{content:counter(step);position:absolute;left:0;top:6px;width:22px;height:22px;background:#c5a059;color:#fff;border-radius:50%;text-align:center;line-height:22px;font-size:.7rem;font-weight:700;}
+</style>
+</head>
+<body>
+
+<div class="top">
+    <h1>⚙️ Panou Admin — Conca Verde</h1>
+    <button class="save-btn" onclick="generateAndCopy()">💾 Generează & Copiază</button>
+</div>
+
+<div class="wrap">
+    <div class="left">
+        <!-- STATUS -->
+        <div class="card">
+            <h2>🔌 Status Promoție</h2>
+            <div class="toggle-row">
+                <label class="sw"><input type="checkbox" id="promoActive" checked onchange="update()"><span class="sl"></span></label>
+                <div>
+                    <strong>Popup promoțional</strong>
+                    <span class="tag tag-on" id="statusTag">ACTIV</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISCOUNT -->
+        <div class="card">
+            <h2>🏷️ Configurare Discount</h2>
+            <div class="row">
+                <div class="fg">
+                    <label>Procent reducere</label>
+                    <select id="discount" onchange="update()">
+                        <option value="5">5%</option>
+                        <option value="10">10%</option>
+                        <option value="15">15%</option>
+                        <option value="20">20%</option>
+                        <option value="25">25%</option>
+                    </select>
+                </div>
+                <div class="fg">
+                    <label>Cod promoțional</label>
+                    <input type="text" id="code" value="VERDE5" oninput="this.value=this.value.toUpperCase();update()" maxlength="15">
+                </div>
+            </div>
+            <div class="row">
+                <div class="fg">
+                    <label>Titlu RO</label>
+                    <input type="text" id="titleRo" value="Reducere la Prima Rezervare" oninput="update()">
+                </div>
+                <div class="fg">
+                    <label>Titlu EN</label>
+                    <input type="text" id="titleEn" value="Discount on First Booking" oninput="update()">
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMING -->
+        <div class="card">
+            <h2>⏱️ Timing Popup</h2>
+            <div class="row">
+                <div class="fg">
+                    <label>Apare după (secunde)</label>
+                    <input type="number" id="delay" value="8" min="3" max="30" onchange="update()">
+                </div>
+                <div class="fg">
+                    <label>Sau la scroll (%)</label>
+                    <input type="number" id="scroll" value="35" min="10" max="80" onchange="update()">
+                </div>
+            </div>
+            <div class="row">
+                <div class="fg">
+                    <label>Nu apare X zile după închidere</label>
+                    <input type="number" id="cookieClose" value="7" min="1" max="30" onchange="update()">
+                </div>
+                <div class="fg">
+                    <label>Nu apare X zile după abonare</label>
+                    <input type="number" id="cookieSignup" value="30" min="7" max="90" onchange="update()">
+                </div>
+            </div>
+        </div>
+
+        <!-- GENERATE -->
+        <div class="card">
+            <h2>📄 Fișier Configurare</h2>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="save-btn" style="background:#1e3a29;" onclick="generateConfig()">🔧 Generează</button>
+                <button class="save-btn" style="background:#c5a059;" onclick="copyConfig()">📋 Copiază Codul</button>
+                <button class="save-btn" style="background:#b71c1c;" onclick="resetConfig()">🔄 Reset Default</button>
+            </div>
+            <div class="code" id="configOutput"></div>
+            <div class="help" style="margin-top:12px;">
+                <strong>Pași rapizi:</strong>
+                <ol class="steps">
+                    <li>Modifică setările de mai sus</li>
+                    <li>Apasă <strong>Generează & Copiază</strong> (buton sus-dreapta)</li>
+                    <li>Deschide <code>assets/js/promo-config.js</code></li>
+                    <li>Selectează tot (Ctrl+A) → Paste (Ctrl+V)</li>
+                    <li>Salvează → <code>git add -A && git commit -m "promo" && git push</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- QUICK ACTIONS -->
+        <div class="card">
+            <h2>⚡ Acțiuni Rapide</h2>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="save-btn" style="background:#b71c1c;font-size:.8rem;padding:8px 16px;" onclick="quickAction('off')">🔴 Oprește Promoția</button>
+                <button class="save-btn" style="background:#2e7d32;font-size:.8rem;padding:8px 16px;" onclick="quickAction('5')">5% VERDE5</button>
+                <button class="save-btn" style="background:#1565c0;font-size:.8rem;padding:8px 16px;" onclick="quickAction('10')">10% VERDE10</button>
+                <button class="save-btn" style="background:#c5a059;font-size:.8rem;padding:8px 16px;" onclick="quickAction('15')">15% VARA15</button>
+                <button class="save-btn" style="background:#6a1b9a;font-size:.8rem;padding:8px 16px;" onclick="quickAction('20')">20% SUPER20</button>
+            </div>
+            <p class="help">Click pe un buton → setează automat → copiază config-ul gata de paste.</p>
+        </div>
+    </div>
+
+    <!-- PHONE PREVIEW -->
+    <div class="right">
+        <div class="card" style="background:transparent;box-shadow:none;padding:0;">
+            <h2 style="text-align:center;border:none;padding:0;margin-bottom:12px;">📱 Preview Mobil</h2>
+            <div class="phone">
+                <div class="phone-screen" style="background:#f5f5f0;">
+                    <div class="phone-notch"></div>
+                    <div style="padding:12px;text-align:center;opacity:.3;margin-top:40px;">
+                        <div style="font-size:14px;font-weight:700;color:#1e3a29;">CONCA VERDE</div>
+                        <div style="font-size:8px;color:#888;margin-top:4px;">conca-verde.ro</div>
+                    </div>
+                    <div class="phone-popup" id="phonePopup">
+                        <div class="pp-card">
+                            <div class="pp-head">
+                                <div class="pp-badge">OFERTĂ EXCLUSIVĂ</div>
+                                <h4 id="ppTitle">5% Reducere la Prima Rezervare</h4>
+                                <p>Abonează-te și primești codul de reducere direct pe email</p>
+                            </div>
+                            <div class="pp-body">
+                                <div class="pp-perks">
+                                    <span class="pp-perk" id="ppPerk">🏷️ Cod -5%</span>
+                                    <span class="pp-perk">📧 Oferte exclusive</span>
+                                    <span class="pp-perk">🎁 Pachete</span>
+                                    <span class="pp-perk">🚫 Fără spam</span>
+                                </div>
+                                <div class="pp-input">Numele tău</div>
+                                <div class="pp-input">Adresa ta de email *</div>
+                                <div class="pp-btn" id="ppBtn">Vreau Reducerea de 5% →</div>
+                                <div class="pp-note">🔒 Datele tale sunt în siguranță</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align:center;font-size:.75rem;color:#999;margin-top:8px;">Cod curent: <strong id="pvCode">VERDE5</strong></p>
+        </div>
+    </div>
+</div>
+
+<div class="copy-toast" id="toast">✅ Config copiat! Paste în promo-config.js</div>
+
+<script>
+function update() {
+    var d = document.getElementById('discount').value;
+    var c = document.getElementById('code').value;
+    var t = document.getElementById('titleRo').value;
+    var on = document.getElementById('promoActive').checked;
+    
+    // Preview
+    document.getElementById('ppTitle').textContent = d + '% ' + t;
+    document.getElementById('ppPerk').textContent = '🏷️ Cod -' + d + '%';
+    document.getElementById('ppBtn').textContent = 'Vreau Reducerea de ' + d + '% →';
+    document.getElementById('pvCode').textContent = c;
+    
+    // Status
+    var tag = document.getElementById('statusTag');
+    tag.textContent = on ? 'ACTIV' : 'OPRIT';
+    tag.className = 'tag ' + (on ? 'tag-on' : 'tag-off');
+    document.getElementById('phonePopup').classList.toggle('hidden', !on);
+    
+    // Save to localStorage
+    localStorage.setItem('cv_admin', JSON.stringify({
+        active: on, discount: d, code: c, titleRo: t,
+        titleEn: document.getElementById('titleEn').value,
+        delay: document.getElementById('delay').value,
+        scroll: document.getElementById('scroll').value,
+        cookieClose: document.getElementById('cookieClose').value,
+        cookieSignup: document.getElementById('cookieSignup').value
+    }));
+}
+
+function generateConfig() {
+    var cfg = [
+        '/* Conca Verde — Promo Config */',
+        '/* Ultima modificare: ' + new Date().toLocaleString('ro-RO') + ' */',
+        'var CV_PROMO = {',
+        '    active: ' + document.getElementById('promoActive').checked + ',',
+        '    discount: ' + document.getElementById('discount').value + ',',
+        '    code: "' + document.getElementById('code').value + '",',
+        '    title_ro: "' + document.getElementById('titleRo').value + '",',
+        '    title_en: "' + document.getElementById('titleEn').value + '",',
+        '    delay_seconds: ' + document.getElementById('delay').value + ',',
+        '    scroll_trigger: ' + document.getElementById('scroll').value + ',',
+        '    cookie_days_close: ' + document.getElementById('cookieClose').value + ',',
+        '    cookie_days_signup: ' + document.getElementById('cookieSignup').value,
+        '};'
+    ].join('\n');
+    
+    var el = document.getElementById('configOutput');
+    el.textContent = cfg;
+    el.style.display = 'block';
+    return cfg;
+}
+
+function copyConfig() {
+    var cfg = generateConfig();
+    navigator.clipboard.writeText(cfg).then(function() { showToast(); });
+}
+
+function generateAndCopy() {
+    copyConfig();
+    var btn = document.querySelector('.top .save-btn');
+    btn.textContent = '✅ Copiat!';
+    btn.classList.add('saved');
+    setTimeout(function() { btn.textContent = '💾 Generează & Copiază'; btn.classList.remove('saved'); }, 2000);
+}
+
+function quickAction(preset) {
+    if (preset === 'off') {
+        document.getElementById('promoActive').checked = false;
+    } else {
+        document.getElementById('promoActive').checked = true;
+        document.getElementById('discount').value = preset;
+        var codes = {'5':'VERDE5','10':'VERDE10','15':'VARA15','20':'SUPER20'};
+        document.getElementById('code').value = codes[preset] || 'VERDE' + preset;
+    }
+    update();
+    copyConfig();
+}
+
+function resetConfig() {
+    document.getElementById('promoActive').checked = true;
+    document.getElementById('discount').value = '5';
+    document.getElementById('code').value = 'VERDE5';
+    document.getElementById('titleRo').value = 'Reducere la Prima Rezervare';
+    document.getElementById('titleEn').value = 'Discount on First Booking';
+    document.getElementById('delay').value = '8';
+    document.getElementById('scroll').value = '35';
+    document.getElementById('cookieClose').value = '7';
+    document.getElementById('cookieSignup').value = '30';
+    update();
+}
+
+function showToast() {
+    var t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+
+// Load saved settings
+var saved = localStorage.getItem('cv_admin');
+if (saved) {
+    try {
+        var s = JSON.parse(saved);
+        if (s.active !== undefined) document.getElementById('promoActive').checked = s.active;
+        if (s.discount) document.getElementById('discount').value = s.discount;
+        if (s.code) document.getElementById('code').value = s.code;
+        if (s.titleRo) document.getElementById('titleRo').value = s.titleRo;
+        if (s.titleEn) document.getElementById('titleEn').value = s.titleEn;
+        if (s.delay) document.getElementById('delay').value = s.delay;
+        if (s.scroll) document.getElementById('scroll').value = s.scroll;
+        if (s.cookieClose) document.getElementById('cookieClose').value = s.cookieClose;
+        if (s.cookieSignup) document.getElementById('cookieSignup').value = s.cookieSignup;
+    } catch(e) {}
+}
+update();
+</script>
+</body>
+</html>
