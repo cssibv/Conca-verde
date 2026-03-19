@@ -145,6 +145,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://conca-verde.ro/pachet-weekend-romantic</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://conca-verde.ro/pachet-teambuilding</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://conca-verde.ro/pachet-early-booking</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://conca-verde.ro/politica-confidentialitate</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>yearly</changefreq>
