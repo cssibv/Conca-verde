@@ -1667,17 +1667,19 @@ article table { display: block; overflow-x: auto; -webkit-overflow-scrolling: to
 /* ===== FOOTER COPYRIGHT - desktop & mobile ===== */
 .copyright {
     display: flex !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
     align-items: center !important;
     flex-wrap: wrap !important;
-    gap: 8px !important;
-    padding: 18px 0 !important;
+    gap: 6px 24px !important;
+    padding: 20px 80px !important;
+    text-align: center !important;
+    font-size: 0.82rem !important;
+    line-height: 1.6 !important;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .copyright {
         flex-direction: column !important;
-        text-align: center !important;
+        padding: 20px 20px 80px !important;
         gap: 4px !important;
-        padding-bottom: 70px !important;
     }
 }
