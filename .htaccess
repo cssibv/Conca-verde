@@ -1,6 +1,9 @@
 ErrorDocument 404 /404.html
 
-# ===== GZIP Compression =====
+# ===== Prevent Directory Listing =====
+Options -Indexes
+
+# ===== GZIP Compression ======
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
 </IfModule>
@@ -24,6 +27,15 @@ ErrorDocument 404 /404.html
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ===== Cache-Control for JS/CSS (immutable for hashed, short for dynamic) =====
+<IfModule mod_headers.c>
+    <FilesMatch "newsletter-popup\.js$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
 </IfModule>
 
 # ===== Force HTTPS =====
