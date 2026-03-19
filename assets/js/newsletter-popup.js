@@ -32,7 +32,7 @@
         var overlay = document.createElement('div');
         overlay.className = 'cv-popup-overlay';
         overlay.id = 'cvNewsletter';
-        overlay.innerHTML = '<div class="cv-popup"><button class="cv-popup-close" aria-label="Închide" id="cvPopupClose">&times;</button><div id="cvPopupContent"><div class="cv-popup-header"><div class="cv-badge">Ofertă Exclusivă</div><h3>' + DISCOUNT + '% ' + TITLE_RO + '</h3><p>Abonează-te și primești codul de reducere direct pe email, plus oferte speciale și noutăți.</p></div><div class="cv-popup-body"><div class="cv-popup-perks"><span class="cv-popup-perk">🏷️ Cod -' + DISCOUNT + '%</span><span class="cv-popup-perk">📧 Oferte exclusive</span><span class="cv-popup-perk">🎁 Pachete sezoniere</span><span class="cv-popup-perk">🚫 Fără spam</span></div><form class="cv-popup-form" id="cvNewsletterForm"><input type="text" class="cv-popup-input" id="cvName" placeholder="Numele tău" autocomplete="given-name"><input type="email" class="cv-popup-input" id="cvEmail" placeholder="Adresa ta de email *" required autocomplete="email"><button type="submit" class="cv-popup-btn">Vreau Reducerea de ' + DISCOUNT + '% →</button></form><p class="cv-popup-note">🔒 Datele tale sunt în siguranță. <a href="/politica-confidentialitate">Politica de confidențialitate</a></p></div></div></div>';
+        overlay.innerHTML = '<div class="cv-popup"><button class="cv-popup-close" aria-label="Închide" id="cvPopupClose">&times;</button><div id="cvPopupContent"><div class="cv-popup-header"><div class="cv-badge">Ofertă Exclusivă</div><h3>' + DISCOUNT + '% ' + TITLE_RO + '</h3><p>Abonează-te și primești codul de reducere direct pe email, plus oferte speciale și noutăți.</p></div><div class="cv-popup-body"><div class="cv-popup-perks"><span class="cv-popup-perk">🏷️ Cod -' + DISCOUNT + '%</span><span class="cv-popup-perk">📧 Oferte exclusive</span><span class="cv-popup-perk">🎁 Pachete sezoniere</span><span class="cv-popup-perk">🚫 Fără spam</span></div><form class="cv-popup-form" id="cvNewsletterForm"><input type="text" class="cv-popup-input" id="cvName" placeholder="Numele tău" autocomplete="given-name"><input type="tel" class="cv-popup-input" id="cvPhone" placeholder="Numărul tău de telefon *" required autocomplete="tel" pattern="[0-9]{10}" inputmode="numeric"><button type="submit" class="cv-popup-btn">Vreau Reducerea de ' + DISCOUNT + '% →</button></form><p class="cv-popup-note">🔒 Datele tale sunt în siguranță. <a href="/politica-confidentialitate">Politica de confidențialitate</a></p></div></div></div>';
         document.body.appendChild(overlay);
 
         var shown = false;
@@ -62,14 +62,14 @@
         document.getElementById('cvNewsletterForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var name = document.getElementById('cvName').value.trim();
-            var email = document.getElementById('cvEmail').value.trim();
-            if (!email) return;
+            var phone = document.getElementById('cvPhone').value.trim();
+            if (!phone) return;
 
-            if (typeof gtag === 'function') gtag('event', 'newsletter_signup', { event_category: 'lead', event_label: email, promo_code: CODE, page: location.pathname });
+            if (typeof gtag === 'function') gtag('event', 'newsletter_signup', { event_category: 'lead', event_label: phone, promo_code: CODE, page: location.pathname });
 
             var waMsg = 'Bună ziua! Abonare newsletter Conca Verde.\n\n';
             if (name) waMsg += '👤 Nume: ' + name + '\n';
-            waMsg += '✉️ Email: ' + email + '\n';
+            waMsg += '📱 Telefon: ' + phone + '\n';
             waMsg += '🏷️ Solicită codul de reducere -' + DISCOUNT + '% (' + CODE + ')\n\nMulțumesc!';
             var waUrl = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(waMsg);
 

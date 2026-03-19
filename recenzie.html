@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Lasă o Recenzie — Conca Verde</title>
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7T927GTD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9G7T927GTD');
+
+    // Track QR scan source
+    var params = new URLSearchParams(window.location.search);
+    var source = params.get('src') || 'direct';
+    var campaign = params.get('c') || 'qr-recenzie';
+
+    // GA4 event
+    gtag('event', 'qr_scan_review', {
+        event_category: 'qr_tracking',
+        event_label: source,
+        campaign: campaign,
+        page: '/recenzie'
+    });
+
+    // Google Ads conversion (optional)
+    gtag('event', 'conversion', {
+        send_to: 'AW-17987940313/qr_review',
+        event_category: 'engagement'
+    });
+
+    // Redirect after 3 seconds
+    var REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJ695s2K5Hs0ARvk90QbldSDY';
+    setTimeout(function() {
+        window.location.href = REVIEW_URL;
+    }, 3000);
+    </script>
+    <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background: linear-gradient(135deg, #1e3a29, #2d5a3f);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .container {
+        max-width: 400px;
+        width: 100%;
+    }
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+    .subtitle {
+        color: #c5a059;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    .stars {
+        font-size: 2.5rem;
+        color: #c5a059;
+        margin-bottom: 20px;
+    }
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+    .desc {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    .loader {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255,255,255,0.2);
+        border-top-color: #c5a059;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin-bottom: 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .redirect-text {
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+    .redirect-text span {
+        color: #c5a059;
+        font-weight: 700;
+    }
+    .manual-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 28px;
+        background: #c5a059;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: background 0.2s;
+    }
+    .manual-link:hover { background: #d4b068; }
+    .badge {
+        display: inline-block;
+        background: #b71c1c;
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-top: 24px;
+    }
+    .contact {
+        margin-top: 30px;
+        font-size: 0.8rem;
+        opacity: 0.5;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">CONCA VERDE</div>
+        <div class="subtitle">Complex Turistic · Cheile Râșnoavei</div>
+
+        <div class="stars">★ ★ ★ ★ ★</div>
+
+        <h1>Mulțumim că ne vizitezi!</h1>
+        <p class="desc">Ești redirecționat către Google Reviews<br>pentru a lăsa o recenzie.</p>
+
+        <div class="loader"></div>
+        <p class="redirect-text">Se deschide Google Reviews în <span id="countdown">3</span> secunde...</p>
+
+        <a href="https://search.google.com/local/writereview?placeid=ChIJ695s2K5Hs0ARvk90QbldSDY" class="manual-link">
+            Lasă o Recenzie pe Google →
+        </a>
+
+        <div class="badge">★ 5% reducere cu cod VERDE5 la următoarea vizită ★</div>
+
+        <div class="contact">conca-verde.ro · 0799 597 083</div>
+    </div>
+
+    <script>
+    // Countdown
+    var count = 3;
+    var el = document.getElementById('countdown');
+    var timer = setInterval(function() {
+        count--;
+        el.textContent = count;
+        if (count <= 0) clearInterval(timer);
+    }, 1000);
+    </script>
+</body>
+</html>

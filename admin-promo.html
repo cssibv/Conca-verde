@@ -162,6 +162,43 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;color:#333;m
             </div>
         </div>
 
+        <!-- QR TRACKING -->
+        <div class="card">
+            <h2>📊 Tracking QR Recenzii</h2>
+            <p style="font-size:.85rem;color:#666;margin-bottom:12px;">Fiecare QR de recenzie trece prin <code>conca-verde.ro/recenzie</code> — vizita e înregistrată în GA4 cu sursa.</p>
+            <div class="fg">
+                <label>Sursă QR (unde pui flyer-ul)</label>
+                <select id="qrSource" onchange="updateQR()">
+                    <option value="flyer">Flyer pe masă</option>
+                    <option value="receptie">Recepție</option>
+                    <option value="bon">Bon fiscal / Notă plată</option>
+                    <option value="card-vizita">Card vizită</option>
+                    <option value="sticker">Sticker ușă</option>
+                    <option value="email">Email</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="instagram">Instagram</option>
+                </select>
+            </div>
+            <div style="background:#f8f8f8;padding:12px 16px;border-radius:8px;margin-top:8px;">
+                <label style="font-size:.7rem;color:#888;text-transform:uppercase;font-weight:700;">URL pentru QR Code</label>
+                <div style="font-family:Consolas,monospace;font-size:.8rem;word-break:break-all;margin-top:4px;color:#1e3a29;font-weight:600;" id="qrUrl">conca-verde.ro/recenzie?src=flyer&c=qr-masa</div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+                <button class="save-btn" style="background:#1e3a29;font-size:.8rem;padding:8px 16px;" onclick="copyQR()">📋 Copiază URL</button>
+            </div>
+            <div class="help" style="margin-top:12px;">
+                <strong>Cum vezi statisticile:</strong><br>
+                GA4 → Reports → Engagement → Events → <code>qr_scan_review</code><br>
+                Filtrează după <code>event_label</code> pentru a vedea sursa (flyer, recepție, bon etc.)
+                <br><br>
+                <strong>Exemplu URL-uri per locație:</strong><br>
+                <code>/recenzie?src=flyer&c=qr-masa</code> — flyer pe masă<br>
+                <code>/recenzie?src=receptie&c=qr-receptie</code> — QR la recepție<br>
+                <code>/recenzie?src=bon&c=qr-nota</code> — QR pe bon<br>
+                <code>/recenzie?src=facebook&c=social</code> — link pe Facebook
+            </div>
+        </div>
+
         <!-- QUICK ACTIONS -->
         <div class="card">
             <h2>⚡ Acțiuni Rapide</h2>
@@ -332,6 +369,18 @@ if (saved) {
     } catch(e) {}
 }
 update();
+
+function updateQR() {
+    var src = document.getElementById('qrSource').value;
+    var campaigns = {flyer:'qr-masa',receptie:'qr-receptie',bon:'qr-nota','card-vizita':'qr-card',sticker:'qr-sticker',email:'email-review',facebook:'social',instagram:'social'};
+    var url = 'https://conca-verde.ro/recenzie?src=' + src + '&c=' + (campaigns[src]||'qr');
+    document.getElementById('qrUrl').textContent = url;
+}
+function copyQR() {
+    var url = document.getElementById('qrUrl').textContent;
+    navigator.clipboard.writeText(url).then(function() { showToast(); });
+}
+updateQR();
 </script>
 </body>
 </html>
