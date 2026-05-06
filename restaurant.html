@@ -29,6 +29,11 @@
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     <link rel="canonical" href="https://conca-verde.ro/restaurant">
 
+    <!-- Hreflang — bilingv RO/EN -->
+    <link rel="alternate" hreflang="ro" href="https://conca-verde.ro/restaurant">
+    <link rel="alternate" hreflang="en" href="https://conca-verde.ro/restaurant?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://conca-verde.ro/restaurant">
+
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preload" as="image" href="assets/img/restaurant-card.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1235,27 +1240,4 @@
             });
         });
 
-        // 7. Sub-nav links (Răcoritoare, Calde etc.) — ensure they switch group first
-        document.querySelectorAll('.menu-nav-group a[href^="#"]').forEach(function(link){
-            link.addEventListener('click', function(e){
-                var targetId = link.getAttribute('href').replace('#','');
-                var targetGroup = barAnchorIds.indexOf(targetId) !== -1 ? 'bar' : 'food';
-                // Switch group if needed
-                var currentGroup = document.querySelector('.menu-nav-toggle.active');
-                if(currentGroup && currentGroup.dataset.group !== targetGroup){
-                    switchGroup(targetGroup);
-                }
-                // Scroll to target
-                var target = document.getElementById(targetId);
-                if(target){
-                    e.preventDefault();
-                    setTimeout(function(){ target.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
-                }
-            });
-        });
-    });
-    </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
-    <script src="assets/js/newsletter-popup.js" defer></script>
-</body>
-</html>
+        // 7. Sub-nav links

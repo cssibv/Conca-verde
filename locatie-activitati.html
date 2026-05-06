@@ -8,6 +8,11 @@
     <title>Locație & Activități — Cheile Râșnoavei, lângă Brașov și Bran | Conca Verde</title>
     <link rel="canonical" href="https://conca-verde.ro/locatie-activitati">
 
+    <!-- Hreflang — bilingv RO/EN -->
+    <link rel="alternate" hreflang="ro" href="https://conca-verde.ro/locatie-activitati">
+    <link rel="alternate" hreflang="en" href="https://conca-verde.ro/locatie-activitati?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://conca-verde.ro/locatie-activitati">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Locație & Activități | Complex Turistic Conca Verde">
     <meta property="og:description" content="Conca Verde în Cheile Râșnoavei — 18 km de Brașov, 20 km de Castelul Bran, 55 km de Sinaia. Drumeții, castele, activități.">
@@ -514,11 +519,4 @@
             el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname}); });
         });
         document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
-            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','email_click',{event_category:'contact',event_label:el.href.replace('mailto:',''),page:location.pathname}); });
-        });
-    });
-    </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
-    <script src="assets/js/newsletter-popup.js" defer></script>
-</body>
-</html>
+            el.addEventListener(

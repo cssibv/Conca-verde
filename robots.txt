@@ -1,4 +1,45 @@
 User-agent: *
 Allow: /
+Disallow: /landing-cazare-ads.html
+Disallow: /landing-nunta-ads.html
+Disallow: /landing-restaurant-ads.html
+Disallow: /admin-promo.html
+Disallow: /template.html
+Disallow: /*?utm_*
+Disallow: /*?fbclid*
+Disallow: /*?gclid*
+
+# Blocheaza AI scrapers care nu trimit trafic inapoi
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Permite AI care trimit trafic inapoi
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Prioritate crawl pentru Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://conca-verde.ro/sitemap.xml

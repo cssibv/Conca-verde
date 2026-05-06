@@ -7,6 +7,11 @@
     <meta name="description" content="Termeni și condiții de utilizare a serviciilor Complexului Turistic Conca Verde, Cheile Râșnoavei. Informații despre rezervări, anulări și politici.">
     <title>Termeni și Condiții | Complex Turistic Conca Verde</title>
     <link rel="canonical" href="https://conca-verde.ro/termeni">
+
+    <!-- Hreflang — bilingv RO/EN -->
+    <link rel="alternate" hreflang="ro" href="https://conca-verde.ro/termeni">
+    <link rel="alternate" hreflang="en" href="https://conca-verde.ro/termeni?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://conca-verde.ro/termeni">
     <meta property="og:title" content="Termeni și Condiții | Conca Verde">
     <meta property="og:description" content="Termeni și condiții de utilizare a serviciilor Complexului Turistic Conca Verde.">
     <meta property="og:image" content="https://conca-verde.ro/assets/img/og-default.jpg">
@@ -244,24 +249,4 @@
             el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname}); });
         });
         document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
-            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','email_click',{event_category:'contact',event_label:el.href.replace('mailto:',''),page:location.pathname}); });
-        });
-    });
-    </script>
-    <script>
-    window.__menuReady = false;
-    document.addEventListener('DOMContentLoaded', function(){
-        setTimeout(function(){
-            if(window.__menuReady) return;
-            var h=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');
-            if(!h||!n)return;
-            var o=document.createElement('div');o.className='nav-overlay';document.body.appendChild(o);
-            function toggle(){var isOpen=n.classList.contains('active');n.classList.toggle('active',!isOpen);h.classList.toggle('open',!isOpen);o.classList.toggle('active',!isOpen);document.body.style.overflow=isOpen?'':'hidden';}
-            h.addEventListener('click',toggle);
-            o.addEventListener('click',function(){n.classList.remove('active');h.classList.remove('open');o.classList.remove('active');document.body.style.overflow='';});
-        },1500);
-    });
-    </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
-</body>
-</html>
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','email_cli

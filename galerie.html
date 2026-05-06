@@ -7,6 +7,11 @@
     <meta name="description" content="Galerie foto Complex Turistic Conca Verde – Cheile Râșnoavei. Hotel, restaurant, sală evenimente, natură și activități lângă Brașov.">
     <title>Galerie Foto – Complex Turistic Conca Verde | Cheile Râșnoavei, Brașov</title>
     <link rel="canonical" href="https://conca-verde.ro/galerie">
+
+    <!-- Hreflang — bilingv RO/EN -->
+    <link rel="alternate" hreflang="ro" href="https://conca-verde.ro/galerie">
+    <link rel="alternate" hreflang="en" href="https://conca-verde.ro/galerie?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://conca-verde.ro/galerie">
     <meta property="og:title" content="Galerie Foto | Complex Turistic Conca Verde">
     <meta property="og:description" content="Descoperă în imagini Complexul Turistic Conca Verde din Cheile Râșnoavei – hotel, restaurant, evenimente și natură.">
     <meta property="og:image" content="https://conca-verde.ro/assets/img/og-default.jpg">
@@ -399,14 +404,4 @@
     <script>
     document.addEventListener('DOMContentLoaded', function(){
         document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
-            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',page:location.pathname}); });
-        });
-        document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
-            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname}); });
-        });
-    });
-    </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
-    <script src="assets/js/newsletter-popup.js" defer></script>
-</body>
-</html>
+            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'cont
