@@ -1,3 +1,17 @@
+/* ========================================
+   GLOBAL LANGUAGE SWITCHER
+   ======================================== */
+function setLang(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+    });
+    try { localStorage.setItem('cv-lang', lang); } catch(e) {}
+}
+(function() {
+    try { var s = localStorage.getItem('cv-lang'); if (s === 'en') document.body.classList.add('lang-en'); } catch(e) {}
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ─────────────────────────────────────────
@@ -92,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Recalculate offset after scrolled class changes
         updateHeaderOffset();
 
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1024) {
             if (currentScroll > lastScroll && currentScroll > 120) {
                 header.classList.add('hidden');
                 // Header e ascuns → sticky nav trebuie să urce la top: 0
@@ -153,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
        9. RESIZE — inchide meniu daca se mareste fereastra
     ───────────────────────────────────────── */
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeMenu();
+        if (window.innerWidth > 1024) closeMenu();
     }, { passive: true });
 
 
@@ -184,6 +198,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.phone) message += '📞 Telefon: ' + data.phone + '\n';
                 if (data.eventType) message += '🎉 Tip: ' + data.eventType + '\n';
                 if (data.date) message += '📅 Dată: ' + data.date + '\n';
+                if (data.guests) message += '👥 Persoane: ' + data.guests + '\n';
+            } else if (leadType === 'cazare') {
+                message += 'Doresc să fac o rezervare de cazare la Conca Verde.\n\n';
+                if (data.name) message += '👤 Nume: ' + data.name + '\n';
+                if (data.phone) message += '📞 Telefon: ' + data.phone + '\n';
+                if (data.checkin) message += '📅 Check-in: ' + data.checkin + '\n';
+                if (data.checkout) message += '📅 Check-out: ' + data.checkout + '\n';
+                if (data.roomType) message += '🛏️ Tip cameră: ' + data.roomType + '\n';
                 if (data.guests) message += '👥 Persoane: ' + data.guests + '\n';
             } else if (leadType === 'contact') {
                 message += 'Am un mesaj pentru Conca Verde.\n\n';
@@ -287,3 +309,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+/* ========================================
+   FAQ ACCORDION
+   Adaugă la sfârșitul fișierului assets/js/script.js
+   ======================================== */
+
+(function(){
+    function initFaqAccordion() {
+        var faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(function(question) {
+            question.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var isOpen = this.getAttribute('aria-expanded') === 'true';
+                faqQuestions.forEach(function(q) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('open');
+                });
+                if (!isOpen) {
+                    this.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('open');
+                }
+            });
+        });
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initFaqAccordion);
+    else initFaqAccordion();
+})();
+
+/* Restore lang on load */
+(function(){
+    function restoreLang() {
+        var saved = 'ro';
+        try { saved = localStorage.getItem('cv-lang') || 'ro'; } catch(e) {}
+        setLang(saved);
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', restoreLang);
+    else restoreLang();
+})();
+
+/* ========================================
+   PDF SAVE BUTTON
+   ======================================== */
+(function(){
+    function initPDF() {
+        var pdfBtn = document.querySelector('.pdf-float');
+        if (pdfBtn) {
+            pdfBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.print();
+            });
+        }
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', initPDF);
+    else initPDF();
+})();
