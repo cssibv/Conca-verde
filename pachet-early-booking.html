@@ -248,11 +248,7 @@
         <div class="copyright" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;"><span>Produs de <a href="https://cssi.ro" target="_blank" rel="noopener" style="color:var(--gold); font-weight:600;">CSSI.ro</a></span><span>&copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.</span></div>
     </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
-            el.addEventListener('click', function(){
-                if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',package:'pachet-early-booking',page:location.pathname});
-            });
-        });
-        document.querySelector
+    <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
+    <script src="assets/js/newsletter-popup.js" defer></script>
+</body>
+</html>

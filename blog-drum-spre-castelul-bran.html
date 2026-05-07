@@ -446,21 +446,7 @@
         <div class="copyright" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;"><span>Produs de <a href="https://cssi.ro" target="_blank" rel="noopener" style="color:var(--gold); font-weight:600;">CSSI.ro</a></span><span>&copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.</span></div>
     </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
-            el.addEventListener('click', function(){
-                if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'contact',event_label:'whatsapp_click',article:'blog-drum-spre-castelul-bran',page:location.pathname});
-            });
-        });
-        document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
-            el.addEventListener('click', function(){
-                if(typeof gtag==='function') gtag('event','phone_call',{event_category:'contact',event_label:el.href.replace('tel:',''),page:location.pathname});
-            });
-        });
-    });
-    </script>
-    <script>
-    document.querySelectorAll('.faq-question').forEach(function(btn){
-        btn.addEventListener('click', function(){
-            var expanded
+    <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
+    <script src="assets/js/newsletter-popup.js" defer></script>
+</body>
+</html>
