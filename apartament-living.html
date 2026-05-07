@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <style>
     .faq-list { max-width: 800px; margin: 0 auto; }
@@ -145,7 +145,7 @@
 
     <main>
 
-    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/apartament-living1.jpeg');">
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/apartament-living1.webp');">
         <div class="header-content">
             <h1><span data-lang="ro">Apartament cu Living Separat — Conca Verde, Cheile Râșnoavei</span><span data-lang="en">Apartment with Separate Living Room — Conca Verde, Râșnoavei Gorge</span></h1>
             <p><span data-lang="ro">Apartament generos cu dormitor și living separat, ideal pentru familii sau sejururi prelungite. Spaț...</span><span data-lang="en">Generous apartment with bedroom and separate living room, ideal for families or extended stays. Priv...</span></p>
@@ -163,9 +163,9 @@
         <div class="grid-2" style="gap:40px; align-items:start;">
             <div class="room-img room-carousel" data-room="apartament-living">
                 <div class="carousel-track">
-                            <img src="assets/img/apartament-living1.jpeg" width="750" height="500" alt="Apartament cu Living Separat Conca Verde — 1" class="carousel-slide active" loading="lazy">
-                            <img src="assets/img/apartament-living2.jpeg" width="750" height="500" alt="Apartament cu Living Separat Conca Verde — 2" class="carousel-slide" loading="lazy">
-                            <img src="assets/img/apartament-living3.jpeg" width="750" height="500" alt="Apartament cu Living Separat Conca Verde — 3" class="carousel-slide" loading="lazy">
+                            <picture><source srcset="assets/img/apartament-living1.webp" type="image/webp"><img width="750" height="500" alt="Apartament cu Living Separat Conca Verde — 1" class="carousel-slide active" loading="lazy" src="assets/img/apartament-living1.jpeg"></picture>
+                            <picture><source srcset="assets/img/apartament-living2.webp" type="image/webp"><img width="750" height="500" alt="Apartament cu Living Separat Conca Verde — 2" class="carousel-slide" loading="lazy" src="assets/img/apartament-living2.jpeg"></picture>
+                            <picture><source srcset="assets/img/apartament-living3.webp" type="image/webp"><img width="750" height="500" alt="Apartament cu Living Separat Conca Verde — 3" class="carousel-slide" loading="lazy" src="assets/img/apartament-living3.jpeg"></picture>
                 </div>
                 <button class="carousel-arrow carousel-prev" aria-label="Poza anterioară">‹</button>
                 <button class="carousel-arrow carousel-next" aria-label="Poza următoare">›</button>
@@ -239,21 +239,21 @@
         </div>
         <div class="grid-3">
                 <a href="camera-dubla.html" class="room-mini-card">
-                    <img src="assets/img/camera-dubla1.jpeg" alt="Cameră Single & Dublă" width="300" height="200" loading="lazy">
+                    <picture><source srcset="assets/img/camera-dubla1.webp" type="image/webp"><img alt="Cameră Single & Dublă" width="300" height="200" loading="lazy" src="assets/img/camera-dubla1.jpeg"></picture>
                     <div class="room-mini-info">
                         <h4><span data-lang="ro">Cameră Single & Dublă</span><span data-lang="en">Single & Double Room</span></h4>
                         <span class="room-mini-price">250 lei <span data-lang="ro">/ noapte</span><span data-lang="en">/ night</span></span>
                     </div>
                 </a>
                 <a href="camera-tripla.html" class="room-mini-card">
-                    <img src="assets/img/camera-dubla1.jpeg" alt="Cameră Triplă" width="300" height="200" loading="lazy">
+                    <picture><source srcset="assets/img/camera-dubla1.webp" type="image/webp"><img alt="Cameră Triplă" width="300" height="200" loading="lazy" src="assets/img/camera-dubla1.jpeg"></picture>
                     <div class="room-mini-info">
                         <h4><span data-lang="ro">Cameră Triplă</span><span data-lang="en">Triple Room</span></h4>
                         <span class="room-mini-price">300 lei <span data-lang="ro">/ noapte</span><span data-lang="en">/ night</span></span>
                     </div>
                 </a>
                 <a href="apartament-2-camere.html" class="room-mini-card">
-                    <img src="assets/img/apartament-2camere1.jpeg" alt="Apartament 2 Camere" width="300" height="200" loading="lazy">
+                    <picture><source srcset="assets/img/apartament-2camere1.webp" type="image/webp"><img alt="Apartament 2 Camere" width="300" height="200" loading="lazy" src="assets/img/apartament-2camere1.jpeg"></picture>
                     <div class="room-mini-info">
                         <h4><span data-lang="ro">Apartament 2 Camere</span><span data-lang="en">2-Bedroom Apartment</span></h4>
                         <span class="room-mini-price">500 lei <span data-lang="ro">/ noapte</span><span data-lang="en">/ night</span></span>
@@ -345,7 +345,7 @@
         });
     });
     </script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="assets/js/newsletter-popup.js" defer></script>
 </body>
 </html>

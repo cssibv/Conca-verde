@@ -32,10 +32,10 @@
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="image" href="assets/img/nunta.jpg">
+    <link rel="preload" as="image" href="assets/img/nunta.webp" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <style>
         .lang-switcher{display:flex;align-items:center;gap:6px;margin-right:10px}
@@ -46,7 +46,7 @@
         header.scrolled .lang-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
 
         /* Hero Landing */
-        .hero-nunta{height:78vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden;padding-top:90px;background:linear-gradient(135deg,rgba(20,45,30,.85),rgba(30,58,41,.7)),url('assets/img/nunta.jpg') center/cover no-repeat}
+        .hero-nunta{height:78vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative;overflow:hidden;padding-top:90px;background:linear-gradient(135deg,rgba(20,45,30,.85),rgba(30,58,41,.7)),url('assets/img/nunta.webp') center/cover no-repeat}
         .hero-nunta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,#fff);pointer-events:none}
         .hero-nunta .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 22px;border-radius:50px;margin-bottom:28px;animation:fadeUp .8s ease both}
         .hero-nunta h1{font-family:var(--font-head);font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.08;margin-bottom:22px;animation:fadeUp .9s .1s ease both}
@@ -203,16 +203,16 @@
                 <div class="line center"></div>
             </div>
             <div class="grid-3" style="margin-top:40px">
-                <div class="service-card"><div class="card-img-wrap"><img src="assets/img/nunta.jpg" alt="Nuntă în aer liber Conca Verde" width="680" height="510" loading="lazy"></div><div class="card-body"><h3><span data-lang="ro">Ceremonie în Natură</span><span data-lang="en">Nature Ceremony</span></h3></div></div>
-                <div class="service-card"><div class="card-img-wrap"><img src="assets/img/sala-mare.jpg" alt="Sala mare Conca Verde" width="383" height="510" loading="lazy"></div><div class="card-body"><h3><span data-lang="ro">Sala Principală</span><span data-lang="en">Main Hall</span></h3></div></div>
-                <div class="service-card"><div class="card-img-wrap"><img src="assets/img/separeu.jpg" alt="Separeu Conca Verde" width="680" height="510" loading="lazy"></div><div class="card-body"><h3><span data-lang="ro">Separeu Privat</span><span data-lang="en">Private Room</span></h3></div></div>
+                <div class="service-card"><div class="card-img-wrap"><picture><source srcset="assets/img/nunta.webp" type="image/webp"><img alt="Nuntă în aer liber Conca Verde" width="680" height="510" loading="lazy" src="assets/img/nunta.jpg"></picture></div><div class="card-body"><h3><span data-lang="ro">Ceremonie în Natură</span><span data-lang="en">Nature Ceremony</span></h3></div></div>
+                <div class="service-card"><div class="card-img-wrap"><picture><source srcset="assets/img/sala-mare.webp" type="image/webp"><img alt="Sala mare Conca Verde" width="383" height="510" loading="lazy" src="assets/img/sala-mare.jpg"></picture></div><div class="card-body"><h3><span data-lang="ro">Sala Principală</span><span data-lang="en">Main Hall</span></h3></div></div>
+                <div class="service-card"><div class="card-img-wrap"><picture><source srcset="assets/img/separeu.webp" type="image/webp"><img alt="Separeu Conca Verde" width="680" height="510" loading="lazy" src="assets/img/separeu.jpg"></picture></div><div class="card-body"><h3><span data-lang="ro">Separeu Privat</span><span data-lang="en">Private Room</span></h3></div></div>
             </div>
             <div style="text-align:center;margin-top:30px"><a href="galerie.html" class="btn-link" style="color:var(--gold)"><span data-lang="ro">Vezi toate fotografiile →</span><span data-lang="en">View all photos →</span></a></div>
         </div>
     </section>
 
     <!-- Formular ofertă nuntă -->
-    <section class="container spatiu-mare" id="oferta-nunta" style="background:linear-gradient(135deg,rgba(20,45,30,.97),rgba(30,58,41,.95)),url('assets/img/exterior.jpeg') center/cover;margin:0;max-width:100%;padding:80px 20px;border-radius:0">
+    <section class="container spatiu-mare" id="oferta-nunta" style="background:linear-gradient(135deg,rgba(20,45,30,.97),rgba(30,58,41,.95)),url('assets/img/exterior.webp') center/cover;margin:0;max-width:100%;padding:80px 20px;border-radius:0">
         <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start">
             <div>
                 <span style="color:var(--gold);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:15px"><span data-lang="ro">Ofertă Nuntă</span><span data-lang="en">Wedding Quote</span></span>
@@ -326,7 +326,7 @@
 
     });
     </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
     <script src="assets/js/newsletter-popup.js" defer></script>
 </body>
 </html>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Blog","name":"Blog Conca Verde","description":"Ghiduri turistice și sfaturi de vacanță în Cheile Râșnoavei","url":"https://conca-verde.ro/blog","publisher":{"@type":"Organization","name":"Complex Turistic Conca Verde","url":"https://conca-verde.ro"}}
@@ -72,7 +72,7 @@
 
     <main>
 
-    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/exterior.jpeg'); min-height:280px;">
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/exterior.webp'); min-height:280px;">
         <div class="header-content">
             <h1><span data-lang="ro">Blog Conca Verde</span><span data-lang="en">Conca Verde Blog</span></h1>
             <p><span data-lang="ro">Ghiduri, sfaturi și inspirație din Cheile Râșnoavei</span><span data-lang="en">Guides, tips and inspiration from Râșnoavei Gorge</span></p>
@@ -111,7 +111,7 @@
             </a>
             <a href="blog-weekend-la-munte-langa-brasov.html" class="service-card" style="text-decoration:none; color:inherit;">
                 <div class="card-img-wrap">
-                    <img src="assets/img/Activitati-adrenalina.jpg" alt="Weekend la Munte lângă Brașov — Ghid Complet de Evadare" width="400" height="267" loading="lazy">
+                    <picture><source srcset="assets/img/Activitati-adrenalina.webp" type="image/webp"><img alt="Weekend la Munte lângă Brașov — Ghid Complet de Evadare" width="400" height="267" loading="lazy" src="assets/img/Activitati-adrenalina.jpg"></picture>
                 </div>
                 <div class="card-body">
                     <span style="color:var(--gold); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px;">Ghid Weekend</span>
@@ -122,7 +122,7 @@
             </a>
             <a href="blog-cum-organizezi-nunta-in-natura.html" class="service-card" style="text-decoration:none; color:inherit;">
                 <div class="card-img-wrap">
-                    <img src="assets/img/nunta.jpg" alt="Cum Organizezi o Nuntă în Natură — Ghid Complet 2026" width="400" height="267" loading="lazy">
+                    <picture><source srcset="assets/img/nunta.webp" type="image/webp"><img alt="Cum Organizezi o Nuntă în Natură — Ghid Complet 2026" width="400" height="267" loading="lazy" src="assets/img/nunta.jpg"></picture>
                 </div>
                 <div class="card-body">
                     <span style="color:var(--gold); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px;">Evenimente</span>
@@ -208,5 +208,5 @@
         });
     });
     </script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="assets/js/newsletter-popup.js" defer></scrip

@@ -35,10 +35,10 @@
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="image" href="assets/img/sala-mare.jpg">
+    <link rel="preload" as="image" href="assets/img/sala-mare.webp" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <script type="application/ld+json">
     {
@@ -204,7 +204,7 @@
 
     <main>
 
-    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/img/sala-mare.jpg');">
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/img/sala-mare.webp');">
         <div class="header-content">
             <h1><span data-lang="ro">Sală Evenimente Conca Verde – Locație în Natură, lângă Brașov</span><span data-lang="en">Conca Verde Event Hall – Venue in Nature, near Brașov</span></h1>
             <p><span data-lang="ro">Nunți, botezuri, conferințe și team building în Cheile Râșnoavei, la 18 km de Brașov.</span><span data-lang="en">Weddings, christenings, conferences and team building in Râșnoavei Gorge, 18 km from Brașov.</span></p>
@@ -235,7 +235,7 @@
             </div>
             
             <div class="intro-image-wrap">
-                <img src="assets/img/nunta.jpg" width="680" height="510" loading="lazy" alt="Ceremonie în aer liber la Conca Verde Râșnov">
+                <picture><source srcset="assets/img/nunta.webp" type="image/webp"><img width="680" height="510" loading="lazy" alt="Ceremonie în aer liber la Conca Verde Râșnov" src="assets/img/nunta.jpg"></picture>
             </div>
         </div>
     </section>
@@ -251,7 +251,7 @@
             <div class="grid-2">
                 <div class="service-card">
                     <div class="card-img-wrap">
-                        <img src="assets/img/sala-mare.jpg" width="383" height="510" alt="Sala de evenimente Conca Verde — 240 locuri" loading="lazy">
+                        <picture><source srcset="assets/img/sala-mare.webp" type="image/webp"><img width="383" height="510" alt="Sala de evenimente Conca Verde — 240 locuri" loading="lazy" src="assets/img/sala-mare.jpg"></picture>
                     </div>
                     <div class="card-body">
                         <h3><span data-lang="ro">Sala Principală</span><span data-lang="en">Main Hall</span></h3>
@@ -266,7 +266,7 @@
 
                 <div class="service-card">
                     <div class="card-img-wrap">
-                        <img src="assets/img/separeu.jpg" width="680" height="510" alt="Separeu Conca Verde — 60 locuri" loading="lazy">
+                        <picture><source srcset="assets/img/separeu.webp" type="image/webp"><img width="680" height="510" alt="Separeu Conca Verde — 60 locuri" loading="lazy" src="assets/img/separeu.jpg"></picture>
                     </div>
                     <div class="card-body">
                         <h3><span data-lang="ro">Separeu & Terasă</span><span data-lang="en">Private Room & Terrace</span></h3>
@@ -543,7 +543,7 @@
         });
     });
     </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
     <script src="assets/js/newsletter-popup.js" defer></script>
 </body>
 </html>

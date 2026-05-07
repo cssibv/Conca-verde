@@ -35,10 +35,10 @@
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="image" href="assets/img/hotel-interior.jpeg">
+    <link rel="preload" as="image" href="assets/img/hotel-interior.webp" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <script type="application/ld+json">
     {
@@ -189,7 +189,7 @@
 
     <main>
 
-    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/hotel-interior.jpeg');">
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/hotel-interior.webp');">
         <div class="header-content">
             <h1><span data-lang="ro">Pensiune Conca Verde – Cazare în Cheile Râșnoavei, lângă Brașov</span><span data-lang="en">Conca Verde Guesthouse – Accommodation in Râșnoavei Gorge, near Brașov</span></h1>
             <p><span data-lang="ro">Camere cu vedere la munte, la 18 km de Brașov, 20 km de Bran și 2.5h de București.</span><span data-lang="en">Mountain view rooms, 18 km from Brașov, 20 km from Bran and 2.5h from Bucharest.</span></p>
@@ -217,7 +217,7 @@
                 </div>
             </div>
             <div class="intro-image-wrap">
-                <img src="assets/img/hotel-interior.jpeg" width="800" height="533" loading="lazy" alt="Interior Hotel Conca Verde Râșnov">
+                <picture><source srcset="assets/img/hotel-interior.webp" type="image/webp"><img width="800" height="533" loading="lazy" alt="Interior Hotel Conca Verde Râșnov" src="assets/img/hotel-interior.jpeg"></picture>
             </div>
         </div>
     </section>
@@ -233,9 +233,9 @@
             <div class="room-card-long">
                 <div class="room-img room-carousel" data-room="camera-dubla">
                     <div class="carousel-track">
-                        <img src="assets/img/camera-dubla1.jpeg" width="750" height="500" alt="Cameră Single și Dublă Conca Verde — vedere 1" class="carousel-slide active" loading="lazy">
-                        <img src="assets/img/camera-dubla2.jpeg" width="750" height="500" alt="Cameră Single și Dublă Conca Verde — vedere 2" class="carousel-slide" loading="lazy">
-                        <img src="assets/img/camera-dubla3.jpeg" width="750" height="500" alt="Cameră Single și Dublă Conca Verde — vedere 3" class="carousel-slide" loading="lazy">
+                        <picture><source srcset="assets/img/camera-dubla1.webp" type="image/webp"><img width="750" height="500" alt="Cameră Single și Dublă Conca Verde — vedere 1" class="carousel-slide active" loading="lazy" src="assets/img/camera-dubla1.jpeg"></picture>
+                        <picture><source srcset="assets/img/camera-dubla2.webp" type="image/webp"><img width="750" height="500" alt="Cameră Single și Dublă Conca Verde — vedere 2" class="carousel-slide" loading="lazy" src="assets/img/camera-dubla2.jpeg"></picture>
+                        <picture><source srcset="assets/img/camera-dubla3.webp" type="image/webp"><img width="750" height="500" alt="Cameră Single și Dublă Conca Verde — vedere 3" class="carousel-slide" loading="lazy" src="assets/img/camera-dubla3.jpeg"></picture>
                     </div>
                     <button class="carousel-arrow carousel-prev" aria-label="Poza anterioară">‹</button>
                     <button class="carousel-arrow carousel-next" aria-label="Poza următoare">›</button>
@@ -268,9 +268,9 @@
             <div class="room-card-long">
                 <div class="room-img room-carousel" data-room="camera-tripla">
                     <div class="carousel-track">
-                        <img src="assets/img/camera-dubla1.jpeg" width="750" height="500" alt="Cameră Triplă Conca Verde — vedere 1" class="carousel-slide active" loading="lazy">
-                        <img src="assets/img/camera-dubla2.jpeg" width="750" height="500" alt="Cameră Triplă Conca Verde — vedere 2" class="carousel-slide" loading="lazy">
-                        <img src="assets/img/camera-dubla3.jpeg" width="750" height="500" alt="Cameră Triplă Conca Verde — vedere 3" class="carousel-slide" loading="lazy">
+                        <picture><source srcset="assets/img/camera-dubla1.webp" type="image/webp"><img width="750" height="500" alt="Cameră Triplă Conca Verde — vedere 1" class="carousel-slide active" loading="lazy" src="assets/img/camera-dubla1.jpeg"></picture>
+                        <picture><source srcset="assets/img/camera-dubla2.webp" type="image/webp"><img width="750" height="500" alt="Cameră Triplă Conca Verde — vedere 2" class="carousel-slide" loading="lazy" src="assets/img/camera-dubla2.jpeg"></picture>
+                        <picture><source srcset="assets/img/camera-dubla3.webp" type="image/webp"><img width="750" height="500" alt="Cameră Triplă Conca Verde — vedere 3" class="carousel-slide" loading="lazy" src="assets/img/camera-dubla3.jpeg"></picture>
                     </div>
                     <button class="carousel-arrow carousel-prev" aria-label="Poza anterioară">‹</button>
                     <button class="carousel-arrow carousel-next" aria-label="Poza următoare">›</button>
@@ -303,9 +303,9 @@
             <div class="room-card-long">
                 <div class="room-img room-carousel" data-room="apartament-living">
                     <div class="carousel-track" loading="lazy">
-                        <img src="assets/img/apartament-living1.jpeg" width="750" height="500" alt="Apartament cu Living Separat Conca Verde — vedere 1" class="carousel-slide active" loading="lazy">
-                        <img src="assets/img/apartament-living2.jpeg" width="750" height="500" alt="Apartament cu Living Separat Conca Verde — vedere 2" class="carousel-slide" loading="lazy">
-                        <img src="assets/img/apartament-living3.jpeg" width="750" height="500" alt="Apartament cu Living Separat Conca Verde — vedere 3" class="carousel-slide" loading="lazy">
+                        <picture><source srcset="assets/img/apartament-living1.webp" type="image/webp"><img width="750" height="500" alt="Apartament cu Living Separat Conca Verde — vedere 1" class="carousel-slide active" loading="lazy" src="assets/img/apartament-living1.jpeg"></picture>
+                        <picture><source srcset="assets/img/apartament-living2.webp" type="image/webp"><img width="750" height="500" alt="Apartament cu Living Separat Conca Verde — vedere 2" class="carousel-slide" loading="lazy" src="assets/img/apartament-living2.jpeg"></picture>
+                        <picture><source srcset="assets/img/apartament-living3.webp" type="image/webp"><img width="750" height="500" alt="Apartament cu Living Separat Conca Verde — vedere 3" class="carousel-slide" loading="lazy" src="assets/img/apartament-living3.jpeg"></picture>
                     </div>
                     <button class="carousel-arrow carousel-prev" aria-label="Poza anterioară">‹</button>
                     <button class="carousel-arrow carousel-next" aria-label="Poza următoare">›</button>
@@ -339,9 +339,9 @@
             <div class="room-card-long">
                 <div class="room-img room-carousel" data-room="apartament-2camere" loading="lazy">
                     <div class="carousel-track">
-                        <img src="assets/img/apartament-2camere1.jpeg" width="750" height="500" alt="Apartament 2 Camere Conca Verde — vedere 1" class="carousel-slide active" loading="lazy">
-                        <img src="assets/img/apartament-2camere2.jpeg" width="750" height="500" alt="Apartament 2 Camere Conca Verde — vedere 2" class="carousel-slide" loading="lazy">
-                        <img src="assets/img/apartament-2camere3.jpeg" width="750" height="500" alt="Apartament 2 Camere Conca Verde — vedere 3" class="carousel-slide" loading="lazy">
+                        <picture><source srcset="assets/img/apartament-2camere1.webp" type="image/webp"><img width="750" height="500" alt="Apartament 2 Camere Conca Verde — vedere 1" class="carousel-slide active" loading="lazy" src="assets/img/apartament-2camere1.jpeg"></picture>
+                        <picture><source srcset="assets/img/apartament-2camere2.webp" type="image/webp"><img width="750" height="500" alt="Apartament 2 Camere Conca Verde — vedere 2" class="carousel-slide" loading="lazy" src="assets/img/apartament-2camere2.jpeg"></picture>
+                        <picture><source srcset="assets/img/apartament-2camere3.webp" type="image/webp"><img width="750" height="500" alt="Apartament 2 Camere Conca Verde — vedere 3" class="carousel-slide" loading="lazy" src="assets/img/apartament-2camere3.jpeg"></picture>
                     </div>
                     <button class="carousel-arrow carousel-prev" aria-label="Poza anterioară">‹</button>
                     <button class="carousel-arrow carousel-next" aria-label="Poza următoare">›</button>
@@ -639,7 +639,7 @@
         });
     });
     </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
     <script src="assets/js/newsletter-popup.js" defer></script>
 </body>
 </html>

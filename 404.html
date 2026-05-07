@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
     <style>
         .error-page{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px}
         .error-content{max-width:600px}
@@ -101,6 +101,6 @@
     <script>
     window.__menuReady=false;document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(window.__menuReady)return;var h=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');if(!h||!n)return;var o=document.createElement('div');o.className='nav-overlay';document.body.appendChild(o);function closeMenu(){n.classList.remove('active');h.classList.remove('open');o.classList.remove('active');document.body.style.overflow=''}function toggle(){var isOpen=n.classList.contains('active');if(isOpen){closeMenu()}else{n.classList.add('active');h.classList.add('open');o.classList.add('active');document.body.style.overflow='hidden'}}h.addEventListener('click',toggle);o.addEventListener('click',closeMenu);n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)})},1500)});
     </script>
-    <script src="assets/js/script.js" onload="window.__menuReady=true;"></script>
+    <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
 </body>
 </html>

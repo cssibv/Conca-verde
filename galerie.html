@@ -32,10 +32,10 @@
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preload" as="image" href="assets/img/exterior.jpeg">
+    <link rel="preload" as="image" href="assets/img/exterior.webp" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <style>
         /* Lang */
@@ -116,7 +116,7 @@
 
     <main>
 
-    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/exterior.jpeg');">
+    <section class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/img/exterior.webp');">
         <div class="header-content">
             <h1><span data-lang="ro">Galerie Foto</span><span data-lang="en">Photo Gallery</span></h1>
             <p><span data-lang="ro">Descoperă Conca Verde în imagini</span><span data-lang="en">Discover Conca Verde through images</span></p>
@@ -146,7 +146,7 @@
         <div class="gallery-grid" id="galleryGrid">
             <!-- Exterior & Natură -->
             <div class="gallery-item" data-cat="exterior" data-caption-ro="Complexul Conca Verde – vedere exterioară" data-caption-en="Conca Verde Resort – exterior view">
-                <img src="assets/img/exterior.jpeg" alt="Exterior Complex Turistic Conca Verde" width="600" height="400" loading="lazy">
+                <picture><source srcset="assets/img/exterior.webp" type="image/webp"><img alt="Exterior Complex Turistic Conca Verde" width="600" height="400" loading="lazy" src="assets/img/exterior.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Vedere exterioară</span><span data-lang="en">Exterior view</span></span></div>
             </div>
             <div class="gallery-item" data-cat="exterior" data-caption-ro="Cheile Râșnoavei – natură sălbatică" data-caption-en="Râșnoavei Gorge – wild nature">
@@ -156,35 +156,35 @@
 
             <!-- Cazare -->
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Interior hotel – recepție și lounge" data-caption-en="Hotel interior – reception and lounge">
-                <img src="assets/img/hotel-interior.jpeg" alt="Interior Hotel Conca Verde" width="800" height="533" loading="lazy">
+                <picture><source srcset="assets/img/hotel-interior.webp" type="image/webp"><img alt="Interior Hotel Conca Verde" width="800" height="533" loading="lazy" src="assets/img/hotel-interior.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Interior hotel</span><span data-lang="en">Hotel interior</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Cameră dublă – vedere 1" data-caption-en="Double room – view 1">
-                <img src="assets/img/camera-dubla1.jpeg" alt="Cameră Dublă Conca Verde" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/camera-dubla1.webp" type="image/webp"><img alt="Cameră Dublă Conca Verde" width="750" height="500" loading="lazy" src="assets/img/camera-dubla1.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Cameră dublă</span><span data-lang="en">Double room</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Cameră dublă – vedere 2" data-caption-en="Double room – view 2">
-                <img src="assets/img/camera-dubla2.jpeg" alt="Cameră Dublă Conca Verde – alt unghi" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/camera-dubla2.webp" type="image/webp"><img alt="Cameră Dublă Conca Verde – alt unghi" width="750" height="500" loading="lazy" src="assets/img/camera-dubla2.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Cameră dublă</span><span data-lang="en">Double room</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Cameră dublă – vedere 3" data-caption-en="Double room – view 3">
-                <img src="assets/img/camera-dubla3.jpeg" alt="Cameră Dublă Conca Verde – baie" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/camera-dubla3.webp" type="image/webp"><img alt="Cameră Dublă Conca Verde – baie" width="750" height="500" loading="lazy" src="assets/img/camera-dubla3.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Cameră dublă</span><span data-lang="en">Double room</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament cu living separat" data-caption-en="Apartment with separate living room">
-                <img src="assets/img/apartament-living1.jpeg" alt="Apartament cu Living Conca Verde" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/apartament-living1.webp" type="image/webp"><img alt="Apartament cu Living Conca Verde" width="750" height="500" loading="lazy" src="assets/img/apartament-living1.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Apartament living</span><span data-lang="en">Living apartment</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament cu living – dormitor" data-caption-en="Living apartment – bedroom">
-                <img src="assets/img/apartament-living2.jpeg" alt="Apartament Living Conca Verde – dormitor" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/apartament-living2.webp" type="image/webp"><img alt="Apartament Living Conca Verde – dormitor" width="750" height="500" loading="lazy" src="assets/img/apartament-living2.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Dormitor apartament</span><span data-lang="en">Apartment bedroom</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament 2 camere" data-caption-en="2-bedroom apartment">
-                <img src="assets/img/apartament-2camere1.jpeg" alt="Apartament 2 Camere Conca Verde" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/apartament-2camere1.webp" type="image/webp"><img alt="Apartament 2 Camere Conca Verde" width="750" height="500" loading="lazy" src="assets/img/apartament-2camere1.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Apartament 2 camere</span><span data-lang="en">2-bedroom apartment</span></span></div>
             </div>
             <div class="gallery-item" data-cat="cazare" data-caption-ro="Apartament 2 camere – alt unghi" data-caption-en="2-bedroom apartment – another angle">
-                <img src="assets/img/apartament-2camere2.jpeg" alt="Apartament 2 Camere – vedere" width="750" height="500" loading="lazy">
+                <picture><source srcset="assets/img/apartament-2camere2.webp" type="image/webp"><img alt="Apartament 2 Camere – vedere" width="750" height="500" loading="lazy" src="assets/img/apartament-2camere2.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Apartament 2 camere</span><span data-lang="en">2-bedroom apartment</span></span></div>
             </div>
 
@@ -196,29 +196,29 @@
 
             <!-- Evenimente -->
             <div class="gallery-item" data-cat="evenimente" data-caption-ro="Nuntă în aer liber la Conca Verde" data-caption-en="Outdoor wedding at Conca Verde">
-                <img src="assets/img/nunta.jpg" alt="Nuntă la Conca Verde Râșnov" width="680" height="510" loading="lazy">
+                <picture><source srcset="assets/img/nunta.webp" type="image/webp"><img alt="Nuntă la Conca Verde Râșnov" width="680" height="510" loading="lazy" src="assets/img/nunta.jpg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Nuntă în natură</span><span data-lang="en">Outdoor wedding</span></span></div>
             </div>
             <div class="gallery-item" data-cat="evenimente" data-caption-ro="Sala mare – 240 locuri" data-caption-en="Main hall – 240 seats">
-                <img src="assets/img/sala-mare.jpg" alt="Sala evenimente Conca Verde" width="383" height="510" loading="lazy">
+                <picture><source srcset="assets/img/sala-mare.webp" type="image/webp"><img alt="Sala evenimente Conca Verde" width="383" height="510" loading="lazy" src="assets/img/sala-mare.jpg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Sala mare</span><span data-lang="en">Main hall</span></span></div>
             </div>
             <div class="gallery-item" data-cat="evenimente" data-caption-ro="Separeu – 60 locuri" data-caption-en="Private room – 60 seats">
-                <img src="assets/img/separeu.jpg" alt="Separeu Conca Verde" width="680" height="510" loading="lazy">
+                <picture><source srcset="assets/img/separeu.webp" type="image/webp"><img alt="Separeu Conca Verde" width="680" height="510" loading="lazy" src="assets/img/separeu.jpg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Separeu privat</span><span data-lang="en">Private room</span></span></div>
             </div>
             <div class="gallery-item" data-cat="evenimente" data-caption-ro="Eveniment corporate la Conca Verde" data-caption-en="Corporate event at Conca Verde">
-                <img src="assets/img/evenimente-card.jpeg" alt="Evenimente corporate Conca Verde" width="400" height="267" loading="lazy">
+                <picture><source srcset="assets/img/evenimente-card.webp" type="image/webp"><img alt="Evenimente corporate Conca Verde" width="400" height="267" loading="lazy" src="assets/img/evenimente-card.jpeg"></picture>
                 <div class="gi-overlay"><span>Corporate</span></div>
             </div>
 
             <!-- Activități -->
             <div class="gallery-item" data-cat="activitati" data-caption-ro="Activități de aventură în Cheile Râșnoavei" data-caption-en="Adventure activities in Râșnoavei Gorge">
-                <img src="assets/img/Activitati-adrenalina.jpg" alt="Activități aventură Conca Verde" width="600" height="400" loading="lazy">
+                <picture><source srcset="assets/img/Activitati-adrenalina.webp" type="image/webp"><img alt="Activități aventură Conca Verde" width="600" height="400" loading="lazy" src="assets/img/Activitati-adrenalina.jpg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Aventură în chei</span><span data-lang="en">Gorge adventure</span></span></div>
             </div>
             <div class="gallery-item" data-cat="exterior" data-caption-ro="Cazare – vedere generală complex" data-caption-en="Accommodation – resort overview">
-                <img src="assets/img/cazare-card.jpeg" alt="Cazare Conca Verde" width="400" height="267" loading="lazy">
+                <picture><source srcset="assets/img/cazare-card.webp" type="image/webp"><img alt="Cazare Conca Verde" width="400" height="267" loading="lazy" src="assets/img/cazare-card.jpeg"></picture>
                 <div class="gi-overlay"><span><span data-lang="ro">Complex turistic</span><span data-lang="en">Resort overview</span></span></div>
             </div>
         </div>
