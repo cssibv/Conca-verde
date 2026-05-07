@@ -42,16 +42,6 @@
     
     <style>
         /* Stiluri specifice doar pentru aceasta pagina */
-        .lang-switcher { display: flex; align-items: center; gap: 6px; margin-right: 15px; }
-        .lang-btn {
-            background: transparent; border: 1px solid rgba(255,255,255,0.4);
-            color: #fff; font-size: 0.75rem; font-weight: 600; padding: 4px 10px;
-            border-radius: 4px; cursor: pointer; transition: 0.3s;
-        }
-        .lang-btn.active { background: var(--gold); border-color: var(--gold); }
-        header.scrolled .lang-btn { color: var(--primary); border-color: var(--primary); }
-        header.scrolled .lang-btn.active { color: #fff; }
-
         /* Logica Limba */
         [data-lang="en"] { display: none; }
         body.lang-en [data-lang="ro"] { display: none; }
@@ -871,8 +861,6 @@
   </div>
 </section>
 
-
-
     <!-- FAQ Section -->
     <section class="bg-sand spatiu-mare">
         <div class="container">
@@ -1012,7 +1000,6 @@
             <span>&copy; 2026 Complex Turistic Conca Verde. Toate drepturile rezervate.</span>
         </div>
     </footer>
-
 
     <script>
         // Logica Limba

@@ -38,14 +38,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
     <style>
-        /* Lang */
-        .lang-switcher{display:flex;align-items:center;gap:6px;margin-right:10px}
-        .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:1px;padding:4px 10px;border-radius:3px;cursor:pointer;font-family:var(--font-body);transition:.3s}
-        .lang-btn.active{background:var(--gold);border-color:var(--gold)}
-        .lang-btn:hover:not(.active){border-color:var(--gold);color:var(--gold)}
-        header.scrolled .lang-btn{color:var(--primary);border-color:var(--primary)}
-        header.scrolled .lang-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
-
         /* Gallery Filter */
         .gallery-filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
         .gf-btn{padding:10px 24px;border:2px solid #e0d8cc;border-radius:50px;background:transparent;font-family:var(--font-body);font-size:.9rem;font-weight:600;color:var(--primary);cursor:pointer;transition:.3s}
@@ -404,5 +396,4 @@
     <!-- GA4 Event Tracking -->
     <script>
     document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
-            el.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'cont
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el)
