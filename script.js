@@ -25,15 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateHeaderOffset(){
         if(!header) return;
-        rootEl.style.setProperty('--header-offset', header.offsetHeight + 'px');
+        // Citim offsetHeight o singura data (evita forced reflow — layout se citea de 2x)
+        const h = header.offsetHeight;
+        rootEl.style.setProperty('--header-offset', h + 'px');
         // Also compute a "scrolled" offset for sticky elements like the restaurant menu nav
         // When scrolled, the header shrinks (smaller logo), so we need a smaller top value
         const scrolled = header.classList.contains('scrolled');
         if (scrolled) {
-            rootEl.style.setProperty('--header-offset-scrolled', header.offsetHeight + 'px');
+            rootEl.style.setProperty('--header-offset-scrolled', h + 'px');
         } else {
             // Estimate scrolled height (header shrinks ~30% when scrolled)
-            const estimated = Math.round(header.offsetHeight * 0.7);
+            const estimated = Math.round(h * 0.7);
             rootEl.style.setProperty('--header-offset-scrolled', estimated + 'px');
         }
     }
