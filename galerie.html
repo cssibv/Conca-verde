@@ -124,7 +124,6 @@
         <div class="section-header" style="margin-top:16px;">
             <span><span data-lang="ro">Fotografii</span><span data-lang="en">Photos</span></span>
             <h2><span data-lang="ro">Complexul în imagini</span><span data-lang="en">The resort in images</span></h2>
-            <div class="line center"></div>
         </div>
 
         <div class="gallery-filters">
@@ -293,5 +292,85 @@
 
     <script src="assets/js/script.js" onload="window.__menuReady=true;" defer></script>
     <script src="assets/js/newsletter-popup.js" defer></script>
+
+    <!-- Galerie: filtrare + lightbox -->
+    <style>
+        .cv-lb{position:fixed;inset:0;background:rgba(15,23,18,.92);display:none;align-items:center;justify-content:center;z-index:9999;opacity:0;transition:opacity .25s}
+        .cv-lb.open{display:flex;opacity:1}
+        .cv-lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+        .cv-lb-cap{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:#fff;font-family:var(--font-body,sans-serif);font-size:1rem;padding:0 20px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+        .cv-lb-btn{position:absolute;background:rgba(255,255,255,.12);border:none;color:#fff;width:52px;height:52px;border-radius:50%;font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;user-select:none}
+        .cv-lb-btn:hover{background:rgba(255,255,255,.28)}
+        .cv-lb-close{top:20px;right:20px;width:44px;height:44px;font-size:1.4rem}
+        .cv-lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+        .cv-lb-next{right:20px;top:50%;transform:translateY(-50%)}
+        @media(max-width:600px){.cv-lb-prev{left:8px}.cv-lb-next{right:8px}.cv-lb-btn{width:44px;height:44px;font-size:1.3rem}}
+    </style>
+    <script>
+    (function () {
+      var grid = document.getElementById('galleryGrid');
+      if (!grid) return;
+      var btns  = Array.prototype.slice.call(document.querySelectorAll('.gf-btn'));
+      var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+
+      /* ---- Filtrare ---- */
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var f = btn.getAttribute('data-filter');
+          btns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          items.forEach(function (it) {
+            it.style.display = (f === 'all' || it.getAttribute('data-cat') === f) ? '' : 'none';
+          });
+        });
+      });
+
+      /* ---- Lightbox ---- */
+      var lb = document.createElement('div');
+      lb.className = 'cv-lb';
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-modal', 'true');
+      lb.innerHTML =
+        '<button class="cv-lb-btn cv-lb-close" aria-label="Inchide">&times;</button>' +
+        '<button class="cv-lb-btn cv-lb-prev" aria-label="Anterior">&#8249;</button>' +
+        '<img class="cv-lb-img" alt="">' +
+        '<button class="cv-lb-btn cv-lb-next" aria-label="Urmator">&#8250;</button>' +
+        '<div class="cv-lb-cap"></div>';
+      document.body.appendChild(lb);
+      var lbImg = lb.querySelector('.cv-lb-img');
+      var lbCap = lb.querySelector('.cv-lb-cap');
+      var cur = -1;
+
+      function visibleItems(){ return items.filter(function (it) { return it.style.display !== 'none'; }); }
+      function capOf(it){
+        var en = document.body.classList.contains('lang-en');
+        return it.getAttribute(en ? 'data-caption-en' : 'data-caption-ro') || it.getAttribute('data-caption-ro') || '';
+      }
+      function srcOf(it){ var img = it.querySelector('img'); return img ? (img.currentSrc || img.src) : ''; }
+      function show(list, i){
+        if (!list.length) return;
+        cur = (i + list.length) % list.length;
+        var it = list[cur];
+        lbImg.src = srcOf(it);
+        lbImg.alt = capOf(it);
+        lbCap.textContent = capOf(it);
+      }
+      function openAt(it){ var list = visibleItems(); show(list, list.indexOf(it)); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+      function step(d){ show(visibleItems(), cur + d); }
+
+      items.forEach(function (it) { it.addEventListener('click', function () { openAt(it); }); });
+      lb.querySelector('.cv-lb-close').addEventListener('click', close);
+      lb.querySelector('.cv-lb-prev').addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+      lb.querySelector('.cv-lb-next').addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+      });
+    })();
+    </script>
 </body>
 </html>
