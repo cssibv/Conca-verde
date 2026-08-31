@@ -1,0 +1,10 @@
+# Folderul de lucru al uneltei (conține și worktree-ul cu adminul,
+# care e salvat separat pe ramura lui — vezi jurnalul)
+.claude/
+
+# Agency Admin — unealta internă a lui David, proiect separat de site-ul conca-verde.ro.
+# Are propriul deploy pe Vercel; NU trebuie publicat odată cu site-ul.
+agency-admin/
+
+# Arhive locale
+*.zip
