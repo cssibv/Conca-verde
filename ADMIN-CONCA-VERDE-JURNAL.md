@@ -2,7 +2,7 @@
 
 > **Documentul viu al proiectului.** Claude îl deschide la începutul fiecărei sesiuni și îl completează la sfârșit. David îl poate consulta oricând ca să vadă starea proiectului.
 
-**Ultima actualizare:** 17 august 2026 · sesiunea 19  
+**Ultima actualizare:** 17 august 2026 · sesiunea 20  
 **Data pornirii proiectului:** ~20 mai 2026 (contul Vercel creat la 20 mai)  
 **Durata activă:** ~2 luni  
 
@@ -142,7 +142,7 @@ Scopul: să înlocuiască hârtia, mesajele WhatsApp și Excel-urile improvizate
 | **Site public conca-verde.ro** | `D:\Git\Conca-verde\` (fișiere .html — NU se atinge de admin) |
 | **Jurnal (acest fișier)** | `D:\Git\Conca-verde\ADMIN-CONCA-VERDE-JURNAL.md` |
 
-**⚠️ Adminul NU e commituit în git.** Trăiește doar pe disc + Vercel. Zi-mi "commit admin" într-o sesiune viitoare ca să-l pun în siguranță.
+**✅ Adminul E salvat în git** (august 2026), pe ramura locală `claude/trusting-goldwasser-36d81f`, commit `bfeefa0` — 105 fișiere. Se poate recupera din `.git` chiar dacă se șterge folderul worktree. **Încă NU e trimis pe GitHub** — vezi backlog.
 
 ---
 
@@ -288,7 +288,13 @@ Scopul: să înlocuiască hârtia, mesajele WhatsApp și Excel-urile improvizate
 
 ### 🔴 Prioritate mare
 - [ ] **Rotația cheii secrete** `sb_secret_VEZI_GOOGLE_DRIVE` (expusă în chat) — David → Supabase Dashboard → Roll → paste nouă în Vercel env `SUPABASE_SECRET_KEY` → redeploy
-- [ ] **Commit adminul în git** — trăiește doar pe disc + Vercel; risc de pierdere dacă se șterge worktree
+- [x] ~~**Commit adminul în git**~~ — FĂCUT (august 2026), commit `bfeefa0` pe ramura `claude/trusting-goldwasser-36d81f`
+- [ ] **Trimite adminul pe GitHub** — commit-ul e doar local; push-ul a cerut autentificare GitHub. David rulează:
+      `cd D:\Git\Conca-verde\.claude\worktrees\trusting-goldwasser-36d81f` apoi
+      `git push -u origin claude/trusting-goldwasser-36d81f:admin`
+- [ ] **Sincronizează `main` cu GitHub** — local e în urmă cu 9 commituri de site (galerie, footer Smart Web,
+      email recepție, optimizări). Local există 1 commit nou cu documentația, netrimis. Atenție: `script.js`
+      are o modificare nesalvată, iar GitHub a atins și el `script.js` — se rezolvă manual, cu David de față.
 
 ### 🟡 Prioritate medie
 - [ ] Bucătar redesign detaliat (colorare pe cronometru, sunet + vibrație la comandă nouă)
@@ -325,6 +331,37 @@ Scopul: să înlocuiască hârtia, mesajele WhatsApp și Excel-urile improvizate
 ---
 
 ## 📅 ISTORIC SESIUNI
+
+### Sesiunea 20 — Adminul salvat în git, cu parolele scoase (17 august 2026)
+**Ce a cerut David:** „vreau să salvăm adminul de la Conca Verde în git”.
+
+**Ce am găsit înainte de salvare (important):** 4 fișiere cu parole reale ar fi ajuns în git —
+`scripts-temp/credentiale-conca-verde.json` (parolele celor 10 angajați), plus parola bazei de
+date în `migrate-all.mjs` și `p1-run.mjs` și cheia secretă Supabase în `create-auth-users.mjs`.
+În plus, jurnalul din rădăcină conținea token-ul Vercel, parola bazei de date și cheia secretă.
+
+**Ce s-a curățat:**
+- `credentiale-*.json` — blocat prin `admin/.gitignore` (rămâne pe disc, nu intră în git)
+- parola bazei de date → `process.env.DATABASE_URL` în cele 2 scripturi
+- cheia secretă → `process.env.SUPABASE_SECRET_KEY` în `create-auth-users.mjs`
+- jurnalul — cheile înlocuite cu „VEZI_GOOGLE_DRIVE”
+- `dev-dist/` (fișiere generate) — adăugat la `.gitignore`
+
+**Ce s-a salvat:**
+- Ramura `claude/trusting-goldwasser-36d81f`, commit `bfeefa0` — 118 fișiere: adminul (105) +
+  specificația și designele din `docs/` (12) + `.gitignore`
+- Ramura `main`, commit `28bb63e` — jurnalul curățat, `CLAUDE.md` și `.gitignore` nou
+  (`.claude/`, `agency-admin/`, `*.zip`). **Nu s-a atins** `script.js` și `public/`.
+
+**Ce NU s-a putut face:** push-ul pe GitHub — a cerut autentificare și fereastra a fost anulată.
+Comenzile exacte au rămas în backlog.
+
+**Descoperit pe parcurs:** `origin/main` are 9 commituri de site pe care local nu le avem
+(galerie, footer Smart Web, corectare `receptie@conca-verde.ro`, optimizări CSS). Local avem
+1 commit nou netrimis. Sincronizarea cere atenție, fiindcă `script.js` e modificat în ambele
+părți — se face manual, cu David de față.
+
+---
 
 ### Sesiunea 19 — Proiect NOU: „Agency Admin” (meta-adminul lui David) (17 august 2026)
 **Ce a cerut David:** o aplicație separată, doar pentru el, cu care să construiască admin-uri
@@ -886,7 +923,7 @@ npx vercel link --token=$VERCEL_TOKEN
 npm run dev
 ```
 
-**⚠️ Notă critică:** Adminul NU e commituit în git (vezi backlog). Deci pasul 1 nu funcționează încă — trebuie să copiezi folderul `admin/` manual până când David dă „commit admin".
+**⚠️ Notă:** Adminul e salvat în git local, dar ramura `admin` **nu e încă pe GitHub** (vezi backlog). Până se face push-ul, pe un PC nou trebuie copiat folderul `admin/` manual până când David dă „commit admin".
 
 ---
 
