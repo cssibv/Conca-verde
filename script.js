@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ─────────────────────────────────────────
        1. ELEMENTE
     ───────────────────────────────────────── */
+
+    /* ─────────────────────────────────────────
+       1. ELEMENTE
+    ───────────────────────────────────────── */
     const header    = document.querySelector('header');
     const hamburger = document.querySelector('.hamburger');
     const navLinks  = document.querySelector('.nav-links');
